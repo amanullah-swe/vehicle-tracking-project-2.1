@@ -18,10 +18,7 @@ import Header from "./sharedComponent/Header";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import "react-datepicker/dist/react-datepicker.css";
 
-// import AddOnSettingsCart from "./pages/MasterSettings/AddOnSettingsCart";
-import Holidays from "./pages/MasterData/Holidays";
 
-import Vacations from "./pages/MasterData/Vacations";
 
 
 // import UpdateCustomerProfile from "./pages/MasterSettings/UpdateCustomerProfile";
@@ -359,8 +356,6 @@ function App() {
             currentRoute === "/DriverDutyRoaster" ||
             currentRoute === "/DriverAvailabilityList" ||
 
-            currentRoute === "/Holidays" ||
-            currentRoute === "/Vacations" ||
             currentRoute === "/ParkingSlot" ||
             currentRoute === "/PointOfIntrest" ||
             currentRoute === "/GeofenceAreas" ||
@@ -385,9 +380,6 @@ function App() {
               {/* ============ MASTER SETTING ============= */}
 
               {/* ============ MASTER DATA ============= */}
-
-              <Route path="Holidays" element={<Holidays />} />
-              <Route path="Vacations" element={<Vacations />} />
 
               <Route path="AddVehicleCategory" element={<AddVehicleCategory />}>
                 <Route path=":id" element={<AddVehicleCategory />} />
