@@ -1,0 +1,27 @@
+.displayFlexInp-for-expense-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    // gap: 1rem;
+    padding-bottom: 10px;
+    
+    @media  (max-width: 1350px) { /* Target medium devices or below */
+      justify-content: start;
+    }
+  
+    .selectForm-1 {
+      width: 13%;
+      @media (min-width: 800px) and (max-width: 1280px) { /* Target medium devices or below */
+        width: 48%; /* Adjust width to 16% on medium and smaller screens */
+      }
+      @media  (max-width: 799px) { /* Target medium devices or below */
+        width: 100%; /* Adjust width to 16% on medium and smaller screens */
+      }
+      .innerCust {
+        width: 100%;
+      }
+    }
+    
+  }

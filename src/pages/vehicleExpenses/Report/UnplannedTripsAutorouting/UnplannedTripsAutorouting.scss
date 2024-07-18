@@ -1,0 +1,67 @@
+.middle-header {
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    width: calc(100% - 1px);
+    justify-content: space-between;
+    z-index: 111;
+
+    p {
+        color: rgb(143, 67, 0) !important;
+        padding-left: 20px;
+    }
+}
+
+.UserTabel {
+
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 20px;
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+    z-index: 111;
+
+    .heading {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        margin: 0;
+        border-bottom: 0.5px solid #F6EFE9;
+        margin-bottom: 0px;
+
+    }
+
+    .tableAdmin {
+        min-width: 1060px;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        margin-bottom: 0;
+    }
+
+}
+#cx-active {  position: relative;
+    overflow-x: hidden;
+    margin-left: 270px;
+    transition: all 0.5s;
+    padding: 100px 20px 20px 20px;
+    height: 100vh;
+    background-color: var(--backColorMainLightMode);
+}
+.cx-active {
+    margin-left: 80px !important;
+}
+.Vehicle_inspition_dashboard {
+    overflow-y: auto
+}
+.iconheader{
+    height: 40px;
+    // width: 100px;
+    background-color:white;
+    position: fixed;
+        bottom: 0;
+        width: 100%;
+}

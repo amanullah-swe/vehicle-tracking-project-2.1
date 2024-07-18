@@ -1,0 +1,90 @@
+import React from 'react'
+import Linkify from 'react-linkify'
+
+const ChatShow = ({ msg, className, style }) => {
+  const linkifyComponentDecorator = (href, text, key) => (
+    <a href={href} target='_blank' rel='noreferrer' key={key}>
+      {text}
+    </a>
+  )
+
+  const linkifyOptions = {
+    target: 'blank',
+    rel: 'noopener noreferrer'
+  }
+
+  return (
+    <p className={className && className} style={style && style}>
+      {msg?.split('\n')
+        ? msg?.split('\n').map((single, i) => {
+            return (
+              <Linkify
+                options={linkifyOptions}
+                componentDecorator={linkifyComponentDecorator}
+                key={'msmsgg' + i}
+              >
+                <div>{single}</div>
+              </Linkify>
+            )
+          })
+        : ''}
+    </p>
+  )
+}
+
+export default ChatShow
+
+// import React from 'react';
+// import Linkify from 'react-linkify';
+
+// const ChatMessage = ({ msg, className, style }) => {
+//   const linkifyComponentDecorator = (href, text, key) => {
+//     if (href.startsWith('mailto:')) {
+//       return (
+//         <a href={href} key={key}>
+//           {text}
+//         </a>
+//       );
+//     } else {
+//       return (
+//         <a href={href} target='_blank' rel='noopener noreferrer' key={key}>
+//           {text}
+//         </a>
+//       );
+//     }
+//   };
+
+//   const customEmailParser = (text) => {
+//     const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+//     const matches = text.match(emailRegex);
+
+//     if (!matches) {
+//       return text;
+//     }
+
+//     return text.split(emailRegex).map((part, index) => {
+//       if (matches.includes(part)) {
+//         return (
+//           <a href={`mailto:${part}`} key={index}>
+//             {part}
+//           </a>
+//         );
+//       }
+//       return part;
+//     });
+//   };
+
+//   const linkifyOptions = {
+//     target: '_blank',
+//     rel: 'noopener noreferrer',
+//     format: customEmailParser, // Use the custom parser for email addresses
+//   };
+
+//   return (
+//     <p className={className} style={style}>
+//       <Linkify options={linkifyOptions}>{msg}</Linkify>
+//     </p>
+//   );
+// };
+
+// export default ChatMessage;

@@ -1,0 +1,363 @@
+.custom-invoiced-height {
+  height: calc(100vh - 216px);
+}
+.right-invoice-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  img {
+    width: 90%;
+    // height: 80%;
+    // object-fit: contain;
+  }
+}
+.invoice-heading {
+  font-weight: 400;
+  font-size: 20px;
+  color: #8f4300;
+}
+
+.invoice-outer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 10px;
+  .invoice-inner-wrapper {
+    border-radius: 10px;
+    border: 1px solid #f6efe9;
+    .heading-table {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      .left-title {
+        background-color: #8f430080;
+        p {
+          font-size: 30px;
+          color: #421f00;
+          font-weight: 600;
+        }
+        td {
+          &:first-child {
+            width: 70%;
+          }
+        }
+        .lt-heading {
+          border-radius: 10px 0 0 0;
+          padding: 20px;
+          font-weight: 600;
+          font-size: 30px;
+          color: #421f00;
+        }
+        .right-invoice-details {
+          border-radius: 0 10px 0 0;
+          padding: 20px;
+          table {
+            tr {
+              td {
+                &:first-child {
+                  color: #8f4300;
+                  font-weight: 400;
+                  font-size: 16px;
+                  padding-right: 1rem;
+                }
+                &:last-child {
+                  font-weight: 400;
+                  font-size: 16px;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .invoice-head {
+      width: 100%;
+      border-spacing: 20px !important;
+      border-collapse: unset !important;
+
+      .address-row {
+        width: 100%;
+        .address-table {
+          width: 100%;
+          th {
+            color: rgba(143, 67, 0, 0.5);
+            font-size: 11px;
+            font-weight: 500;
+          }
+          td {
+            color: #8f4300;
+            font-weight: 600;
+            font-size: 11px;
+          }
+        }
+        td {
+          &:first-child {
+            width: 73%;
+          }
+        }
+        .description-table {
+          width: 100%;
+          margin-bottom: 4rem;
+          th {
+            font-weight: 400;
+            font-size: 16px;
+            color: #8f4300;
+          }
+          td {
+            font-weight: 500;
+            font-size: 12px;
+            color: rgba(143, 67, 0, 0.5);
+          }
+        }
+      }
+    }
+
+    .particular-table {
+      width: 100% !important;
+      thead {
+        background-color: #c7a180;
+        tr {
+          th {
+            padding: 15px 20px !important;
+            font-weight: 600;
+            font-size: 11px;
+            color: #421f00;
+            &:nth-child(4) {
+              text-align: center;
+            }
+            &:nth-child(6) {
+              text-align: center;
+            }
+
+            &:first-child {
+              border-top-left-radius: 10px;
+              text-align: center;
+            }
+            &:last-child {
+              border-top-right-radius: 10px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid #f6efe9;
+          td {
+            color: rgba(66, 31, 0, 0.5);
+            font-weight: 500;
+            padding: 15px 30px !important;
+            font-size: 11px;
+            text-align: right;
+            &:nth-child(1) {
+              text-align: left;
+              padding: 15px 20px !important;
+            }
+            &:nth-child(2) {
+              padding: 15px 20px;
+              text-align: left;
+            }
+            &:nth-child(4) {
+              text-align: center;
+            }
+            &:nth-child(6) {
+              text-align: center;
+            }
+          }
+        }
+        .total {
+          text-align: right !important;
+          padding-right: 2rem !important;
+          color: #421f00;
+          font-weight: 600;
+        }
+        .pt-bottom-section {
+          border: none !important;
+          .ptb-total {
+            padding: 15px 30px 15px 10px !important;
+            font-weight: 600;
+            font-size: 12px;
+            color: #421f00;
+            text-align: right;
+            background-color: #c7a180;
+          }
+          .ptb-border-radius-bottom-right {
+            border-bottom-right-radius: 10px;
+          }
+        }
+      }
+    }
+    .tax-table {
+      td,
+      th {
+        text-align: center !important;
+      }
+      td {
+        color: rgba(143, 67, 0, 0.5) !important;
+      }
+    }
+    .tax-heading {
+      font-weight: 400;
+      font-size: 16px;
+      color: #8f4300;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.custom-select-for-invoice {
+}
+
+.height-97 {
+  height: 100%;
+}
+
+#cx-marketPlace {
+  .t-check-box{
+    display: flex;
+    align-items: center;
+    .m-p-check-list{
+      margin-right: 10px;
+    }
+  }
+  .m-p-check-list{
+    cursor: pointer;
+    display: inline;
+    .form-check-input{
+      margin-top: 2px;
+      cursor: pointer;
+
+      margin-left: 0 !important;
+    }
+  }
+  #dr-m-img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+  .com-name-v-det {
+    margin-left: 140px;
+    margin-top: -50px;
+    color: var(--Headings, #8f4300);
+    font-family: Overpass;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+  }
+  .doc-img-ref {
+    max-width: 100px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--Background, #f6efe9);
+    img {
+      cursor: pointer;
+    }
+  }
+  #head-refs {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .refrs-link {
+    a {
+      border-bottom: 1px solid #8f4300;
+    }
+  }
+  .headingDetails.btn-o {
+    display: block;
+  }
+  .headingTxt.btn-o {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .btn-right-offer {
+    .Cancel {
+      margin-right: 20px;
+      color: var(--Headings, #8f4300);
+      font-family: Overpass;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      background-color: transparent;
+      border-radius: 10px;
+      border: 1px solid var(--button-text-icons, #9c4900);
+      width: 115px;
+      height: 40px;
+    }
+    .Send-Offer {
+      width: 115px;
+      height: 40px;
+      color: var(--White, #fff);
+      font-family: Overpass;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border: none;
+      border-radius: 10px;
+      background: #9c4900;
+    }
+  }
+  .offer-load-btn-wrapper {
+    margin-bottom: 20px;
+    text-align: right;
+    button {
+      border: none;
+      color: #9c4900;
+      font-family: Overpass;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      height: 40px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 0 30px;
+    }
+  }
+  .main-master-wrapper .tableAdmin .tableBody tr td {
+  }
+  .tob_nav_pills {
+    max-width: 100% !important;
+  }
+  .common-cat-vehical-card-inner .cat-body {
+    padding-left: 0;
+  }
+  .common-cat-vehical-card-inner {
+    .head-with-img {
+      display: flex;
+      .left {
+        margin-right: 20px;
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+    #head-with-img-switch {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      #head-with-img {
+        display: flex;
+      }
+      .form-check-input {
+        background-color: #8f430080 !important;
+        height: 25px;
+        width: 40px !important;
+        background-image: url("../images/Empty_cicle.svg") !important;
+      }
+
+      .form-check-input:checked {
+        background-color: #9c4900 !important;
+      }
+    }
+  }
+}

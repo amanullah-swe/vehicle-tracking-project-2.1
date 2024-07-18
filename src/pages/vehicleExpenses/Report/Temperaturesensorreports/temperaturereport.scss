@@ -1,0 +1,125 @@
+.middle-header1 {
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    width: calc(100% - 1px);
+    justify-content: space-between;
+    z-index: 111;
+
+    p {
+        color: rgb(143, 67, 0) !important;
+        padding-left: 20px;
+    }
+}
+ 
+.mainwaraper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+     
+    
+}
+.widthAdjuster{
+    width: 40px;
+}
+.Dateheading{
+    p {
+color: rgb(143, 67, 0) !important;
+        
+    }
+}
+.UserTabelreport {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 20px;
+    height: calc(100vh - 170px);
+    overflow-y: scroll;
+
+    .heading {
+        // display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        margin: 0;
+        border-bottom: 0.5px solid #F6EFE9;
+        margin-bottom: 0px;
+
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            color: #8F4300;
+        }
+
+        .viewall {
+            font-size: 12px;
+            font-weight: 400;
+            color: #8F430080;
+            cursor: pointer;
+
+            &:hover {
+                color: #8F4300;
+            }
+        }
+    }
+
+    .tableAdmin {
+        min-width: 1060px;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        // margin-top: -10px;
+        margin-bottom: 0;
+
+        // text-align: center;
+        .tableHead tr th {
+            color: rgba(143, 67, 0, 0.6);
+            font-size: 14px;
+            font-weight: 400 !important;
+            border-bottom: none !important;
+            padding: 5px 12px !important;
+            position: sticky;
+            top: 0px;
+            background-color: #fff;
+        }
+
+        .tableBody {
+            tr {
+                .ellipsis {
+                    // display: inline-block;
+                    max-width: 300px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                td {
+                    border: 0.5px solid #f6efe9;
+                    color: #8F4300;
+                    font-size: 14px;
+                    border-style: solid none;
+                    padding: 12px !important;
+                    border-bottom: 0.5px solid #f6efe9 !important;
+                }
+
+                .DeleteBtn {
+                    cursor: pointer;
+                }
+
+                td:first-child {
+                    border-left-style: solid;
+                    border-top-left-radius: 11px;
+                    border-bottom-left-radius: 11px;
+                }
+
+                td:last-child {
+                    border-right-style: solid;
+                    border-bottom-right-radius: 11px;
+                    border-top-right-radius: 11px;
+                }
+            }
+        }
+    }
+
+}

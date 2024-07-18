@@ -1,0 +1,92 @@
+.cat-delete-btn {
+  position: absolute;
+  right: 10px;
+  border: none;
+  bottom: 9px;
+  background-color: transparent;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.location-search-input {
+  padding-right: 70px;
+}
+
+.searchbar {
+
+  border: 0.956px solid #f6efe9 !important;
+  color: rgb(143, 67, 0) !important;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px !important;
+}
+
+.location-search-input-main {
+  position: relative;
+  .Search_order{
+    position: absolute;
+    top: 24px;
+    z-index: 999;
+  }
+}
+
+.maindiveSearch {
+  // border: 1px solid #151414;
+  // padding: 0px;
+  // border-bottom-left-radius: 0px
+  margin: 5px;
+  height: 100px;
+}
+
+.overflowScroller {
+
+  position: relative;
+  border: 1px solid #151414;
+  background-color: #fff;
+  z-index: 999;
+  padding: 0px;
+  border-bottom-left-radius: 0px;
+  scroll-behavior: auto;
+}
+
+.Select_location_dropDown {}
+
+.Search_order {
+  overflow: auto;
+  height: 200px;
+  margin-top: 20px;
+  // z-index: 10;
+  background-color: #f6efe9 !important;
+  padding: 20px;
+  border-radius: 20px;
+  // max-width: 50%;
+
+  div {
+    transition: 0.5s;
+    margin-bottom: 15px;
+
+    p {
+      color: #8f4300;
+    }
+
+    &:hover {
+      scale: 1.02;
+      font-weight: 700;
+    }
+  }
+}
+
+.lal_hy_lal_hy {
+  option {
+
+    // backgroundColor: "#f6efe9",
+    // color:"#8f4300",
+    p {
+      background-color: #f6efe9;
+      color: #8f4300;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.speed-dial {
+    left: -10px;
+    bottom: 165px;
+    position: relative;
+    bottom: -20px;
+    left: -10px;
+
+    .p-speeddial-opened .p-speeddial-list {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 0;
+    }
+
+    .p-speeddial-list {
+      padding: 0;
+
+    }
+
+    .p-speeddial-item {
+      margin-top: 10px;
+    }
+
+    .p-speeddial {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .p-speeddial-button.p-button.p-button-icon-only {
+      height: 40px;
+      width: 40px;
+      
+    }
+
+    .p-button {
+      background-color: #53b7e8;
+      border: none;
+      border-radius: 50%;
+    }
+
+    .pi-plus:before {
+      font-weight: bolder;
+    }
+
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+      background-color: #53b7e8;
+      border: none;
+    }
+
+    .p-speeddial-action {
+      font-weight: bolder;
+      height: 40px;
+      width: 40px;
+      background-color: #53b7e8;
+    }
+  } 
+
+  .msg-text-1{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    word-break: break-word;
+    color: rgba(156, 73, 0, 0.5019607843);
+    padding-left: 2%;
+  }
+
+  .custom-toggle::before {
+    display: none !important;
+  }

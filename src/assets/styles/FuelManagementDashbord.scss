@@ -1,0 +1,467 @@
+.FuelManagementDashbord {
+    .leftSideSec {
+        display: flex;
+        justify-content: flex-end;
+
+    .addParkBtn button {
+      border: none;
+      background: #ffffff;
+      border-radius: 10px;
+      width: 160px;
+      height: 40px;
+      color: #9c4900;
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    .inconMain {
+      height: 40px;
+      width: 40px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 10px;
+    }
+  }
+
+  .Heading_fule {
+    border-bottom: 0.5px solid #f6efe9;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      color: #8f4300;
+      margin: 0;
+    }
+
+    .viewAll {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(143, 67, 0, 0.5);
+      cursor: pointer;
+    }
+  }
+
+  .Top_section_first {
+    height: fit-content;
+
+    .Summary {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 20px;
+
+      .Summary_body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .summary_left {
+          .TotalSpend {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(143, 67, 0, 0.5);
+            margin-bottom: 5px;
+          }
+
+          .amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #8f4300;
+            margin-bottom: 20px;
+          }
+
+          .increes {
+            display: flex;
+
+            p {
+              background-color: #ff0000;
+              font-size: 14px;
+              font-weight: 400;
+              color: #ffffff;
+              padding: 7px 14px;
+              border-radius: 20px;
+              margin-right: 5px;
+            }
+          }
+
+          .month {
+            font-size: 8px;
+            font-weight: 400;
+            color: rgba(143, 67, 0, 0.5);
+            margin-top: 5px;
+          }
+        }
+
+        .summery_right {
+          width: 70%;
+
+          .apexcharts-canvas {
+            width: 100%;
+          }
+
+          .apexcharts-tooltip {
+            background: transparent;
+            border: none;
+            width: 97px;
+            height: 30px;
+            border-radius: 20px;
+          }
+
+          .arrow_box {
+            width: 97px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8f4300;
+            border-radius: 20px;
+            border: 1px solid #8f4300;
+            background-color: white;
+          }
+        }
+      }
+    }
+
+    .TopSpends {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      height: 100%;
+
+      .TopSpends_Body {
+        display: flex;
+        align-items: center;
+
+        .single_card_Spends {
+          padding-right: 20px;
+          margin-bottom: 20px;
+
+          .title {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(143, 67, 0, 0.5);
+            margin-bottom: 7px;
+          }
+
+          .amount_arrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .amount {
+              font-size: 20px;
+              font-weight: 700;
+              color: #8f4300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Graph_Section_second {
+    .TopSpendsbyVehicles {
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 20px;
+
+      .single_card_TopSpendsbyVehicles {
+        .title {
+          font-size: 14px;
+          font-weight: 400;
+          color: rgba(143, 67, 0, 0.5);
+        }
+
+        .amount {
+          font-size: 32px;
+          font-weight: 700;
+          color: #8f4300;
+        }
+      }
+
+      .Barchart {
+        .apexcharts-legend-text {
+          color: red !important;
+        }
+
+        .apexcharts-bar-area:hover {
+          fill: #8f4300 !important;
+          opacity: 1;
+          background-color: #ff0000;
+          stroke: transparent;
+        }
+
+        .apexcharts-xaxis-label {
+          tspan,
+          title {
+            color: red !important;
+          }
+        }
+
+        .apexcharts-tooltip {
+          background: transparent;
+          border: none;
+          width: 97px;
+          height: 30px;
+          border-radius: 20px;
+        }
+
+        .Utility_cab {
+          width: 97px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #8f4300;
+          border-radius: 20px;
+          border: 1px solid #8f4300;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .TopSpendCategories {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+
+    .single_card_TopSpendCategories {
+      .title {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(143, 67, 0, 0.5);
+      }
+
+      .amount {
+        font-size: 32px;
+        font-weight: 700;
+        color: #8f4300;
+      }
+    }
+
+    .circle_chart {
+      // display: flex;
+      // justify-content: space-between;
+      div {
+        // min-height: 200px !important
+      }
+
+      #SvgjsPath33995 {
+        filter: none !important;
+      }
+
+      .apexcharts-canvas {
+        // height: 200px !important;
+        // width: 200px !important;
+      }
+
+      .apexcharts-svg {
+        // transform: translate(130px, 0px) !important;
+      }
+      .apexcharts-inner {
+        transform: translate(140px, 0);
+        width: 100%;
+      }
+      .apexcharts-legend {
+        right: auto !important;
+        top: auto !important;
+        color: red;
+
+        .apexcharts-legend-marker {
+          border-radius: 0 !important;
+          margin-right: 10px;
+        }
+
+        .apexcharts-legend-text {
+          color: rgba(143, 67, 0, 0.5) !important;
+          font-size: 12px !important;
+          font-weight: 400 !important;
+        }
+      }
+    }
+  }
+
+  .FuelALertDetails {
+    .AbnormalFuelConsumption,
+    .AbnormalGroupExpense {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+
+      .AbnormalFuelConsumption_table_main {
+        min-width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        margin-top: -20px;
+
+        // text-align: center;
+        .tableHead tr th {
+          color: rgba(143, 67, 0, 0.6);
+          font-size: 14px;
+          font-weight: 400 !important;
+          border-bottom: none !important;
+          padding: 5px 10px !important;
+        }
+
+        .tableBody {
+          tr {
+            td {
+              border: 0.5px solid #f6efe9;
+              border-style: solid none;
+              padding: 10px !important;
+              border-bottom: 0.5px solid #f6efe9 !important;
+              color: #8f4300;
+              font-size: 13px;
+              font-weight: 500;
+            }
+
+            .redColor {
+              color: #ff0000;
+            }
+
+            .yellowColor {
+              color: #f6a300;
+            }
+
+            .Low {
+              color: #7879f1;
+            }
+
+            .DeleteBtn {
+              cursor: pointer;
+            }
+
+            td:first-child {
+              border-left-style: solid;
+              border-top-left-radius: 11px;
+              border-bottom-left-radius: 11px;
+            }
+
+            td:last-child {
+              border-right-style: solid;
+              border-bottom-right-radius: 11px;
+              border-top-right-radius: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// #asdf {
+//     .AbnormalFuelConsumption_table_main {
+
+//         margin-top: 20px;
+
+//         .grid {
+//             position: relative;
+//             // border: 1px solid #000;
+//             padding-top: 27px;
+//             background: white;
+//             min-width: 100%;
+//         }
+
+//         .grid-container {
+//             overflow-y: auto;
+//             height: 278px;
+//             width: 100%;
+//         }
+
+//         table {
+//             min-width: 100%;
+//             border-collapse: separate;
+//             border-spacing: 0 15px;
+//             margin-top: -20px;
+//         }
+
+//         tr {
+//             td {
+//                 border: 0.5px solid #f6efe9;
+//                 border-style: solid none;
+//                 padding: 10px !important;
+//                 border-bottom: 0.5px solid #f6efe9 !important;
+//                 color: #8F4300;
+//                 font-size: 13px;
+//                 font-weight: 500;
+//             }
+
+//             .redColor {
+//                 color: #FF0000;
+//             }
+
+//             .yellowColor {
+//                 color: #F6A300;
+//             }
+
+//             .Low {
+//                 color: #7879F1;
+//             }
+
+//             .DeleteBtn {
+//                 cursor: pointer;
+//             }
+
+//             td:first-child {
+//                 border-left-style: solid;
+//                 border-top-left-radius: 11px;
+//                 border-bottom-left-radius: 11px;
+//                 padding-left: 20px !important;
+//             }
+
+//             td:last-child {
+//                 border-right-style: solid;
+//                 border-bottom-right-radius: 11px;
+//                 border-top-right-radius: 11px;
+//             }
+//         }
+
+//         td,
+//         th {
+//             border-bottom: 1px solid #000;
+//             background: #fff;
+//             color: #000;
+//             padding: 10px 25px;
+//         }
+
+//         th {
+//             height: 0;
+//             line-height: 0;
+//             padding-top: 0;
+//             padding-bottom: 0;
+//             color: transparent;
+//             border: none;
+//             white-space: nowrap;
+//         }
+
+//         th div:first-child {
+//             padding-left: 20px !important;
+//         }
+
+//         th div {
+//             position: absolute;
+//             background: transparent;
+//             color: rgba(143, 67, 0, 0.6);
+//             top: 0;
+//             margin-left: -25px;
+//             line-height: normal;
+//             font-size: 14px;
+//             font-weight: 400 !important;
+//             border-bottom: none !important;
+//             padding: 5px 10px !important;
+//         }
+//     }
+// }

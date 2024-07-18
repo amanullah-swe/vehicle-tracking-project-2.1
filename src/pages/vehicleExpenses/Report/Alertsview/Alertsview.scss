@@ -1,0 +1,24 @@
+.middle-header1 {
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    width: calc(100% - 1px);
+    justify-content: space-between;
+    z-index: 111;
+
+    p {
+        color: rgb(143, 67, 0) !important;
+        padding-left: 20px;
+    }
+}
+.widthAdjuster{
+    font-size: 20px;
+    font-weight: 400;
+    color: #8F4300;border: 0.956px solid #f6efe9 !important;
+    text-align: center;
+}
+.heading{
+    padding-top: 10px;
+}

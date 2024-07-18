@@ -1,0 +1,494 @@
+.hidden {
+  visibility: hidden;
+}
+
+.top-avatar-wrapper {
+  img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    padding: 0 !important;
+    margin-right: 1rem;
+  }
+
+  .sub-heading {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+.tm-main-tabs .tm-tab1 .nav-link.active {
+  // visibility: hidden;
+}
+
+.all-vehical-head .form-control {
+  border-radius: 10px;
+}
+
+.cv-card {
+  position: relative;
+  height: fit-content;
+  // padding: 0 !important;
+  // margin: 0.2rem 0;
+
+  .vc-top {
+    padding: 15px 15px 10px !important;
+  }
+
+  .vc-body {
+    padding: 10px 15px 15px !important;
+  }
+
+  .inactive-overlay {
+    position: absolute;
+    border-radius: 20px;
+    border-radius: 20px;
+    background-color: #ededed60;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // opacity: 0.6;
+  }
+}
+
+.untracked-overlay {
+  position: absolute;
+  border-radius: 20px;
+  border-radius: 20px;
+  background-color: rgb(66, 31, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // opacity: .6;
+  .untracked-img {
+    position: absolute;
+  }
+}
+
+.common-vehical-card .vehical-card-head .heading img,
+.common-vehical-card-inner .vehical-card-head .heading img {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  padding: 0 !important;
+  margin-right: 1rem;
+}
+
+.cv-card {
+  // padding: 15px;
+  background-color: #f6efe9;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+  .vehical-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9c49001a;
+    padding: 15px;
+
+    .heading {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 60px;
+        width: auto;
+        padding: 0 30px;
+      }
+
+      div {
+        p {
+          margin: 0;
+          padding: 0;
+        }
+
+        .sub-heading {
+          color: #703c19;
+          margin-bottom: 5px;
+          font-size: 12px;
+        }
+
+        .title {
+          font-size: 14px;
+          color: #8f4300;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .option .dropdown {
+      button {
+        background-color: transparent !important;
+        background-color: white;
+        border: none;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-bottom: 1px solid #9c49001a;
+        padding-bottom: 10px;
+      }
+
+      .dropdown-toggle::after {
+        display: none;
+      }
+    }
+  }
+
+  .vehical-card-body {
+    padding: 15px;
+
+    .card-contain {
+      margin-bottom: 10px;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sub-heading {
+        color: #703c19;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .title {
+        color: #8f4300;
+        font-size: 12px;
+        font-weight: 600;
+        word-break: break-word;
+      }
+
+      .title2 {
+        font-weight: 600;
+        font-size: 14px;
+        color: #8f4300;
+      }
+    }
+  }
+}
+
+// Add Transport Manager Module (Form) Start
+
+.porile-img {
+  img {
+    background-color: #fff;
+  }
+
+  .invalid-feedback {
+    // position: absolute;
+    // bottom: -70px;
+  }
+}
+
+.prof-img {
+  position: relative;
+
+  .prof-cam {
+    position: absolute;
+    width: 40%;
+    background: none !important;
+    right: -10px;
+    top: 70px;
+  }
+}
+
+.form-control {
+  &::placeholder {
+    font-size: 14px;
+  }
+}
+
+.form-select {
+  font-size: 14px;
+
+  option {
+    font-size: 14px;
+  }
+}
+
+.select-picture-feedback {
+  position: absolute;
+}
+
+.CustomerProfile-head {
+}
+
+.Heading {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+// Add Transport Manager Module (Form) End
+
+// View Transport Manager Module (Form) Start
+
+.discription-heading {
+  font-size: 14px;
+}
+
+.discription-contain {
+  font-weight: 600 !important;
+  font-size: 14px;
+}
+
+.pop-up-modal-footer {
+  padding: 20px 0 0 !important;
+}
+
+.tabs-custom-width-33 ul li {
+  width: 33.33% !important;
+}
+
+.tabs-custom-width-25 ul li {
+  width: 25% !important;
+}
+
+// View Transport Manager Module (Form) End
+
+.export-btn {
+  img {
+    cursor: pointer;
+  }
+}
+
+.vd-table {
+  table {
+    tr {
+      border-bottom: 1px solid #f6efe9;
+
+      td,
+      th {
+        padding: 10px 0 !important;
+        width: auto !important;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Driver Details > Trip type Tooltip Styling
+.type-wrapper {
+  img {
+    cursor: pointer;
+  }
+
+  .tooltip-inner {
+    background-color: #fff !important;
+    color: #8f4300;
+  }
+}
+
+.no-data {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(143, 67, 0, 0.8);
+  margin: 1rem 0 0 !important;
+}
+
+.information-card {
+  .add_btn_wrapper {
+    display: flex;
+    justify-content: end;
+
+    .cx-btn-2 {
+      width: 20%;
+      min-width: 200px;
+    }
+  }
+}
+
+.information-card
+  .information-contain
+  .information-discriptiopn
+  .discription-heading {
+  color: #703c19;
+  font-weight: 500;
+}
+
+.common-table table thead tr th {
+  color: #703c19;
+  font-weight: 500;
+}
+
+// Delivery Person Styling
+.edit-form-heading {
+  margin-top: 1rem !important;
+
+  p {
+    color: #8f4300;
+    font-size: 20px;
+  }
+}
+
+.label-with-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  p {
+    margin: 0 0.5rem 0 0.5rem;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    input {
+      vertical-align: middle;
+      margin-top: 0.5rem !important;
+    }
+
+    label {
+      margin-left: 5px;
+      margin-right: 0rem !important;
+      font-size: 14px !important;
+      color: rgba(156, 73, 0, 0.5) !important;
+      cursor: pointer;
+      opacity: 1 !important;
+    }
+  }
+
+  [type="radio"]:checked,
+  [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    line-height: 18px;
+    display: inline-block;
+    color: #666;
+  }
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -12px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+  }
+
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #04b54c;
+    background-image: url(../images/Green-check.svg);
+    background-size: 15px;
+    position: absolute;
+    top: -12px;
+    left: 0px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+  [type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+#opactiy_for_inactive_card {
+  .common-vehical-card,
+  .common-vehical-card-inner {
+    opacity: 0.5 !important;
+  }
+}
+
+.no-data-found-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+
+  .no-data-found-inner-wrapper {
+    text-align: center;
+
+    .no-data-text {
+      color: #9c4900;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.no-more-data-wrapper {
+  text-align: center;
+  margin: 15px 0;
+
+  label {
+    color: #9c4900;
+    // background-color: #f6efe9;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px 15px;
+  }
+}
+
+// Global btn
+// .ScrollingSetting {
+//   height: calc(100vh - 140px) !important;
+//   overflow: auto !important;
+// }
+.globalBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 70px;
+  background-color: #9c4900;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 10px 20px 7px;
+  height: 40px;
+  min-width: 100px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 0 0 0 0.2rem;
+}

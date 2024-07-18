@@ -1,0 +1,845 @@
+@media all and (max-width: 1160px) {
+  .Summary_body {
+    .summery_right {
+      width: 60% !important;
+    }
+  }
+}
+
+@media all and (max-width: 1300px) {
+  #U_Responsive {
+    .common-vehical-card {
+      width: 100%;
+      max-width: 48% !important;
+    }
+  }
+
+  .FuelALertDetails {
+    .AbnormalFuelConsumption,
+    .AbnormalGroupExpense {
+      .AbnormalFuelConsumption_table {
+        .AbnormalFuelConsumption_table_main {
+          width: 900px;
+          overflow-x: auto;
+        }
+      }
+    }
+  }
+
+  .FuelManagementDashbord
+    .Top_section_first
+    .Summary
+    .Summary_body
+    .summery_right
+    .apexcharts-canvas {
+    width: 400px !important;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .ProgreeBar_main {
+    .TopSpendCategories {
+      margin-bottom: 20px;
+    }
+  }
+
+  .resposiveBottom {
+    margin-top: 20px;
+  }
+
+  .FuelManagementDashbord {
+    .Top_section_first {
+      .Summary {
+        margin-bottom: 20px;
+
+        .Summary_body {
+          .summery_right {
+            width: 70% !important;
+
+            .apexcharts-canvas {
+              width: 400px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .invoice-outer-wrapper {
+    overflow-y: auto !important;
+    justify-content: unset !important;
+
+    .invoice-inner-wrapper {
+      width: 700px;
+    }
+  }
+
+  #Email_Responsive .communication-tabs {
+    margin-top: 0;
+  }
+
+  #Viwe_Report_Respoasive {
+    p {
+      font-size: 20px !important;
+    }
+  }
+
+  .all-vehicle-main {
+    .all-vehical-head {
+      .innerInputsGen {
+        // padding-right: 0;
+
+        div {
+          padding-right: 0 !important;
+        }
+      }
+    }
+  }
+
+  .export-btn div {
+    margin-left: 0 !important;
+  }
+
+  .export-btn img {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
+  .arrange-margin {
+    margin-bottom: 10px !important;
+
+    div {
+      div {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .leftSideSec {
+    margin-bottom: 10px;
+  }
+
+  .left-margin {
+    margin: 0 !important;
+  }
+
+  .upperMainSet .mainMape .innerMapDetails {
+    width: 81%;
+  }
+
+  .responscie-tabss {
+    ul {
+      li {
+        width: 47% !important;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #Access_right_new {
+    .common_access_card {
+      .left {
+        flex-direction: column;
+
+        .title {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #f6efe9;
+          height: 62px;
+        }
+      }
+
+      .single_Contain {
+        height: auto;
+      }
+
+      .right {
+        margin-top: 62px;
+      }
+    }
+
+    .noborder {
+      .right {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .FuelManagementDashbord {
+    .Top_section_first {
+      .Summary {
+        .Summary_body {
+          flex-direction: column;
+
+          .summary_left {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .summery_right {
+            width: 100% !important;
+
+            .apexcharts-canvas {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #newTabMai {
+    justify-content: space-between;
+  }
+
+  #newTabMai .nav-item {
+    width: 48%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  #newTabMai .nav-item a {
+    width: 100%;
+  }
+
+  #InnerTabNew_Auto div,
+  #InnerTabNew_Two div,
+  #InnerTabNew_Three div,
+  #InnerTabNew_Foure div,
+  #InnerTabNew_Five div {
+    width: 50%;
+  }
+
+  #View_Report_Header {
+    .vehicle-top-inputs {
+      // margin-right: 0;
+
+      .innerInputsGen {
+        margin-right: 0;
+        padding-right: 0;
+
+        div {
+          margin-right: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  #Viwe_Report_Respoasive {
+    flex-direction: column;
+    margin: 0;
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    div {
+      margin-bottom: 10px;
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  #ScheduleReoprt_Responsive {
+    .ScheduleReoprt_From {
+      div {
+        margin-bottom: 10px !important;
+      }
+    }
+  }
+
+  #EditProfile_Reponsive {
+    .Heading {
+      padding-bottom: 0;
+    }
+
+    .information-card {
+      margin-bottom: 0;
+
+      // div {
+      //     margin-bottom: 15px !important;
+      // }
+    }
+  }
+
+  #Email_Responsive {
+    .communication-tabs {
+      margin-top: 0;
+    }
+
+    .innerInputsGen {
+      padding-right: 0;
+
+      div {
+        padding-right: 0;
+      }
+    }
+  }
+
+  #customerSupportTabs {
+    ul li {
+      width: 100% !important;
+
+      button {
+        height: 30px;
+      }
+    }
+  }
+
+  #Customer_Responsive {
+    #CustomerSupport {
+      height: auto !important;
+    }
+
+    .innerSelectBox {
+      margin-bottom: 5px !important;
+    }
+  }
+
+  #All_Users_Responsive {
+    .main-master-wrapper,
+    .main-master-wrapper .tab-content,
+    .main-master-wrapper .scroller {
+      overflow-x: hidden !important;
+    }
+
+    .common-vehical-card {
+      width: 100%;
+      max-width: 100% !important;
+    }
+
+    .inner-tabs-section {
+      ul {
+        li {
+          width: 100% !important;
+        }
+      }
+    }
+
+    #cutomHeight {
+      height: auto !important;
+    }
+
+    .innerInputsGen {
+      div {
+        margin-bottom: 5px !important;
+      }
+    }
+
+    .inner-tabs-section ul li button {
+      height: 29px;
+    }
+
+    .export-btn {
+      margin-bottom: 5px;
+    }
+
+    .cx-btn-3 {
+      margin-bottom: 5px !important;
+    }
+  }
+
+  #Create_User_Responsive {
+    .main-page-heading {
+      margin-bottom: 2px;
+    }
+
+    .CustomerProfile-head {
+      margin-bottom: 30px;
+    }
+
+    .common-labels {
+      margin-bottom: 1px !important;
+    }
+
+    .form_input_main {
+      margin-bottom: 5px !important;
+    }
+  }
+
+  .inner-view-details ul li button {
+    height: 35px !important;
+  }
+
+  #inner-inner-tabs ul {
+    justify-content: center;
+  }
+
+  .common-cat-vehical-card,
+  .common-cat-vehical-card-inner {
+    align-items: flex-start;
+
+    .cat-head {
+      padding: 0;
+      margin-bottom: 15px;
+      border: none;
+    }
+  }
+
+  .CustomerProfile-head {
+    padding: 20px !important;
+    height: 70px;
+    margin-bottom: 40px;
+
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      top: 17px;
+
+      img {
+        padding: 0 !important;
+        height: 50px;
+        width: auto;
+      }
+    }
+  }
+
+  .common-vehical-card .vehical-card-head .heading img {
+    height: 40px !important;
+    width: 40px !important;
+  }
+
+  .common-vehical-card .vehical-card-head .heading div .sub-heading,
+  .common-vehical-card .vehical-card-head .heading div .title {
+    font-size: 12px;
+  }
+
+  .cat-body-head {
+    margin-bottom: 10px !important;
+  }
+
+  .common-cat-vehical-card,
+  .common-cat-vehical-card-inner {
+    .cat-head {
+      img {
+        height: 60px;
+      }
+    }
+  }
+
+  .fileDropper .imageHolder {
+    height: 110px;
+
+    .innerFlex {
+      img {
+        height: 19px;
+      }
+
+      p {
+        margin-bottom: 2px !important;
+      }
+
+      font-size: 12px;
+    }
+  }
+
+  .fileDropper .imageHolder .browseBtn {
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .upload-customer-logo .single-card-customer-logo .logo-file-name .first p,
+  .update-logo-main .update-logo-card .update-logo-head p,
+  .common-cat-vehical-card .cat-body .cat-body-head p,
+  .common-cat-vehical-card .cat-body .cat-body-details label,
+  .common-cat-vehical-card .cat-body .cat-body-discription p {
+    font-size: 12px;
+  }
+
+  .common-cat-vehical-card-inner .cat-body .cat-body-details label {
+    display: flex !important;
+  }
+
+  .main-page-heading {
+    font-size: 14px;
+  }
+
+  .single-card-customer-logo {
+    span {
+      font-size: 12px !important;
+    }
+  }
+
+  .upload-customer-logo .single-card-customer-logo .logo-file-name {
+    margin-bottom: 15px;
+    height: 35px;
+
+    img {
+      height: 15px;
+      width: auto;
+    }
+  }
+
+  .update-logo-main .update-logo-card {
+    height: 160px;
+
+    .update-logo-img {
+      img {
+        height: 89px;
+      }
+    }
+  }
+
+  .all-vehicle-main .yauto {
+    overflow-y: inherit;
+  }
+
+  #arrange-paading {
+    .all-vehical-body {
+      // padding-right: 0 !important;
+    }
+  }
+
+  .all-vehical-body {
+    // height: auto;
+  }
+
+  .common-cat-vehical-card,
+  .common-cat-vehical-card-inner {
+    width: 100% !important;
+  }
+
+  .vehicle_caregory .logo-custom-main .text-main {
+    margin-bottom: 50px;
+  }
+
+  .or-section {
+    margin-bottom: 16px;
+  }
+
+  .weekCounter {
+    // margin-bottom: 5px;
+    // Added this class form_input_main for margin bottom
+  }
+
+  .upperMainSet .mainMape .innerMapDetails {
+    width: 81%;
+  }
+
+  .demo-section {
+    display: none;
+  }
+
+  .custom-label-title p {
+    font-size: 12px;
+  }
+
+  .table-width-700 {
+    table {
+      width: 700px;
+    }
+  }
+
+  .greenCheck {
+    margin-top: 10px;
+  }
+
+  #model-responsive-on-map {
+    .headingDetails {
+      margin-bottom: 0;
+      font-size: 11px;
+
+      .heading {
+        margin-bottom: 5px;
+      }
+    }
+
+    .dividedCol {
+      p {
+        margin-bottom: 7px;
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 540px) {
+  #Access_right_new {
+    .common_access_card {
+      .left {
+        .sub-contain {
+          ul {
+            li {
+              // flex-direction: column;
+              .head {
+                width: 170px;
+                font-weight: 600;
+                padding: 10px 0 10px 10px;
+                // border-right: none;
+              }
+            }
+          }
+        }
+        .title {
+        }
+      }
+
+      .single_Contain {
+      }
+
+      .right {
+        ul {
+          li {
+            #custom_switch {
+              .form-check-input {
+                height: 20px;
+                width: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .noborder {
+      .right {
+      }
+    }
+  }
+
+  #newTabMai .nav-item {
+    width: 100%;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  #InnerTabNew_Auto div,
+  #InnerTabNew_Two div,
+  #InnerTabNew_Three div,
+  #InnerTabNew_Foure div,
+  #InnerTabNew_Five div {
+    width: 100%;
+  }
+
+  .customise_Report_Responsive {
+    flex-direction: column-reverse;
+
+    div {
+      // display: flex;
+      // justify-content: space-between;
+      margin-bottom: 5px !important;
+
+      img {
+        width: 100% !important;
+      }
+    }
+
+    &:last-child {
+      // align-items: center;
+    }
+
+    .title {
+      // margin-left: 15px !important;
+    }
+  }
+
+  #Report_responsive {
+    .inner-tabs-section ul li {
+      width: 100% !important;
+    }
+  }
+
+  .vehicle_caregory .logo-custom-main .text-main textarea {
+    width: 94%;
+  }
+
+  .addvhical-main .AddVehicle-steper .single-step p {
+    font-size: 13px;
+  }
+
+  .information-card {
+    margin-bottom: 15px;
+  }
+
+  .addvhical-main {
+    margin-bottom: 0;
+  }
+
+  .responscie-tabss {
+    ul {
+      li {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .FuelManagementDashbord .TopSpendCategories {
+    .circle_chart {
+      margin-top: 20px;
+    }
+
+    .single_card_TopSpendCategories {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      .amount {
+        font-size: 25px !important;
+      }
+    }
+  }
+
+  .FuelManagementDashbord {
+    .Top_section_first {
+      .Summary {
+        .Summary_body {
+          .summary_left {
+            .amount {
+              font-size: 25px !important;
+            }
+          }
+
+          .summery_right {
+            .apexcharts-canvas {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #notification_header_responsive {
+    .dropdown-menu {
+      width: 250px;
+      padding: 15px;
+
+      .contain img {
+        margin-right: 5px;
+      }
+
+      .main-wrapper {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  #ScheduleReoprt_Responsive {
+    .custom-radio-btn label {
+      margin-right: 5px;
+    }
+
+    .custom-radio-btn input {
+      margin-right: 10px;
+    }
+  }
+
+  #Report_head_reponsive {
+    div {
+      div {
+        flex-direction: column;
+
+        a {
+          width: 100% !important;
+
+          button {
+            width: 100%;
+          }
+
+          &:first-child {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  #U_Responsive {
+    .common-model .modal-dialog .modal-content .modal-footer {
+      justify-content: flex-end !important;
+    }
+  }
+
+  .common-vehical-card .vehical-card-head .heading img {
+    margin-right: 5px;
+  }
+
+  .responscie-tabss-bigger {
+    ul {
+      li {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .upperMainSet .mainCol4 .leftSideSec {
+    justify-content: flex-end;
+  }
+
+  .upperMainSet .mainCol4 .leftSideSec .addParkBtn button {
+    width: auto;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+
+  #EditProfile_Reponsive {
+    .btns-main {
+      flex-direction: column;
+
+      a {
+        width: 100%;
+      }
+
+      .cx-btn-1 {
+        width: 100%;
+        margin: 0px 0px 10px 0px;
+      }
+
+      .cx-btn-2 {
+        width: 100%;
+      }
+    }
+  }
+
+  .ComposeMessage {
+    .btn-wrapper {
+      flex-direction: column;
+
+      .innerLink {
+        width: 100% !important;
+
+        .cx-btn-2,
+        .cx-btn-1 {
+          margin: 0px 0px 10px 0px;
+          margin-left: 0rem !important;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 380px) {
+  #notification_header_responsive {
+    .dropdown-menu {
+    }
+  }
+
+  #LockScreen_Responsive {
+    .main-screen-box .top-head {
+      height: 90px !important;
+    }
+
+    .main-screen-box .top-head .profileimg {
+      top: 15px !important;
+    }
+
+    .main-screen-box .top-head p {
+      left: 0 !important;
+      margin-left: 0px !important;
+    }
+  }
+}

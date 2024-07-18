@@ -1,0 +1,61 @@
+.Vehicle_Availability .upperMainSet .mainCol4 .leftSideSec .addParkBtn {
+  .search_btn {
+    color: #ffffff !important;
+    background: #9c4900 !important;
+  }
+  .driver_btn {
+    width: 200px;
+    color: #ffffff !important;
+    background: #9c4900 !important;
+  }
+  .clear_btn {
+    background: #ffffff !important;
+    color: #9c4900 !important;
+    border: 1px solid #9c4900;
+  }
+}
+.tabsCon {
+  height: auto;
+  .category_heading {
+    color: rgba(143, 67, 0, 1);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+  .category_color_today {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(143, 67, 0, 1);
+  }
+  .category_color_trip {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(213, 78, 33, 1);
+  }
+  .category_color_iTrip {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(66, 139, 202, 1);
+  }
+  .category_color_shuttle {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(115, 113, 110, 1);
+  }
+  .category_color_unplannedtrip {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(0, 193, 158, 1);
+  }
+  .category_color_weekends {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(246, 239, 233, 1);
+  }
+}

@@ -1,0 +1,423 @@
+.holiday-table {
+  min-width: 770px;
+  // margin-top: -10px;
+}
+.custom-padding-left2 {
+  padding-left: 1rem !important;
+}
+
+@media (min-width: 769px) and (max-width: 871px) {
+  .main-dashboard-wrapper {
+    .bottom-wrapper {
+      bottom: 0px;
+      .bottom-status {
+        margin-right: 5px !important;
+
+        img {
+          width: 26px;
+        }
+
+        span {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: auto;
+      }
+      &:last-child {
+        img {
+          width: auto;
+        }
+      }
+      .active {
+        width: auto;
+      }
+    }
+  }
+  .addvhical-main .AddVehicle-steper .single-step p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .export-btn img {
+    cursor: pointer;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .custom-padding-left2 {
+    padding-left: 1rem;
+  }
+  .textclr-responsive {
+    font-size: 8px;
+    display: flex;
+    color: var(--menuLight);
+  }
+}
+.new-additional-row {
+  margin-left: 20px;
+  margin-top: 45px;
+}
+.textclr-responsive {
+  font-size: 8px;
+  margin-left: -5px;
+  color: var(--menuLight);
+}
+.textclr {
+  font-size: 8px;
+  margin-left: -5px;
+  color: var(--menuLight);
+}
+.textclr-new {
+  font-size: 8px;
+  display: flex;
+  color: var(--menuLight);
+}
+@media (max-width: 768px) {
+  .new-row-align {
+    display: flex;
+  }
+  .textclr-new {
+    font-size: 8px;
+
+    display: inline;
+  }
+  .textclr-responsive {
+    font-size: 8px;
+    display: inline;
+  }
+}
+@media (max-width: 991px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: 200px;
+      }
+      &:last-child {
+        img {
+          width: 50px;
+        }
+      }
+      .active {
+        width: 200px;
+      }
+    }
+  }
+  .new-additional-row {
+    margin-left: 15px;
+    margin-top: 45px;
+    justify-content: center;
+  }
+
+  .dashboard_responsive {
+    .rvs-nav {
+      width: 100%;
+      flex-direction: row !important;
+    }
+    .main-dashboard-wrapper .right-vehicle-status-wrapper {
+    }
+    .main-dashboard-wrapper .right-vehicle-status-wrapper .vehicle-main-tab {
+      border-radius: 0 0 20px 20px;
+      border: 1px solid #f6efe9;
+      border-top: transparent;
+    }
+    .main-dashboard-wrapper .map-wrapper {
+      width: 100%;
+    }
+    .main-dashboard-wrapper
+      .right-vehicle-status-wrapper
+      .vehicle-tabs
+      .active {
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid #f6efe9;
+      border-radius: 10px 10px 0 0;
+    }
+    .main-dashboard-wrapper .right-vehicle-status-wrapper .vehicle-tabs {
+      &::after {
+        display: none;
+      }
+    }
+    .main-dashboard-wrapper .right-vehicle-status-wrapper .tools-main-tab {
+      left: 22%;
+      top: 70%;
+    }
+    .main-dashboard-wrapper .right-vehicle-status-wrapper .va-nav {
+      justify-content: flex-start;
+    }
+  }
+  .vehicle-top-inputs {
+    .input-section-wrapper {
+      width: 100% !important;
+    }
+    .right-export-btn-section-wrapper {
+      width: 100% !important;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: 150px;
+      }
+      &:last-child {
+        img {
+          width: 40px;
+        }
+      }
+      .active {
+        width: 150px;
+      }
+    }
+  }
+  .date-input,
+  .search-input {
+    margin: 10px 0 0 0;
+  }
+  .weekCounter {
+    margin-bottom: 0.5rem;
+  }
+  .date-input,
+  .search-input {
+  }
+  .dashboard_responsive {
+    .main-dashboard-wrapper {
+      .holidays-filter-wrapper .right-wrapper {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10px;
+      }
+      .add-holiday-btn {
+        padding: 9px 14px !important;
+        font-size: 12px !important;
+      }
+
+      .right-vehicle-status-wrapper {
+        top: 120%;
+      }
+
+      .right-vehicle-status-wrapper .tools-main-tab {
+        left: 16% !important;
+        top: 64% !important;
+        box-shadow: 0 4px 8px 0px #0000002a;
+      }
+      .topsection {
+        margin-bottom: 0.5rem;
+      }
+
+      .dropdown-wrapper {
+        justify-content: center;
+      }
+      .map-wrapper {
+        .red-car-wrapper {
+          left: 38%;
+        }
+        .yellow-car-wrapper {
+          top: 30%;
+          left: 25%;
+        }
+      }
+      .right-vehicle-status-wrapper .vehicle-tabs span {
+        text-align: center;
+      }
+    }
+    .running-status-card-wrapper {
+      .status-card {
+        padding: 0 10px !important;
+      }
+      .row {
+        .col-md-4 {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+  .dropdown-wrapper {
+    justify-content: center;
+    .row {
+      .col-md-4 {
+      }
+    }
+    &:nth-child(3) {
+      .multi-select-1 {
+        margin-right: 0 !important;
+      }
+    }
+    .multi-select-1 {
+      margin-right: 1rem;
+    }
+  }
+  .audio-custom-padding {
+    padding: 0px 10px 0 0;
+  }
+
+  .custom-padding-left2 {
+    padding-left: 0 !important;
+  }
+  .main-chat .right-chat-section {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: 110px;
+      }
+      &:last-child {
+        img {
+          width: 30px;
+        }
+      }
+      .active {
+        width: 110px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: 90px;
+      }
+      &:last-child {
+        img {
+          width: 25px;
+        }
+      }
+      .active {
+        width: 90px;
+      }
+    }
+  }
+  .dashboard_responsive {
+    .main-dashboard-wrapper {
+      .holidays-filter-wrapper .right-wrapper {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10px;
+      }
+      .add-holiday-btn {
+        padding: 9px 14px !important;
+        font-size: 12px !important;
+      }
+      .map-main {
+        height: calc(100vh - 360px);
+      }
+      .right-vehicle-status-wrapper {
+        top: 64%;
+        .tools-main-tab {
+          left: 30% !important;
+          top: 50% !important;
+          box-shadow: 0 4px 8px 0px #0000002a;
+        }
+        .vehicle-tabs {
+          a {
+            // padding: 2px !important;
+            padding-bottom: 0 !important;
+            img {
+              // width: 60%;
+            }
+          }
+          span {
+            text-align: center;
+            font-size: 10px;
+          }
+        }
+      }
+      .topsection {
+        margin-bottom: 0.5rem;
+      }
+      .bottom-wrapper {
+        .bottom-status {
+          span {
+            font-size: 10px !important;
+          }
+        }
+      }
+
+      .map-wrapper {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        .active-car-btn {
+          height: 55px;
+          width: 55px;
+        }
+        .red-car-wrapper {
+          left: 38%;
+        }
+        .yellow-car-wrapper {
+          top: 30%;
+          left: 25%;
+        }
+        .blue-bike-wrapper {
+          top: 140px;
+        }
+        .yellow-bike-wrapper {
+          right: 42%;
+        }
+        .black-car-wrapper {
+          right: 80px;
+        }
+        .green-car-wrapper {
+          bottom: 80px;
+        }
+        .green-bike-wrapper {
+          right: 200px;
+        }
+      }
+    }
+    .running-status-card-wrapper {
+      .status-card {
+        padding: 0 10px !important;
+      }
+      .row {
+        .col-md-4 {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+  .dropdown-wrapper {
+    justify-content: center;
+    .row {
+      margin: 0 !important;
+      .col-md-4 {
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .dispatch-trip-stepper {
+    .single-step {
+      img {
+        width: 70px;
+      }
+      &:last-child {
+        img {
+          width: 25px;
+        }
+      }
+      .active {
+        width: 70px;
+      }
+    }
+  }
+}

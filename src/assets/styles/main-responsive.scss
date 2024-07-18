@@ -1,0 +1,976 @@
+@media all and (max-width: 360px) {
+}
+@media all and (max-width: 1024px) {
+  .cv-card {
+  }
+}
+@media all and (max-width: 991px) {
+  .right-invoice-icon img {
+    width: unset !important;
+  }
+  #login-with-otp-main-right .Vehcle-main-tabs ul {
+    li {
+      width: 50% !important;
+    }
+    justify-content: center !important;
+  }
+  .Point_Of_Intrest {
+    .Point_Of_Intrest .body-content {
+    }
+    .mainMape {
+    }
+  }
+
+  .Parking_Slot {
+    .tab-content {
+      height: calc(50vh - 110px) !important;
+    }
+    .map-main,
+    .tabsCon {
+      margin-bottom: 15px;
+      height: calc(50vh - 150px);
+    }
+    .mainMape {
+    }
+    .body-content {
+      height: auto !important;
+      flex-direction: column;
+    }
+  }
+  .Vehicle_Main {
+    .Vehcle-main-tabs ul li {
+      margin-bottom: 0px;
+    }
+  }
+  .main-auth
+    .login-wrapper
+    .right
+    .wrapper
+    .auth-form
+    .otp-input
+    .form-control {
+    width: 9vw !important;
+  }
+  .main-auth .login-wrapper .right .wrapper {
+    padding: 20px !important;
+  }
+  .common-vehical-card,
+  .common-vehical-card-inner {
+    // width: calc(50% - 15px) !important;
+  }
+  .cv-card {
+  }
+}
+@media all and (max-width: 768px) {
+  .cx-header .main-heading {
+    display: none !important;
+  }
+  .cx-header .cx-header-wrapper {
+    justify-content: flex-end !important;
+  }
+  .main-master-wrapper {
+    padding: 15px !important;
+    background-color: red;
+  }
+  .dashboard_responsive .rvs-nav {
+    justify-content: center;
+  }
+  .main-dashboard-wrapper .bottom-wrapper {
+    margin-bottom: 10px;
+  }
+
+  .main-dashboard-wrapper .map-wrapper .search-icon {
+    top: 17px !important;
+    right: 7px !important;
+  }
+  .main-dashboard-wrapper
+    .map-wrapper
+    .search-bar-wrapper
+    .search-input.form-control {
+    height: 35px !important;
+  }
+  .main-dashboard-wrapper .map-wrapper .search-bar-wrapper {
+    img {
+      height: 20px !important;
+      width: 20px !important;
+    }
+    width: calc(100% - 20px) !important;
+    position: absolute;
+    top: 0px !important;
+    left: 10px !important;
+  }
+  .dashboard_responsive .main-dashboard-wrapper .map-main {
+    height: calc(100vh - 440px) !important;
+  }
+  .main-dashboard-wrapper .right-vehicle-status-wrapper {
+    background-color: #fff;
+  }
+  .main-dashboard-wrapper .dashboard-main-map .dashboard-inner-wrapper {
+    flex-direction: column;
+  }
+  .main-dashboard-wrapper .right-vehicle-status-wrapper {
+    width: unset !important;
+  }
+  .main-dashboard-wrapper .right-vehicle-status-wrapper {
+    height: auto !important;
+  }
+  .Point_Of_Intrest {
+    .upperMainSet .mainMape .innerMapDetails {
+      height: calc(45vh);
+      overflow-y: auto;
+    }
+    .map-main {
+      height: 50vh !important;
+    }
+    .upperMainSet .mainMape {
+      padding: 15px !important;
+    }
+    .tabsCon {
+      padding: 15px !important;
+    }
+    .body-content {
+      flex-direction: column-reverse;
+      height: auto !important;
+    }
+    .mainMape {
+      margin-top: 5px;
+    }
+  }
+  .Parking_Slot {
+    .upperMainSet .mainMape,
+    .tabsCon {
+      padding: 15px !important;
+    }
+  }
+  .Holidays_Main {
+    .search-input {
+      margin-top: unset !important;
+    }
+    .datepicker-main {
+      margin-left: unset !important;
+      margin-top: 10px;
+    }
+    .right-wrapper {
+      width: 100% !important;
+      margin-top: 0.5rem;
+    }
+  }
+  .holidays-filter-wrapper .right-wrapper {
+    width: 100% !important;
+    margin-top: 0.5rem;
+  }
+  .addvhical-main .btn-common {
+    justify-content: flex-start !important;
+  }
+  .tabs-main-details {
+    padding: 15px !important;
+  }
+  .Vehicle_Main {
+    .common-cat-vehical-card .cat-body {
+      padding-left: 10px !important;
+    }
+    .common-cat-vehical-card .cat-body .cat-body-discription p {
+      padding-right: unset !important;
+    }
+    .Vehcle-main-tabs ul li {
+    }
+    .Vehcle-main-tabs ul li button {
+      height: 35px !important;
+      font-size: 13px !important;
+    }
+  }
+
+  .AddOn_Settings_Cart {
+    .Heading {
+      padding-bottom: 5px !important;
+    }
+    .main-summary-wrapper .order-summary,
+    .main-cart-wrapper .cart-cards-wrapper .cart-card .cc-heading {
+      padding: 15px !important;
+    }
+    .ao-card-table-wrapper {
+      padding: 15px !important;
+    }
+    .main-cart-wrapper {
+      padding: 15px !important;
+    }
+  }
+  .Access_Right {
+    .main-master-wrapper .innerInputsGen .weekCounter label {
+      margin-right: unset !important;
+    }
+  }
+  .main-master-wrapper .innerInputsGen .weekCounter {
+    // margin-bottom: 15px !important;
+    // Added this class form_input_main for margin bottom
+  }
+  .Notification_Setting {
+    .main-master-wrapper .innerInputsGen .innerSelectBox label {
+      margin-right: unset !important;
+    }
+  }
+  .General_Setting {
+    .main-master-wrapper .innerInputsGen .innerSelectBox label {
+      margin-right: unset !important;
+    }
+    .main-master-wrapper .innerInputsGen .weekCounter {
+      margin-bottom: 5px !important;
+    }
+  }
+  .Logo_Update {
+    .update-logo-main .update-logo-card {
+      margin-bottom: 15px !important;
+    }
+    .update-logo-main .update-logo-card .update-logo-head {
+      padding: 0 0 10px 0 !important;
+    }
+  }
+  .Update_Customer_Logo {
+  }
+  .form_input_main {
+    margin-bottom: 15px !important;
+    // padding-right: 0px;
+    .PMINg {
+      margin-right: 0;
+      // padding: 0;
+    }
+  }
+  .Update_Customer_Profile {
+    .mapIcons {
+      right: 20px !important;
+    }
+    .map-main {
+      height: 50vh !important;
+    }
+    .road-map {
+    }
+  }
+
+  .Customer_Profile {
+    .road-map,
+    .transport-main .right-section,
+    .transport-main .left-section,
+    .ApplicationStatistics {
+      padding: 15px !important;
+    }
+    .road-map {
+      margin: 15px 0 !important;
+    }
+    .road-map .map-main {
+      height: 50vh;
+    }
+  }
+
+  .full-body-wrap .main-screen-box .body div img {
+    top: 9px !important;
+    right: 10px !important;
+  }
+  .full-body-wrap .main-screen-box .top-head .profileimg {
+    height: 60px !important;
+    width: 60px !important;
+    top: 30px !important;
+    left: 20px !important;
+  }
+
+  .full-body-wrap .main-screen-box .body .ID-mail {
+    font-size: 18px !important;
+  }
+  .full-body-wrap .main-screen-box .top-head {
+    p {
+      img {
+        height: 16px;
+        margin-left: 8px !important;
+      }
+      margin-left: 10px !important;
+      height: 16px !important;
+      font-size: 16px !important;
+      bottom: -20px !important;
+      left: 95px !important;
+    }
+    margin-bottom: 40px !important;
+    height: 60px !important;
+  }
+  .porile-img img {
+    top: 10px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .porile-img .cameraimg {
+    left: -20px;
+    top: 35px !important;
+    padding: 3px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .export-btn img {
+    height: 30px !important;
+    margin-bottom: 0 !important;
+    margin-left: 10px !important;
+  }
+  .transportMap {
+    .innerMap {
+    }
+  }
+  .main-dashboard-wrapper .map-wrapper .search-bar-wrapper .search-wrapper {
+    height: 30px !important;
+    padding: unset !important;
+    input {
+    }
+  }
+  .addNew-main {
+    padding: 10px !important;
+  }
+  .addNew-main .addnew-head p {
+    font-size: 16px !important;
+  }
+  .form-select,
+  .form-control,
+  .form-textarea {
+    &::placeholder {
+      font-size: 14px !important;
+    }
+  }
+
+  .Vehcle-main-tabs ul li button {
+    padding: unset !important;
+  }
+
+  .main-master-wrapper
+    .innerInputsGen
+    .integrationGrid
+    .integrationRow
+    .integSignUpBtn {
+    height: 35px !important;
+  }
+
+  textarea.form-control {
+    height: auto !important;
+  }
+  .information-card .information-head .imformation-heading p {
+    font-size: 16px !important;
+  }
+  .information-card
+    .information-contain
+    .information-discriptiopn
+    .discription-heading {
+    font-size: 12px !important;
+  }
+  .information-card
+    .information-contain
+    .information-discriptiopn
+    .discription-contain {
+    font-size: 12px !important;
+  }
+  .cx-btn-1,
+  .cx-btn-2 {
+    height: 35px !important;
+  }
+
+  .form-switch .form-check-input {
+    height: 14px;
+    width: 25px !important;
+  }
+  .greenCheck {
+    display: flex;
+  }
+
+  .main-master-wrapper .innerInputsGen .weekCounter .multiHeading label {
+    margin-right: unset !important;
+  }
+  .main-master-wrapper .innerInputsGen .weekCounter .form-switch {
+    margin-right: 5px !important;
+  }
+  .main-master-wrapper .Heading p {
+    font-size: 16px !important;
+  }
+
+  .addParkingMap .mapIcons {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  .addParkingMap .mapIcons .inconsIn {
+    margin: 0px 3px !important;
+    height: 20px !important;
+    width: 20px !important;
+    img {
+      width: 60% !important;
+    }
+  }
+  .main-master-wrapper
+    .innerInputsGen
+    .integrationGrid
+    .integrationRow
+    .mainBorder {
+    padding: 20px !important;
+  }
+  .main-master-wrapper .innerInputsGen .weekCounter .form-switch.align {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  .main-dashboard-wrapper .right-vehicle-status-wrapper .vehicle-tabs a {
+    padding: 5px 10px !important;
+  }
+  .main-dashboard-wrapper {
+    padding: 15px !important;
+  }
+  .cx-header header .header-prfl-img {
+    width: 25px !important;
+  }
+  .cx-header .cx-header-wrapper {
+    padding: 0 15px !important;
+  }
+  .holidays-filter-wrapper .left-wrapper {
+    width: 100% !important;
+  }
+  .holidays-filter-wrapper .left-wrapper .search-input {
+    margin-right: unset !important;
+    input {
+      width: 100% !important;
+    }
+  }
+  .holidays-filter-wrapper {
+    flex-direction: column;
+  }
+  .addVehicleSe {
+    flex-direction: column;
+    .addVehicleLeftSec {
+      width: 100% !important;
+      margin-bottom: 15px;
+    }
+    .imagesRightSec {
+      width: 100% !important;
+    }
+  }
+  .main-auth .login-wrapper .right .wrapper {
+    transform: none !important;
+    position: unset !important;
+  }
+  // .common-vehical-card {
+  //   width: auto !important;
+  // }
+  .cv-card {
+  }
+  .main-summary-wrapper .order-summary {
+    margin-top: 15px;
+  }
+  .transportMap {
+    padding: 15px !important;
+  }
+  .all-vehical-body {
+    padding: 0px !important;
+  }
+  .update-logo-main .update-logo-card {
+    width: 49% !important;
+  }
+  .CustomerProfile {
+    padding: 15px !important;
+
+    margin-bottom: 15px !important;
+  }
+  .cx-header header .bell {
+    margin-right: 7px !important;
+  }
+  .transport-main {
+    flex-direction: column;
+
+    .left-section {
+      width: 100% !important;
+    }
+    .right-section {
+      width: 100% !important;
+      margin-bottom: 15px !important;
+    }
+  }
+
+  #cx-wrapper {
+    max-height: calc(100vh - 110px) !important;
+  }
+  .sub-menus {
+    // left: 37px !important;
+  }
+  .cx-header .cx-header-wrapper {
+    margin-left: 80px !important;
+    margin-top: 15px !important;
+    height: 50px !important;
+    width: calc(100% - 95px) !important;
+  }
+  .cx-sidebar .cx-sidebar-wrapper {
+    margin: 15px !important;
+  }
+  #cx-main {
+    margin-left: 75px !important;
+    padding: 80px 15px 15px 15px !important;
+  }
+
+  .cx-sidebar .cx-sidebar-wrapper {
+  }
+  .cx-sidebar .cx-sidebar-wrapper aside .menus-main .menu-name {
+  }
+  .cx-header .main-heading p {
+    font-size: 18px !important;
+  }
+  .cx-header header .header-prfl-img img {
+    height: 25px !important;
+    width: 25px !important;
+  }
+  .notification-header button {
+    margin-right: 5px !important;
+  }
+  .cx-header header label {
+    display: none;
+  }
+  .main-auth .login-wrapper .right .wrapper h3 {
+    font-size: 30px !important;
+  }
+  .main-auth #registration-main .right .wrapper h3 {
+    margin-top: 0px !important;
+  }
+  .main-auth #registration-main .top-logo img {
+  }
+  .main-auth .login-wrapper .right .arrow img {
+    margin: 20px 0 30px 20px !important;
+  }
+  .main-auth
+    .login-wrapper
+    .right
+    .wrapper
+    .auth-form
+    .otp-input
+    .form-control {
+    width: 18vw !important;
+  }
+  .login-wrapper {
+    .left {
+      display: none;
+    }
+  }
+  .main-auth .login-wrapper .right .wrapper {
+    padding: 30px !important;
+    height: auto !important;
+  }
+  .common-vehical-card {
+    // width: calc(50% - 15px) !important;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .common-vehical-card,
+  .common-vehical-card-inner {
+    width: 100% !important;
+  }
+}
+@media all and (max-width: 580px) {
+  .common-vehical-card {
+    width: 100% !important;
+  }
+  .prof-img .prof-cam {
+    width: 40% !important;
+    top: 28px !important;
+    right: -5px !important;
+  }
+  .trip-details-timeline .td-middle-section {
+    margin: 30px 0 !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline {
+    justify-content: center !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .steps {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: baseline Im !important;
+    width: 44% !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .steps .step {
+    margin: 20px 80px !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline:before {
+    transform: rotate(90deg) !important;
+    width: 60% !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .line {
+    transform: rotate(90deg);
+    top: 130px !important;
+  }
+}
+@media all and (max-width: 480px) {
+  #registration-main .right .wrapper {
+    padding: 0 15px !important;
+  }
+  .main-dashboard-wrapper .bottom-wrapper .bottom-status {
+    margin-right: 5px !important;
+  }
+  .Parking_Slot {
+    .headingDetails .AddParkBtn .addLink button,
+    .headingDetails .headingTxt .heading {
+      font-size: 12px !important;
+    }
+    .innerMapDetails {
+      overflow-y: auto;
+      height: 45vh !important;
+    }
+  }
+  .topUpdateBtn {
+    button {
+      width: 100%;
+    }
+  }
+  .main-master-wrapper .Heading {
+    a {
+      width: 100%;
+    }
+    flex-direction: column;
+    .cx-btn-3 {
+      width: 100% !important;
+      margin-top: 10px;
+    }
+  }
+  .add-on-tabs-wrapper .add-on-card-wrapper .add-on-card .ao-card-header {
+    flex-direction: column;
+    .cx-btn-1,
+    .cx-btn-2 {
+      width: 100% !important;
+      margin-top: 10px;
+    }
+  }
+  .main-master-wrapper
+    .innerInputsGen
+    .switchMain
+    .RechargeButtonMain
+    .recharegBtn {
+    width: 100% !important;
+  }
+  .main-master-wrapper .innerInputsGen .switchMain .RechargeButtonMain {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .update-logo-main .update-logo-card {
+    width: 100% !important;
+  }
+  .porile-img .invalid-feedback {
+    width: 150px !important ;
+    bottom: -75px !important;
+    left: -15px;
+  }
+  .cx-header .main-heading p {
+    font-size: 14px !important;
+  }
+  // .CustomerProfile-head{
+  //   margin-bottom: 50px !important;
+  //   height: 70px !important;
+  //   padding: 20px !important;
+  // }
+
+  .main-master-wrapper .innerInputsGen .switchMain {
+    flex-direction: column;
+  }
+  .main-auth .login-wrapper .right .wrapper {
+    padding: 0 0 20px 0 !important;
+  }
+  .Holidays_Main {
+    .search-input {
+      margin-top: unset !important;
+    }
+    .datepicker-main {
+      margin-left: unset !important;
+      margin-top: 10px;
+    }
+    .right-wrapper {
+      width: 100% !important;
+    }
+  }
+
+  .prof-img .prof-cam {
+    width: 40% !important;
+    top: 28px !important;
+    right: -5px !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline:before {
+    transform: rotate(90deg) !important;
+    width: 80% !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .cx-sidebar .cx-sidebar-wrapper {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .main-dashboard-wrapper
+    .right-vehicle-status-wrapper
+    #vehicle-main-tab-active {
+    width: 100% !important;
+  }
+  .main-dashboard-wrapper .right-vehicle-status-wrapper .vehicle-main-tab {
+    top: 45px !important;
+    right: unset !important;
+  }
+  .notification-header .dropdown-menu .stepper {
+    top: 37px !important;
+  }
+  .notification-header .dropdown-menu .contain img {
+    height: 40px !important;
+    margin-bottom: 40px;
+  }
+  #notification_header_responsive .stepper {
+    left: 20px !important;
+  }
+  .cx-header .cx-active-header {
+    margin-left: 90px !important;
+    transition: all 0.5s;
+    width: calc(100% - 105px) !important;
+  }
+  .main-auth .login-wrapper {
+    padding: 0px !important;
+  }
+  .main-auth
+    .login-wrapper
+    .right
+    .wrapper
+    .auth-form
+    .login-otp-tab
+    .nav-link.active {
+    display: block !important;
+  }
+  .main-auth .login-wrapper .right .wrapper .top-logo {
+    margin-bottom: 5px !important;
+  }
+  .main-auth .login-wrapper .right .wrapper .auth-form .forgot-link {
+    margin-bottom: 15px !important;
+  }
+  .main-auth .login-wrapper .right .wrapper {
+    position: unset !important;
+  }
+  .main-auth #registration-main .top-logo img {
+    height: 130px !important;
+    margin-top: 30px;
+  }
+  #login-with-otp-main-right {
+    height: 100%;
+    .wrapper .top-logo img {
+      margin-top: 40px;
+    }
+    .Vehcle-main-tabs ul {
+      margin-top: 0px !important;
+    }
+  }
+  .main-auth .login-wrapper .right {
+    .login-otp-text {
+      width: 100%;
+    }
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  .main-auth .login-wrapper .arrow {
+    left: 5px !important;
+  }
+  .main-auth .login-wrapper .right .wrapper .top-logo img {
+    height: 130px !important;
+  }
+  .main-dashboard-wrapper {
+    min-height: calc(100vh - 106px) !important;
+    .topsection {
+      flex-direction: column;
+      justify-content: flex-start !important;
+      p {
+        text-align: left;
+        width: 100%;
+      }
+      .dropdown-wrapper {
+        width: 100%;
+        .multi-select-1 {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+    .map-wrapper {
+      // height: calc(100vh - 390px) !important;
+    }
+    .bottom-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .bottom-status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          width: 20px !important;
+        }
+        span {
+          font-size: 12px !important;
+        }
+      }
+    }
+    .right-vehicle-status-wrapper {
+      .vehicle-main-tab {
+        // width: 100% !important;
+        height: calc(100vh - 362px) !important;
+      }
+      .tools-main-tab {
+        top: 25% !important;
+      }
+      .va-nav {
+        justify-content: space-evenly !important;
+        .va-tab {
+          // width: 33.33% !important;
+          a {
+            padding: 5px !important;
+            font-size: 10px !important;
+          }
+        }
+      }
+      .running-status-card-wrapper {
+        .status-card {
+          padding: 10px;
+          .row {
+            .col-md-4 {
+              &:nth-child(3) {
+                text-align: left !important;
+              }
+              &:nth-child(6) {
+                text-align: left !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .prof-img .prof-cam {
+    width: 40% !important;
+    top: 28px !important;
+    right: -5px !important;
+  }
+}
+@media all and (max-width: 360px) {
+  .dashboard_responsive {
+    .main-dashboard-wrapper {
+      .map-main {
+        // height: calc(100vh - 285px) !important;
+      }
+    }
+  }
+  .ao-card-head {
+    tr {
+      th {
+        &:nth-child(2) {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  .common-model .modal-dialog .modal-content .modal-body {
+    padding: 20px 0 !important;
+  }
+  .camera-img-wrapper {
+    img {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+  .prof-img .prof-cam {
+    width: 40% !important;
+    top: 28px !important;
+    right: -5px !important;
+  }
+  .trip-details-timeline .td-middle-section {
+    margin: 30px 0 !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline {
+    justify-content: center !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .steps {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: baseline Im !important;
+    width: 44% !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .steps .step {
+    margin: 20px 80px !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline:before {
+    transform: rotate(90deg) !important;
+    width: 120% !important;
+  }
+  .trip-details-timeline .td-middle-section .horizontal.timeline .line {
+    transform: rotate(90deg);
+    top: 108px !important;
+  }
+
+  .td-nav .td-tab .td-link {
+    padding: 5px 10px 5px 0 !important;
+  }
+}
+
+.transportMap {
+  .innerMap {
+    position: relative;
+    .geofence-area {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background-color: rgba(126, 93, 255, 0.5);
+      .transport-area {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 180px;
+        height: 180px;
+        background-color: rgba(2, 192, 56, 0.8);
+        .dot-top-left {
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: black;
+        }
+        .dot-top-right {
+          position: absolute;
+          top: -4px;
+          right: -4px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: black;
+        }
+        .dot-bottom-left {
+          position: absolute;
+          bottom: -4px;
+          left: -4px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: black;
+        }
+        .dot-bottom-right {
+          position: absolute;
+          bottom: -4px;
+          right: -4px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.vntable{
+  background-color: #fff;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+   
+  display: flex;
+  margin-right: 20px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

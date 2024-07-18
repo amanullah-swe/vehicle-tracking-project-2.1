@@ -1,0 +1,640 @@
+//  Main Parking Styles
+.upperMainSet {
+  .mainCol4 {
+    text-align: end;
+
+    .leftSideSec {
+      display: flex;
+      justify-content: flex-end;
+
+      .addParkBtn button {
+        border: none;
+        background: #ffffff;
+        border-radius: 10px;
+        width: 160px;
+        height: 40px;
+        color: #9c4900;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+
+      .inconMain {
+        height: 40px;
+        width: 40px;
+        background: #fff;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px;
+      }
+    }
+  }
+
+  // .road-map {
+  //     margin: 20px 0;
+  //     // height: 386px;
+  //     padding: 20px;
+  //     background-color: white;
+  //     border-radius: 20px;
+  //     position: relative;
+
+  //     .map-main {
+  //         height: calc(100vh - 372px);
+  //     }
+  // }
+
+  .mainMape {
+    .map-main {
+      height: calc(100vh - 180px);
+      width: 100%;
+    }
+    background-color: #fff;
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    // display: flex;
+    justify-content: center;
+    // margin-bottom: 16px;
+
+    .innerMapDetails {
+      position: absolute;
+      background: #fff;
+      border-radius: 12px;
+      height: auto;
+      padding: 20px;
+      // margin: 0px 30px !important;
+      width: 90%;
+      left: 5%;
+      bottom: 30px;
+
+      .headingDetails {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        border-bottom: 0.5px solid #f6efe9;
+        margin-bottom: 0.5rem;
+
+        .headingTxt {
+          .heading {
+            margin-bottom: unset !important;
+            color: #8f4300;
+            font-size: 15px;
+          }
+        }
+
+        .AddParkBtn {
+          .addLink {
+            text-decoration: none;
+
+            button {
+              border: none;
+              background: #fff;
+              color: #9c4900;
+              font-size: 14px;
+              font-weight: 600;
+            }
+          }
+        }
+        .customer-option {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }
+
+      .innerCOntent {
+        .dividedCol {
+          .paraHead {
+            font-size: 12px;
+            color: rgba(143, 67, 0, 0.5);
+            margin-bottom: 0px !important;
+          }
+
+          .paraVal {
+            font-size: 14px;
+            color: #8f4300;
+          }
+        }
+      }
+    }
+  }
+}
+#customBorder_bottom {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f6efe9;
+}
+
+.arrange-margin {
+  margin-bottom: 19px;
+}
+
+// Add Parking Styles
+.addParkingMap {
+  // width: 100%;
+  border-radius: 12px !important;
+  position: relative;
+
+  .map-main {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .belowLine {
+    border-bottom: 0.5px solid red !important;
+  }
+
+  .mapIcons {
+    position: absolute;
+    top: 20px;
+    z-index: 5;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .inconsIn {
+      height: 30px;
+      width: 30px;
+      background: #9c4900;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 5px;
+    }
+  }
+}
+
+// Tabs Styles
+.tabsCon {
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+  .headGeo {
+    border-bottom: 0.5px solid #f6efe9;
+    margin-bottom: 1rem;
+
+    p {
+      color: #8f4300;
+      margin-bottom: 5px !important;
+    }
+  }
+
+  .addGeolog {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: #8f4300;
+    }
+
+    .innerGroBtn {
+      button {
+        border: none;
+        background: #fff;
+        width: 95px;
+        height: 18px;
+        color: #8f4300;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .nav-tabs {
+    // border-bottom: 0.5px solid rgba(143, 67, 0, 0.5);
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 50%;
+
+    button {
+      width: 100%;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(143, 67, 0, 0.8);
+    }
+  }
+
+  .nav-link {
+    border: none !important;
+    position: relative;
+  }
+
+  .nav-link.active {
+    color: #9c4900 !important;
+    // border-bottom: 1px solid #9c4900 !important;
+  }
+
+  .nav-link::after {
+    transform: scaleX(0);
+    // transform: translateX(0);
+    transform-origin: bottom right;
+  }
+
+  .nav-link::after {
+    content: " ";
+    display: block;
+    border-radius: 10px !important;
+    position: absolute;
+    // top: 0;
+    height: 2px;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    inset: unset;
+    background: #9c4900 !important;
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link.active::after {
+    transform: scaleX(1);
+    // transform: translateX(100%);
+
+    transform-origin: top left;
+  }
+
+  #navPills {
+    // height: 85vh;
+    overflow-y: auto !important;
+
+    .nav-item {
+      width: 100% !important;
+      margin-bottom: 0.5rem;
+      // border: 0.5px solid #f6efe9;
+      border-radius: 12px;
+      border-radius: 12px;
+      margin-right: 0.5rem;
+    }
+
+    .nav-link {
+      padding: 5px;
+      height: auto;
+      .paraNav {
+        color: #703c19;
+      }
+
+      &.active {
+        background-color: #421f00;
+        border: none !important;
+        // height: 100%;
+        .AllFlexNav,
+        .parkingSLotCOl {
+          border-bottom: none !important;
+          .paraNav,
+          .paraNavTxt {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+
+    .AllFlexNav {
+      // border-bottom: 1px solid #f6efe9;
+      display: flex;
+      justify-content: space-between !important;
+      flex-wrap: wrap;
+      padding: 10px 10px 10px 10px;
+      height: 100%;
+      border: 0.5px solid rgba(143, 67, 0, 0.8);
+      border-radius: 12px;
+      .paraNav {
+        margin-bottom: 0px !important;
+        font-size: 11px;
+      }
+      .d-img {
+        img {
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+        }
+      }
+      .paraNavTxt {
+        color: #9c4900;
+        font-size: 12px;
+      }
+    }
+
+    .parkingSLotCOl {
+      padding: 10px 10px 0px 20px;
+
+      .paraNav {
+        margin-bottom: 0px !important;
+        font-size: 11px;
+      }
+
+      .paraNavTxt {
+        color: #9c4900;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.body-content2 {
+  .tabsCon {
+    // min-height: calc(100vh - 638px) !important;
+    // height: auto !important;
+    // max-height: calc(100vh - 238px) !important;
+  }
+}
+
+// POINT OS INTEREST STYLES HERE IF NEEDED BELOW
+
+.Parking_Slot {
+  .top-content {
+    justify-content: space-between;
+
+    .left {
+      justify-content: space-between;
+
+      .row {
+        margin-right: unset !important;
+      }
+    }
+
+    .right {
+      justify-content: space-between;
+    }
+  }
+
+  .tabsCon {
+    height: calc(100vh - 140px);
+  }
+
+  .tab-content {
+    overflow-y: auto;
+    height: calc(100vh - 258px);
+  }
+
+  .body-content {
+    overflow: auto;
+    height: calc(100vh - 100px);
+  }
+
+  .map-main {
+    height: calc(100vh - 224px);
+  }
+}
+
+.ParkingManagement {
+  .body-content {
+    height: auto !important;
+  }
+}
+.ReplayPlayback {
+  #play-vehicle-driver-cards {
+    min-height: calc(100vh - 300px) !important;
+  }
+  .body-content {
+    height: auto !important;
+  }
+}
+
+.Add_Parking_Slot {
+  .map-main {
+    height: calc(100vh - 200px);
+  }
+}
+
+.Edit_Parking_Slot {
+  .map-main {
+    height: calc(100vh - 200px);
+  }
+}
+
+.Point_Of_Intrest {
+  .tabsCon #navPills .nav-item {
+    margin-right: unset !important;
+  }
+
+  .tabsCon #navPills {
+    height: calc(100vh - 180px);
+  }
+
+  .body-content {
+    overflow: auto;
+    height: calc(100vh - 184px);
+  }
+
+  .tabsCon {
+    height: calc(100vh - 144px);
+  }
+
+  .map-main {
+    height: calc(100vh - 224px);
+  }
+}
+
+.AddPointOfInterest {
+  .map-main {
+    height: calc(100vh - 368px);
+  }
+}
+
+.EditPointOfInterest {
+  .map-main {
+    height: calc(100vh - 368px);
+  }
+}
+
+.GeofenceArea {
+  .tabsCon #navPills {
+    height: calc(100vh - 250px);
+  }
+}
+
+.AddGeofenceArea,
+.EditGeofenceArea {
+  .map-main {
+    height: calc(100vh - 368px);
+  }
+}
+
+// Extra styles for map
+// .Transportation_Setting .map-main {
+//   height: 100vh;
+// }
+
+// ParkingManagment
+#parkinManager {
+  .innerMapDetails {
+    margin: 0 !important;
+    margin-left: 2% !important;
+  }
+
+  .map-main {
+    height: calc(100vh - 282px);
+  }
+}
+
+#ReplayPlayback {
+  .innerMapDetails {
+    margin: 0 !important;
+    margin-left: 2% !important;
+  }
+
+  .map-main {
+    height: calc(100vh - 266px);
+  }
+}
+
+#parkinManager1 {
+  .innerMapDetails {
+    margin: 0 !important;
+    margin-left: 2% !important;
+  }
+
+  .map-main {
+    height: calc(100vh - 228px);
+  }
+}
+
+#ParkingManagment {
+  .accordion {
+    .accordion-item {
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+      border: 0.5px solid #f6efe9;
+
+      .accordion-button::after {
+        display: none;
+      }
+
+      button {
+        color: transparent;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .accordion-button:hover {
+        z-index: auto;
+      }
+    }
+
+    .accordion-body {
+      padding: 0.5rem;
+    }
+  }
+
+  .holiday-table {
+    min-width: 100%;
+    overflow: hidden !important;
+
+    .ht-head tr td {
+      padding: 0px 3px !important;
+      font-size: 12px !important;
+      border: none !important;
+    }
+
+    .ht-body .table-row-custom td {
+      padding: 7px 3px !important;
+      font-size: 11px;
+    }
+
+    .De-assign {
+      text-align: center;
+      cursor: pointer;
+
+      p {
+        background-color: #9c4900;
+        color: white;
+        border-radius: 25px;
+        padding: 3px 5px;
+      }
+    }
+
+    .Assign {
+      text-align: center;
+      cursor: pointer;
+
+      p {
+        border: 1px solid #9c4900;
+        // background-color: #9C4900;
+        color: #9c4900;
+        padding: 3px 0px;
+        border-radius: 25px;
+        margin: 0;
+        font-weight: 700;
+      }
+    }
+  }
+
+  #CustomerSupport {
+    height: auto !important;
+  }
+
+  .nav-item {
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    // border: none;
+  }
+
+  .nav-item a:focus-visible {
+    box-shadow: none;
+  }
+}
+
+.customer-option2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.leftSideSec {
+  .cx-btn-1 {
+    min-width: 74px !important;
+  }
+}
+
+.map_bottom_labels {
+  margin-top: 15px;
+  display: flex;
+
+  .label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    p {
+      color: #8f4300;
+      margin-bottom: 0;
+      line-height: 0.5;
+    }
+    .box {
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+    }
+  }
+  .label_1 {
+    .box {
+      background-color: red;
+    }
+  }
+  .label_2 {
+    .box {
+      background-color: green;
+    }
+  }
+  .label_3 {
+    .box {
+      background-color: yellow;
+    }
+  }
+}
+#ReplayPlayback-export {
+  .dropdown button {
+    img {
+      margin-left: 12px;
+    }
+  }
+}

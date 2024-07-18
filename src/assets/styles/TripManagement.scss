@@ -1,0 +1,826 @@
+#cx-wrapper {
+  overflow-x: hidden;
+}
+
+.dispatch-trip-stepper {
+  display: flex;
+  padding: 10px 0 30px;
+  justify-content: center;
+  align-items: center;
+  .single-step {
+    img {
+    }
+    .active {
+    }
+  }
+}
+
+.addvhical-heading {
+  position: relative;
+}
+
+.trip-switch {
+  padding-left: 0 !important;
+
+  .form-check-input {
+    margin-left: 10px !important;
+    margin-top: 3px;
+  }
+}
+
+.trip-map {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 12px !important;
+
+  p {
+    font-size: 20px;
+    color: #8f4300;
+  }
+
+  .inner-map {
+    height: 250px !important;
+  }
+
+  .map-main {
+    height: 400px;
+  }
+}
+
+// .transportMap {
+//   .inner-map {
+//     height: 250px !important;
+//     .map-main {
+//       height: 400px;
+//     }
+//   }
+// }
+
+.trip-map2 {
+  height: 400px !important;
+
+  .top-name {
+    p {
+      font-size: 14px;
+      color: #8f4300;
+    }
+  }
+
+  .inner-map {
+    height: 250px !important;
+  }
+
+  .map-main {
+    height: 400px;
+  }
+}
+
+.transportMap,
+.stopmap {
+  .custom-map-height {
+    .main-map {
+      height: 500px;
+    }
+  }
+}
+
+.mainTripDetails {
+  p {
+    font-size: 18px;
+    color: #9c4900;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .border-common {
+    border: 1px solid #f6efe9;
+  }
+
+  .trip-details-inner {
+    border-radius: 20px;
+    padding: 20px;
+
+    label {
+      color: rgba(143, 67, 0, 0.5);
+      font-size: 14px !important;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      color: #8f4300;
+    }
+  }
+}
+
+.trip-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 18px;
+    color: #8f4300;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .innerPara {
+    font-size: 16px !important;
+  }
+
+  .border-common {
+    border: 1px solid #f6efe9;
+  }
+
+  .trip-details-inner {
+    border-radius: 20px;
+    padding: 20px;
+
+    label {
+      color: rgba(143, 67, 0, 0.8);
+      font-size: 14px;
+    }
+  }
+
+  .end-trip-btn {
+    padding: 8px 25px;
+    background-color: #fff;
+    border: 1px solid #f6efe9;
+    border-radius: 10px;
+    color: #9c4900;
+    font-size: 14px;
+  }
+}
+
+.trip-table-wrapper {
+  border: 1px solid #f6efe9;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.dropdown-wrapper2 {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+
+.trip-details-timeline {
+  margin: 2rem 0;
+
+  .td-left-section {
+    text-align: left;
+
+    label {
+      color: rgba(143, 67, 0, 0.8);
+      font-size: 14px;
+    }
+
+    p {
+      margin: 0;
+      color: #8f4300;
+      font-size: 14px;
+
+      &:first-child {
+        font-size: 14px;
+      }
+
+      &:last-child {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .td-middle-section {
+    margin-top: 1rem;
+
+    .horizontal.timeline {
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        border: 1px solid rgba(143, 67, 0, 0.5);
+      }
+
+      .line {
+        display: block;
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        background-color: #8f4300;
+      }
+
+      .steps {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .step {
+          display: block;
+          position: relative;
+          bottom: calc(100% + 1em);
+          margin: 0 2em;
+          box-sizing: content-box;
+
+          color: #fff;
+          background-color: currentColor;
+          border: 0.25em solid white;
+          border-radius: 50%;
+          z-index: 500;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+            color: #fff;
+          }
+
+          span {
+            position: absolute;
+
+            top: calc(100% + 1em);
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            color: #000;
+            opacity: 0.4;
+          }
+
+          &.current {
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              padding: 1em;
+              background-color: currentColor;
+              border-radius: 50%;
+              opacity: 0;
+              z-index: -1;
+              animation-name: animation-timeline-current;
+              animation-duration: 2s;
+              animation-iteration-count: infinite;
+              animation-timing-function: ease-out;
+            }
+
+            span {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+
+    @keyframes animation-timeline-current {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+      }
+    }
+  }
+
+  .td-right-section {
+    text-align: right;
+
+    label {
+      color: rgba(143, 67, 0, 0.8);
+      font-size: 14px;
+    }
+
+    p {
+      margin: 0;
+      color: #8f4300;
+      font-size: 14px;
+
+      &:last-child {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.vehicle-speed-chart {
+  height: 100%;
+
+  .vsc-heading {
+    p {
+      color: #8f4300;
+      font-size: 20px;
+    }
+  }
+}
+
+.td-nav {
+  border-bottom: 1px solid #f6efe9;
+
+  .td-tab {
+    text-align: left;
+    .nav-link.active {
+      color: #8f4300 !important;
+      background: #fff !important;
+      border-radius: 0;
+      // border-bottom: 0.5px solid #8f4300;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .td-link {
+      color: #703c19 !important;
+      padding: 5px 10px 5px 10px;
+      position: relative;
+      // margin-right: 15px !important;
+      font-size: 16px;
+      z-index: 1;
+    }
+  }
+  #text_small_Tab_first {
+    width: 40%;
+  }
+  #text_small_Tab_second {
+    width: 60%;
+  }
+  #text_small_Tab_first,
+  #text_small_Tab_second {
+    .td-link {
+      color: #8f430080 !important;
+      padding: 5px 10px 5px 10px;
+      position: relative;
+      // margin-right: 15px !important;
+      font-size: 14px;
+      z-index: 1;
+    }
+  }
+
+  .nav-link::after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  .nav-link::after {
+    content: " ";
+    display: block;
+    border-radius: 10px !important;
+    position: absolute;
+    // top: 0;
+    height: 2px;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    inset: unset;
+    background: #9c4900 !important;
+    z-index: -1;
+    transition: transform 0.7s ease;
+  }
+
+  .nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: top left;
+  }
+}
+
+.vd-wrapper {
+  .vd-inner {
+    label {
+      font-size: 12px;
+      color: rgba(143, 67, 0, 0.8);
+    }
+
+    p {
+      font-size: 14px;
+      color: #8f4300;
+      font-weight: 600;
+    }
+  }
+}
+
+.driver-profile {
+  margin-top: 2rem;
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.error-list-wrapper {
+  margin-top: 1rem;
+
+  .error-list {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 0.5rem;
+
+    img {
+    }
+
+    .error-text {
+      margin-left: 1rem;
+
+      label {
+        font-size: 14px;
+        color: #8f4300;
+      }
+
+      p {
+        font-size: 10px;
+        color: rgba(143, 67, 0, 0.8);
+      }
+    }
+  }
+}
+
+.alert-table-wrapper {
+  padding: 10px;
+
+  .alert-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 100%;
+
+    .ht-head {
+      tr {
+        border-bottom: 1px solid #f6efe9;
+
+        td {
+          padding: 10px;
+          font-size: 14px;
+          color: rgba(143, 67, 0, 0.8);
+        }
+      }
+    }
+
+    .ht-body {
+      tr {
+        border-radius: 10px;
+        border: 1px solid #f6efe9;
+        padding: 10px;
+
+        td {
+          font-size: 14px;
+          color: #8f4300;
+          padding: 20px;
+          padding-left: 10px;
+
+          &:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #f6efe9;
+            border-right: 0;
+          }
+
+          &:nth-child(2) {
+            border-top: 1px solid #f6efe9;
+            border-bottom: 1px solid #f6efe9;
+          }
+
+          &:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid #f6efe9;
+            border-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Circular Progress Bar
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px 10px;
+
+  div {
+    p {
+      text-align: center;
+      margin-top: 1rem;
+      color: #8f4300;
+      font-size: 18px;
+    }
+
+    .CircularProgressbar-path {
+      stroke: #8f4300 !important;
+    }
+
+    .CircularProgressbar-trail {
+      stroke: #f6efe9 !important;
+    }
+
+    .CircularProgressbar-text {
+      fill: yellow;
+    }
+
+    .CircularProgressbar-background {
+      fill: green;
+    }
+
+    .progress-text {
+      color: #8f4300;
+    }
+  }
+}
+
+// Stop Section Styling Start
+.horizontal-line {
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  color: rgba(143, 67, 0, 0.8);
+
+  &::before {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    content: "";
+    height: 1px;
+    width: 47%;
+    background-color: #f6efe9;
+  }
+
+  &::after {
+    position: absolute;
+    top: 48%;
+    right: 0;
+    content: "";
+    height: 1px;
+    width: 47%;
+    background-color: #f6efe9;
+  }
+}
+
+.stopmap {
+  height: 100%;
+  position: relative;
+  padding: 0;
+
+  .stop-note {
+    color: #8f4300;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .custom-map-height {
+    height: 100%;
+  }
+
+  .custom-map-height2 {
+    height: 450px;
+  }
+
+  .popOverMap {
+    position: relative;
+  }
+
+  .stop-tooltip-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    button {
+      background-color: transparent;
+      border: none;
+
+      &:active {
+        background-color: transparent;
+      }
+
+      &:focus-visible {
+        border: none;
+      }
+    }
+  }
+
+  .map-main {
+    height: 465px;
+  }
+}
+
+.stop-overlay-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  padding: 0px 0 10px;
+
+  p {
+    margin: 0 !important;
+    color: #8f4300;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.pwb-table {
+  width: 100%;
+}
+
+.so-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 48%;
+    padding: 16px 20px !important;
+    height: 30px;
+    vertical-align: middle;
+
+    &:last-child {
+      border: 1px solid #8f4300;
+    }
+  }
+}
+
+.stop-priority-btn-wrapper {
+  text-align: right;
+
+  button {
+    padding: 5px 25px;
+    background-color: #8f4300;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 !important;
+  }
+}
+
+.action-btn-wrapper {
+  a {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.stop-details-wrapper {
+  label {
+    font-size: 14px;
+    color: rgba(143, 67, 0, 0.5);
+  }
+
+  p {
+    font-size: 14px;
+    color: #8f4300;
+  }
+}
+
+// Stop Section Styling End
+
+// Grabbing Table Row Styling for Stops Details Start
+
+.Stop-details-table {
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+
+  thead {
+    tr {
+      th {
+        background-color: transparent !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        color: rgba(143, 67, 0, 0.8);
+        border: none !important;
+      }
+    }
+
+    tbody {
+      tr {
+        padding: 10px !important;
+        border-radius: 10px !important;
+
+        td {
+          background: transparent !important;
+          color: #8f4300 !important;
+          font-size: 14px;
+          font-weight: 500 !important;
+          border: 1px solid #f6efe9 !important;
+
+          &:first-child {
+            border-top-left-radius: 10px;
+          }
+
+          &:last-child {
+          }
+        }
+      }
+    }
+  }
+
+  .dikAPL {
+    color: #8f4300 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    background: transparent !important;
+
+    td {
+      padding: 10px;
+    }
+  }
+}
+
+.empty-th {
+  margin-right: 10px !important;
+}
+
+// Grabbing Table Row Styling for Stops Details End
+
+.date-input {
+  margin-left: 1rem;
+}
+
+.Trip_Management {
+  .all-vehical-head {
+    justify-content: space-between;
+  }
+}
+
+.addDispach_trip,
+.edit_trip {
+  label {
+    color: rgba(143, 67, 0, 0.8);
+    font-size: 14px;
+  }
+}
+
+.trip-popover {
+  .tp-body {
+    background-color: #f6efe9;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    color: #8f4300;
+    font-size: 12px;
+    .trip-popover-wrapper {
+    }
+  }
+  .bs-popover-bottom > .popover-arrow {
+  }
+  ::after {
+    border-bottom-color: #f6efe9 !important;
+  }
+  .bs-popover-top > .popover-arrow {
+  }
+  ::after {
+    border-top-color: #f6efe9 !important;
+  }
+}
+.popover {
+  border: 1px solid #f6efe9;
+  border-radius: 12px;
+}
+
+.copy_Link {
+  p {
+    color: #c7a180 !important;
+    margin-bottom: 15px;
+  }
+  .copy_body {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    input {
+      width: 65%;
+      background-color: #f6efe9;
+    }
+    button {
+      border-radius: 10px !important;
+      width: auto;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.leaflet-routing-alt,
+.leaflet-routing-container {
+  display: none;
+}

@@ -1,0 +1,61 @@
+.Driver_Duty_Roaster {
+  .upperMainSet .mainCol4 .leftSideSec .addParkBtn {
+    .search_btn {
+      color: #ffffff !important;
+      background: #9c4900 !important;
+    }
+    .driver_btn {
+      width: 220px !important;
+      color: #ffffff !important;
+      background: #9c4900 !important;
+    }
+    .clear_btn {
+      background: #ffffff !important;
+      color: #9c4900 !important;
+      border: 1px solid #9c4900;
+    }
+  }
+  .s_trip {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(213, 78, 33, 1);
+  }
+  .e_trip {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(230, 235, 0, 1);
+  }
+  .i_trip {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(66, 139, 202, 1);
+  }
+  .sh_trip {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(115, 113, 110, 1);
+  }
+  label {
+    color: rgba(143, 67, 0, 1);
+  }
+  ._WuQ0f,
+  ._34SS0 {
+    color: rgba(143, 67, 0, 0.6) !important;
+  }
+  ._9w8d5,
+  ._2q1Kt {
+    fill: rgba(143, 67, 0, 0.6) !important;
+  }
+
+  ._1nBOt {
+    height: 49px !important;
+    border-bottom: 1.5px solid !important;
+  }
+  ._35nLX {
+    stroke-width: 0.6px !important;
+  }
+}

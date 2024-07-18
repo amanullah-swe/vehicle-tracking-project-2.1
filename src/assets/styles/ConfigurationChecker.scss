@@ -1,0 +1,107 @@
+.config-checker-desc {
+  p {
+    font-weight: 600;
+    font-size: 18px;
+    color: #8f4300;
+  }
+}
+.config-checker-desc-text {
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(143, 67, 0, 0.5);
+  }
+}
+
+.config-checker-summary-wrapper {
+  .summary-status-wrapper {
+    .common-summary-tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #f6efe9;
+      border-radius: 10px;
+      padding: 10px;
+      color: #8f4300;
+      font-size: 14px;
+      p {
+        margin: 0;
+      }
+    }
+    .passed {
+      background: rgba(2, 192, 56, 0.05);
+    }
+    .failed {
+      background: rgba(255, 0, 0, 0.05);
+    }
+    .warning {
+      background: rgba(246, 163, 0, 0.05);
+    }
+  }
+  .summary-table-wrapper {
+    .summary-table {
+      margin-top: 1rem;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      thead {
+        tr {
+          border-bottom: 1px solid #f6efe9;
+          th {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(143, 67, 0, 0.5);
+            padding: 5px 15px;
+            &:last-child{
+                width: 20%;
+            }
+          }
+        }
+      }
+      tbody {
+        border-collapse: separate;
+        border-spacing: 0 8px;
+        .table-row-custom {
+            border-radius: 10px;
+      
+            td {
+              padding: 15px 15px !important;
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 18px;
+              color: #8f4300;
+              border-top: 1px solid #f6efe9 !important;
+              border-bottom: 1px solid #f6efe9 !important;
+              vertical-align: top;
+      
+              &:first-child {
+                border-top: 1px solid #f6efe9 !important;
+                border-bottom: 1px solid #f6efe9 !important;
+                border-left: 1px solid #f6efe9 !important;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+              }
+      
+              &:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-right: 1px solid #f6efe9 !important;
+                // border-radius: 10px;
+              }
+      
+              a {
+                margin-right: 15px;
+              }
+            }
+          }
+      }
+    }
+  }
+}
+
+#ForOver_Flow_IN_ConfiCheckeer{
+  overflow: hidden !important;
+  .summary-table-wrapper{
+    overflow-x: auto !important;
+  }
+}

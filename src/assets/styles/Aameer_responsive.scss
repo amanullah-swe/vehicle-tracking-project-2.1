@@ -1,0 +1,390 @@
+/* SCREEN SIZE OF 1200 PX */
+@media all and (max-width: 1280px) {
+  // Vehicle expenses media
+  .DetailsSec .invoiceBox .headingInvoi {
+    flex-direction: column;
+
+    .viewLinks {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .DetailsSec .Value {
+    font-size: 14px !important;
+  }
+
+  .Vehicle_Accident,
+  .Vehicle_Accesory,
+  .VehicleSpare_Parts,
+  .Vehicle_Fine,
+  .Fleet_Maintenance,
+  .Fuel_Expenses,
+  .Dispatch_Customer,
+  .View_Dispatch,
+  .Dispatch_Order {
+    .selectForm {
+      width: 48%;
+    }
+
+    .headerDivIc {
+      width: 22%;
+    }
+
+    .diffBtns {
+      width: 48%;
+    }
+
+    .dNo {
+      display: none;
+    }
+  }
+}
+
+/* SCREEN SIZE OF 991 PX */
+@media all and (max-width: 991px) {
+  #dispatchTabs {
+    .nav-item {
+      width: 100% !important;
+      margin-bottom: 10px;
+    }
+  }
+
+  .searchMainBox {
+    display: flex;
+    flex-direction: column !important;
+    align-items: end !important;
+    width: 100% !important;
+
+    .searchsInsider {
+      .innerSelectBox {
+        width: 49% !important;
+      }
+    }
+  }
+
+  .DetailsSec .invoiceCOl {
+    width: 100%;
+  }
+
+  .DetailsSec .ViewCol3 {
+    width: 32% !important;
+  }
+
+  .DetailsSec .invoiceBox .headingInvoi {
+    flex-direction: row;
+  }
+
+  .mainVehAccident {
+    .addVehicleSe {
+      flex-direction: column !important;
+
+      .addVehicleLeftSec {
+        width: 100%;
+      }
+
+      .imagesRightSec {
+        width: 100%;
+      }
+    }
+
+    .momentRem {
+      display: none;
+    }
+  }
+
+  .displayBoth {
+    display: flex !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .innerStartDate,
+    .innerCnum {
+      width: 48% !important;
+    }
+  }
+
+  // #firstHotspot{
+  .popover-main-wrapperHot {
+    width: 20rem !important;
+  }
+
+  .rightDisplayIcons {
+    .headerDivIc {
+      width: 100%;
+    }
+  }
+
+  // }
+}
+
+/* SCREEN SIZE OF 768 PX */
+@media all and (max-width: 768px) {
+  .DetailsSec .detailsRow {
+    flex-direction: column;
+
+    .ViewCol3 {
+      width: 100% !important;
+    }
+  }
+
+  .mainVehAccident {
+    .rightDisplayIcons {
+      justify-content: space-between !important;
+
+      .headerDivIc {
+        height: 38px !important;
+        width: 48% !important;
+        margin: 0rem !important;
+      }
+    }
+  }
+
+  .mainVehAccident .innerSelectBox .addonCalneder {
+    top: 48px;
+  }
+
+  .mainVehAccident .AddAccidentLink button {
+    height: 35px !important;
+  }
+
+  .Vehicle_Accident,
+  .Vehicle_Accesory,
+  .VehicleSpare_Parts,
+  .Vehicle_Fine,
+  .Fleet_Maintenance,
+  .Fuel_Expenses,
+  .Dispatch_Customer,
+  .View_Dispatch,
+  .Dispatch_Order {
+    .selectForm {
+      width: 100%;
+    }
+
+    .headerDivIc {
+      width: 48%;
+    }
+  }
+
+  .displayBoth {
+    flex-direction: column;
+
+    .innerStartDate,
+    .innerCnum {
+      width: 100% !important;
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .Dispatch_Setting {
+    .AddOnBtn {
+      margin: 10px 0px !important;
+    }
+  }
+}
+
+/* SCREEN SIZE OF 540 PX */
+@media all and (max-width: 540px) {
+  .trip-details-timeline {
+    overflow-x: auto;
+
+    .stepperScroller {
+      min-width: 400px;
+    }
+  }
+}
+
+/* SCREEN SIZE OF 380 PX */
+@media all and (max-width: 480px) {
+  .searchMainBox {
+    .searchsInsider {
+      flex-direction: column;
+
+      .innerSelectBox {
+        width: 100% !important;
+
+        &:first-child {
+          margin-right: 0px !important;
+        }
+      }
+    }
+
+    .innerSelectBox {
+      width: 100%;
+
+      .AddAccidentLink {
+        width: 100% !important;
+
+        .innerCust {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    justify-content: flex-start !important;
+  }
+
+  .modal-footer .btn-wrapper {
+    width: 100% !important;
+    flex-direction: column;
+
+    .cx-btn-1 {
+      margin-right: 0rem !important;
+    }
+
+    .cx-btn-1,
+    .cx-btn-2 {
+      width: 100% !important;
+      margin: 5px 0px;
+    }
+  }
+
+  .editInvoiceWrapper {
+    .invoiceImgEdit {
+      height: 100% !important;
+      width: 200px;
+      object-fit: cover !important;
+    }
+  }
+
+  .belowBtns {
+    flex-direction: column;
+
+    .cx-btn-1 {
+      margin: 0.5rem 0px;
+      width: 100%;
+    }
+
+    .cx-btn-2 {
+      width: 100%;
+    }
+  }
+
+  // Tabs Styles
+  #Vehcle-main-tabs ul {
+    flex-direction: column;
+
+    li {
+      width: 100% !important;
+    }
+  }
+
+  .manualROuting .mainMape .headingIcons {
+    right: 25px;
+  }
+
+  .manualROuting .mainMape {
+    padding: 15px !important;
+  }
+
+  .EditCustomer_Dispatch,
+  .AddDispatch_Customer {
+    .AddNewBtn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      height: 35px !important;
+      border-radius: 20px;
+    }
+  }
+
+  .popover-main-wrapperHot {
+    width: 16rem !important;
+    left: 50px !important;
+    z-index: 100 !important;
+  }
+
+  .manualROuting .mainMape .firstHotspot {
+    position: absolute !important;
+    left: 80px !important;
+  }
+
+  .mainVehAccident .innerSelectBox .addonCalneder {
+    top: 48px;
+  }
+
+  .innerToggle {
+    display: block !important;
+    margin: 0px 20px;
+
+    .innerFlexTog {
+      justify-content: space-between !important;
+    }
+  }
+
+  .mainHeading {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .headingDetails .headingTxt p {
+    font-size: 16px;
+  }
+
+  .mainVehAccident .editInvoiceWrapper {
+    height: auto !important;
+  }
+
+  .Customer_Profile {
+    #twoTables {
+      width: 33% !important;
+    }
+  }
+
+  #customRadios {
+    .greenFlex {
+      padding-left: 0rem !important;
+    }
+  }
+
+  .General_Setting,
+  .Integration_Setting,
+  .Transportation_Setting,
+  .Notification_Setting,
+  .Dispatch_Setting,
+  .Access_Right,
+  .Update_Customer_Profile,
+  .Add_on_setting {
+    .integSignUpBtn {
+      width: 100% !important;
+    }
+
+    .btn-wrapper {
+      flex-direction: column !important;
+
+      .cx-btn-1,
+      .cx-btn-2 {
+        width: 100%;
+        margin: 0px 0px 5px 0px !important;
+      }
+    }
+  }
+
+  .Dispatch_Setting {
+    .dispatchHead {
+      margin-bottom: 0.3rem;
+    }
+
+    .AddOnBtn {
+      width: 100% !important;
+    }
+  }
+}
+
+@media all and (max-width: 392px) {
+  .mainVehAccident .innerSelectBox .addonCalneder {
+    top: 74px;
+  }
+}
+
+/* SCREEN SIZE OF 380 PX */
+@media all and (max-width: 380px) {
+  .DetailsSec .invoiceBox .headingInvoi {
+    flex-wrap: wrap;
+  }
+}
+
+.class {
+  transform: rotate(30deg);
+}

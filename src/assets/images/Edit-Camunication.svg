@@ -1,0 +1,9 @@
+
+ <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1.10938" y="0.75" width="39.0343" height="39" rx="9.5" fill="white" stroke="#F6EFE9"/>
+
+  <!-- <path d="M7.5 1V14M1 7.5H14" stroke="#9C4900"/> -->
+
+   <!-- Plus symbol in the middle -->
+  <path d="M19.5 11V30.5M11 19.5H30.5" stroke="#9C4900"/>
+</svg>
