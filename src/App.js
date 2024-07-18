@@ -20,9 +20,9 @@ import "react-datepicker/dist/react-datepicker.css";
 
 // import AddOnSettingsCart from "./pages/MasterSettings/AddOnSettingsCart";
 import Holidays from "./pages/MasterData/Holidays";
-import AddHolidays from "./pages/MasterData/AddHolidays";
+
 import Vacations from "./pages/MasterData/Vacations";
-import AddVacation from "./pages/MasterData/AddVacation";
+
 
 // import UpdateCustomerProfile from "./pages/MasterSettings/UpdateCustomerProfile";
 // import LogoUpdate from "./pages/MasterSettings/LogoUpdate";
@@ -30,8 +30,8 @@ import Login from "./pages/AuthPages/Login";
 import ForgetPassword from "./pages/AuthPages/ForgetPassword";
 import Registration from "./pages/AuthPages/Registration";
 import DemoAccount from "./pages/AuthPages/DemoAccount";
-import Vehicle from "./pages/MasterData/Vehicle";
-import AddVehicle from "./pages/MasterData/AddVehicle";
+
+
 import LoginWithOTP from "./pages/AuthPages/LoginWithOTP";
 import Animation from "./pages/AuthPages/Animation";
 
@@ -44,58 +44,25 @@ import AddPointOfInterest from "./pages/pointsOfIntrest/AddPointOfInterest";
 import GeofenceArea from "./pages/geofenceArea/GeofenceArea";
 import NewSyncRequest from "./pages/MasterData/NewSyncRequest";
 import AddGeofenceArea from "./pages/geofenceArea/AddGeofenceArea";
-import VehicleAccident from "./pages/vehicleExpenses/vehicleAccident/VehicleAccident";
-import AddVehicleAccident from "./pages/vehicleExpenses/vehicleAccident/AddVehicleAccident";
-import EditVehicleAccident from "./pages/vehicleExpenses/vehicleAccident/EditVehicleAccident";
+
+
+
 import VehicleDetails from "./pages/MasterData/VehicleDetails";
 import AddVehicleGroup from "./pages/MasterData/AddVehicleGroup";
 import MyProfile from "./pages/Account/MyProfile";
 import EditProfile from "./pages/Account/EditProfile";
 import ChangePasswordProfile from "./pages/Account/ChangePasswordProfile";
-import MyMessages from "./pages/Account/MyMessages";
+
 import ComposeMessage from "./pages/Account/ComposeMessage";
 import ChatBox from "./pages/Account/ChatBox";
-import ViewVehicleAccident from "./pages/vehicleExpenses/vehicleAccident/ViewVehicleAccident";
-import ViewVehicleAccesory from "./pages/vehicleExpenses/vehicleAccesory/ViewVehicleAccesory";
-import AddVehicleAccesory from "./pages/vehicleExpenses/vehicleAccesory/AddVehicleAccesory";
-import VehicleAccesory from "./pages/vehicleExpenses/vehicleAccesory/VehicleAccesory";
-import VehicleSpareParts from "./pages/vehicleExpenses/vehicleSpareParts/VehicleSpareParts";
-import AddVehicleSpareParts from "./pages/vehicleExpenses/vehicleSpareParts/AddVehicleSpareParts";
-import EditVehicleSpareParts from "./pages/vehicleExpenses/vehicleSpareParts/EditVehicleSpareParts";
-import ViewVehicleSpareParts from "./pages/vehicleExpenses/vehicleSpareParts/ViewVehicleSpareParts";
-import VehicleFine from "./pages/vehicleExpenses/vehicleFine/VehicleFine";
-import AddVehicleFine from "./pages/vehicleExpenses/vehicleFine/AddVehicleFine";
-import ViewVehicleFine from "./pages/vehicleExpenses/vehicleFine/ViewVehicleFine";
-import EditVehicleFine from "./pages/vehicleExpenses/vehicleFine/EditVehicleFine";
+
 import CustomerSupport from "./pages/Account/CustomerSupport";
-import FuelExpenses from "./pages/vehicleExpenses/FuelExpenses/FuelExpenses";
-import AddFuelExpenses from "./pages/vehicleExpenses/FuelExpenses/AddFuelExpenses";
-import EditFuelExpenses from "./pages/vehicleExpenses/FuelExpenses/EditFuelExpenses";
-import ViewFuelExpenses from "./pages/vehicleExpenses/FuelExpenses/ViewFuelExpenses";
-// import TripManagement from "./pages/TripManagement/TripManagement";
-// import ViewDispatchTrip from "./pages/TripManagement/ViewDispatchTrip";
-// import EditDispatchTrip from "./pages/TripManagement/EditDispatchTrip";
-import DispatchCustomer from "./pages/Dispatch/DispatchCustomer/DispatchCustomer";
-import ViewDispatch from "./pages/Dispatch/DispatchCustomer/ViewDispatch";
-import EditCustomerDispatch from "./pages/Dispatch/DispatchCustomer/EditCustomerDispatch";
-import DispatchOrder from "./pages/Dispatch/DispatchOrder/DispatchOrder";
-import ViewOrders from "./pages/Dispatch/DispatchOrder/ViewOrders";
-import OrderImporData from "./pages/Dispatch/DispatchOrder/OrderImporData.js";
-// import EditStop from "./pages/TripManagement/EditStop";
-// import ViewStop from "./pages/TripManagement/ViewStop";
-import ManualRouting from "./pages/Dispatch/DispatchOrder/ManualRouting";
+
+
+
 // import UpdateCustomerLogo from "./pages/MasterSettings/UpdateCustomerLogo";
 import LockScreen from "./pages/Account/LockScreen";
 
-import Announcement from "./pages/vehicleExpenses/Communication/Announcement";
-import Addaudio from "./pages/vehicleExpenses/Communication/Addaudio";
-import EditAudio from "./pages/vehicleExpenses/Communication/EditAudio";
-import Email from "./pages/vehicleExpenses/Communication/Email";
-import EmailDetails from "./pages/vehicleExpenses/Communication/EmailDetails";
-import ComposeEmail from "./pages/vehicleExpenses/Communication/ComposeEmail";
-import PushNotification from "./pages/vehicleExpenses/Communication/PushNotification";
-import NotificationDetails from "./pages/vehicleExpenses/Communication/NotificationDetails";
-import AddPushNotification from "./pages/vehicleExpenses/Communication/AddPushNotification";
 import Reports from "./pages/vehicleExpenses/Report/Reports";
 import GenerateCustomReport from "./pages/vehicleExpenses/Report/GenerateCustomReport";
 import ScheduleReport from "./pages/vehicleExpenses/Report/ScheduleReport";
@@ -117,37 +84,18 @@ import ReplayPlayback from "./pages/ReplayPlayback/ReplayPlayback";
 // import FuelManagementDetails from "./pages/FuelManagement/FuelManagementDetails";
 // import FuelAlerts from "./pages/FuelManagement/FuelAlerts";
 import { AppContext } from "./context/AppContext";
-import AddTripFleet from "./pages/vehicleExpenses/Communication/AddTripFleet";
+
 import InfoComponent from "./sharedComponent/SupportHelp/InfoComponent";
-import NotificationDetails2 from "./pages/vehicleExpenses/Communication/NotificationDetails2";
-import DeliveryRequest from "./pages/Dispatch/Delivery/DeliveryRequest";
-import AddOrderGhatge from "./pages/Dispatch/Delivery/AddOrderGhatge";
-import VehicleBooking from "./pages/Dispatch/Vehicle_Booking/VehicleBooking";
-import VehicleBooking2 from "./pages/Dispatch/Vehicle_Booking/VehicleBooking2";
+
+
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import { useSelector } from "react-redux";
 import UserAlert from "./pages/UserDashboard/UserAlert";
-import ComposeEmailHelpler from "./pages/vehicleExpenses/Communication/ComposeEmailHelpler";
-import Merchant from "./pages/Dispatch/Merchant/Merchant";
-import EmailDetailsDriver from "./pages/vehicleExpenses/Communication/EmailDetailsDriver";
-import VehicleInspection from "./pages/VehicleInspection/VehicleInspection";
-import NewInspection from "./pages/VehicleInspection/NewInspection";
-import NewVehicleInspection from "./pages/VehicleInspection/NewVehicleInspection";
-import ViewInspectionDetails from "./pages/VehicleInspection/ViewInspectionDetails";
-import VehicleBookingList from "./pages/Dispatch/Vehicle_Booking/VehicleBookingList";
-import AddVehicleMaintenance from "./pages/vehicleExpenses/VehicleMaintenance/AddVehicleMaintenance";
-import VehicleMaintenance from "./pages/vehicleExpenses/VehicleMaintenance/VehicleMaintenance";
-import ViewVehicleMaintenance from "./pages/vehicleExpenses/VehicleMaintenance/ViewVehicleMaintenance";
-import VehicleInspectionDashboard from "./pages/VehicleInspection/VehicleInspectionDashboard.js";
-import InspectionPDF from "./pages/VehicleInspection/InspectionPDF";
+
+
+
 // import ShareTrip from "./pages/TripManagement/ShareTrip";
 import { notifyError, notifySuccess } from "./sharedComponent/notify";
-
-import VehicleNotification from "./pages/vehicleExpenses/VehicleMaintenance/VehicleNotification";
-// import VehicleInspectionSettings from "./pages/MasterSettings/VehicleInspectionSettings";
-// import AddVehicleInspectionSetting from "./pages/MasterSettings/AddVehicleInspectionSetting";
-// import AddVehicleInspection2 from "./pages/MasterSettings/AddVehicleInspection2";
-// import VehicleInspectionTab from "./pages/MasterSettings/VehicleInspectionTab";
 
 
 import DashboardShare from "./pages/Dashboard/DashboardShare";
@@ -156,8 +104,6 @@ import DashboardShare from "./pages/Dashboard/DashboardShare";
 import OtpVerification from "./pages/Account/OtpVerification";
 import NoPage from "./sharedComponent/NoPage";
 import { isValidRoute } from "./sharedComponent/IsRouteValidation";
-import DispatchDashboard from "./pages/VehicleInspection/DispatchDashboard.js";
-import DashboardDispatch from "./pages/Dispatch/DispatchOrder/DashboardDispatch.js";
 
 // abubakar import for report
 // import TripReport from "./pages/vehicleExpenses/Report/DefaultReports/TripReport/Test.js";
@@ -183,7 +129,7 @@ import TripScheduleEta from "./pages/vehicleExpenses/Report/TripScheduleEta.js";
 import DriverListignitionReport from "./pages/vehicleExpenses/Report/DriverListignitionReport.js";
 import DriverBehaviourReport from "./pages/vehicleExpenses/Report/DriverBehaviourReport.js";
 import DriverActivertiyReport from "./pages/vehicleExpenses/Report/DriverActivertiyReport.js";
-import ViewOrdersShare from "./pages/Dispatch/DispatchOrder/ViewOrdersShare.js";
+
 import DispatchCustomerOrderReport from "./pages/vehicleExpenses/Report/TripReportView/DispatchCustomerOrderReport.js";
 import LiveTripLocationReport from "./pages/vehicleExpenses/Report/TripReportView/LiveTripLocationReport.js";
 import TripAssignedVersusCompleted from "./pages/vehicleExpenses/Report/TripReportView/TripAssignedVersusCompleted.js";
@@ -192,11 +138,8 @@ import TripActivityReport from "./pages/vehicleExpenses/Report/TripReportView/Tr
 import PickUpPointReport from "./pages/vehicleExpenses/Report/TripReportView/PickUpPointReport.js";
 import { useTranslation } from "react-i18next";
 import DriverActivetySummaryReport from "./pages/vehicleExpenses/Report/TripReportView/DriverActivetySummaryReport.js";
-import AddNewOrder from "./pages/Dispatch/Dispatch Executive/AddNewOrder";
-import DispatchViewOrder from "./pages/Dispatch/Dispatch Executive/DispatchViewOrder/DispatchViewOrder";
-import ViewInvoice from "./pages/Dispatch/Dispatch Executive/ViewInvoice/ViewInvoice";
-import EditInvoice from "./pages/Dispatch/Dispatch Executive/EditInvoice/EditInvoice";
-import TeamMessages from "./pages/Account/TeamMessages.js";
+
+
 import TeamComposeMessage from "./pages/Account/TeamComposeMessage.js";
 import MaintenanceOverduesReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/MaintenanceOverduesReport.js";
 import VehicleExpenseReport from "./pages/vehicleExpenses/Report/ExpenceReports/VehicleExpenseReport.js";
@@ -207,7 +150,7 @@ import InspectionDueReport from "./pages/vehicleExpenses/Report/MaintenanceViewR
 import InsuranceExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/InsuranceExpiryReport.js";
 import RegistrationExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/RegistrationExpiryReport.js";
 import TaxExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/TaxExpiryReport.js";
-import EditMerchant_temp from "./pages/Dispatch/Merchant/EditMerchant_temp";
+
 import SystemReportsAndStatisticsUsageAudit from "./pages/vehicleExpenses/Report/usageStatisticsReport/SystemReportsAndStatisticsUsageAudit.js";
 import DataUsageViewReport from "./pages/vehicleExpenses/Report/usageStatisticsReport/DataUsageViewReport.js";
 import ViewMobileAppDetails from "./pages/vehicleExpenses/Report/usageStatisticsReport/ViewMobileAppDetails.js";
@@ -359,7 +302,7 @@ function App() {
               <Route path="Registration" element={<Registration />} />
               <Route path="Register" element={<Register />} />
               <Route path="DemoAccount" element={<DemoAccount />} />
-              <Route path="InspectionPDF" element={<InspectionPDF />} />
+
               {/* <Route path="ShareTrip/:id" element={<ShareTrip />} /> */}
 
             </Routes>
@@ -368,7 +311,7 @@ function App() {
         <div>
           <Routes>
             <Route path="DashboardShare/:id" element={<DashboardShare />} />
-            <Route path="ViewOrdersShare/:id" element={<ViewOrdersShare />} />
+
 
 
           </Routes>
@@ -415,7 +358,7 @@ function App() {
             currentRoute === "/VehicleAvailability" ||
             currentRoute === "/DriverDutyRoaster" ||
             currentRoute === "/DriverAvailabilityList" ||
-            currentRoute === "/Vehicle" ||
+
             currentRoute === "/Holidays" ||
             currentRoute === "/Vacations" ||
             currentRoute === "/ParkingSlot" ||
@@ -442,12 +385,10 @@ function App() {
               {/* ============ MASTER SETTING ============= */}
 
               {/* ============ MASTER DATA ============= */}
-              <Route path="Vehicle" element={<Vehicle />} />
+
               <Route path="Holidays" element={<Holidays />} />
               <Route path="Vacations" element={<Vacations />} />
-              <Route path="AddVehicle" element={<AddVehicle />}>
-                <Route path=":id" element={<AddVehicle />} />
-              </Route>
+
               <Route path="AddVehicleCategory" element={<AddVehicleCategory />}>
                 <Route path=":id" element={<AddVehicleCategory />} />
               </Route>
@@ -457,8 +398,7 @@ function App() {
               <Route path="AddVehicleGroup" element={<AddVehicleGroup />}>
                 <Route path=":id" element={<AddVehicleGroup />} />
               </Route>
-              <Route path="AddHolidays" element={<AddHolidays />} />
-              <Route path="AddVacation" element={<AddVacation />} />
+
               {/* ============ Parking Slots ============= */}
               <Route path="ParkingSlot" element={<ParkingSlot />} />
               <Route path="AddParkingSlot" element={<AddParkingSlot />}>
@@ -498,23 +438,7 @@ function App() {
               {/* <Route path="ViewStop" element={<ViewStop />} /> */}
               {/* <Route path="ViewStop/:id" element={<ViewStop />} /> */}
               {/* ============ Vehicle Accident  ============= */}
-              <Route path="VehicleAccident" element={<VehicleAccident />} />
-              <Route
-                path="AddVehicleAccident"
-                element={<AddVehicleAccident />}
-              />
-              <Route
-                path="AddVehicleAccident/:id"
-                element={<AddVehicleAccident />}
-              />
-              <Route
-                path="EditVehicleAccident"
-                element={<EditVehicleAccident />}
-              />
-              <Route
-                path="ViewVehicleAccident/:id"
-                element={<ViewVehicleAccident />}
-              />
+
               {/* ============ Account  ============= */}
               <Route path="MyProfile" element={<MyProfile />} />
               <Route path="EditProfile" element={<EditProfile />} />
@@ -523,88 +447,23 @@ function App() {
                 path="ChangePasswordProfile"
                 element={<ChangePasswordProfile />}
               />
-              <Route path="MyMessages" element={<MyMessages />} />
-              <Route path="MyMessages/:id" element={<MyMessages />} />
-              <Route path="TeamMessages" element={<TeamMessages />} />
+
+
               <Route path="ComposeMessage" element={<ComposeMessage />} />
               <Route path="TeamComposeMessage" element={<TeamComposeMessage />} />
               <Route path="ChatBox" element={<ChatBox />} />
               <Route path="CustomerSupport" element={<CustomerSupport />} />
               {/* ============ Vehicle Accesory  ============= */}
-              <Route path="VehicleAccesory" element={<VehicleAccesory />} />
-              <Route
-                path="AddVehicleAccesory"
-                element={<AddVehicleAccesory />}
-              />
-              <Route
-                path="AddVehicleAccesory/:id"
-                element={<AddVehicleAccesory />}
-              />
-              <Route
-                path="ViewVehicleAccesory/:id"
-                element={<ViewVehicleAccesory />}
-              />
-              {/* ============ Vehicle Spare Parts  ============= */}
-              <Route path="VehicleSpareParts" element={<VehicleSpareParts />} />
-              <Route
-                path="AddVehicleSpareParts/:id"
-                element={<AddVehicleSpareParts />}
-              />
-              <Route
-                path="AddVehicleSpareParts"
-                element={<AddVehicleSpareParts />}
-              />
-              <Route
-                path="EditVehicleSpareParts"
-                element={<EditVehicleSpareParts />}
-              />
-              <Route
-                path="ViewVehicleSpareParts/:id"
-                element={<ViewVehicleSpareParts />}
-              />
-              {/* ============ Vehicle Fine  ============= */}
-              <Route path="VehicleFine" element={<VehicleFine />} />
-              <Route path="AddVehicleFine" element={<AddVehicleFine />} />
-              <Route path="AddVehicleFine/:id" element={<AddVehicleFine />} />
-              <Route path="EditVehicleFine" element={<EditVehicleFine />} />
-              <Route path="ViewVehicleFine/:id" element={<ViewVehicleFine />} />
-              {/* ============ Fuel Expenses ============= */}
-              <Route path="FuelExpenses" element={<FuelExpenses />} />
-              <Route
-                path="ViewFuelExpenses/:id"
-                element={<ViewFuelExpenses />}
-              />
-              <Route path="AddFuelExpenses/:id" element={<AddFuelExpenses />} />
-              <Route path="AddFuelExpenses" element={<AddFuelExpenses />} />
-              <Route path="EditFuelExpenses" element={<EditFuelExpenses />} />
-              {/* ============ Dispatch Module ============= */}
-              <Route path="DispatchCustomer" element={<DispatchCustomer />} />
-              <Route path="ViewDispatch" element={<ViewDispatch />} />
-              <Route path="ViewDispatch/:id" element={<ViewDispatch />} />
-              <Route
-                path="AddDispatchCustomer"
-                element={<EditCustomerDispatch />}
-              />
-              <Route
-                path="EditCustomerDispatch"
-                element={<EditCustomerDispatch />}
-              />
-              <Route
-                path="EditCustomerDispatch/:id"
-                element={<EditCustomerDispatch />}
-              />
-              <Route path="DispatchOrder" element={<DispatchOrder />} />
-              <Route path="ViewOrders" element={<ViewOrders />} />
 
-              <Route path="Importdata" element={<OrderImporData />} />
-              <Route path="ViewOrders/:id" element={<ViewOrders />} />
-              <Route path="ManualRouting" element={<ManualRouting />} />
-              <Route path="DeliveryRequest" element={<DeliveryRequest />} />
-              <Route path="AddOrder" element={<AddOrderGhatge />} />
-              <Route path="DeliveryRequest/:id" element={<DeliveryRequest />} />
-              <Route path="AddOrder/:id" element={<AddOrderGhatge />} />
-              <Route path="VehicleBooking" element={<VehicleBooking />} />
-              <Route path="VehicleBooking2" element={<VehicleBooking2 />} />
+
+              {/* ============ Vehicle Spare Parts  ============= */}
+
+
+              {/* ============ Vehicle Fine  ============= */}
+
+              {/* ============ Fuel Expenses ============= */}
+
+
               {/* ============ Configuration Checker ============= */}
               <Route
                 path="ConfigurationChecker"
@@ -615,7 +474,7 @@ function App() {
                 path="UpdateCustomerLogo"
                 element={<UpdateCustomerLogo />}
               /> */}
-              <Route path="AddVehicle" element={<AddVehicle />} />
+
               <Route
                 path="AddVehicleCategory"
                 element={<AddVehicleCategory />}
@@ -627,55 +486,14 @@ function App() {
               <Route path="AddVehicleGroup" element={<AddVehicleGroup />} />
               <Route path="LockScreen" element={<LockScreen />} />
               {/* <Route path="AddOnSettingsCart" element={<AddOnSettingsCart />} /> */}
-              <Route path="/AddHolidays/" element={<AddHolidays />}>
-                <Route path=":id" element={<AddHolidays />} />
-              </Route>
-              <Route path="AddVacation" element={<AddVacation />}>
-                <Route path=":id" element={<AddVacation />} />
-              </Route>
+
               {/* <Route
                 path="UpdateCustomerProfile"
                 element={<UpdateCustomerProfile />}
               /> */}
-              <Route path="Announcement" element={<Announcement />} />
-              <Route
-                path="EditCustomerDispatch"
-                element={<EditCustomerDispatch />}
-              />
+
               {/* ============ Communication Module ============= */}
-              <Route path="Announcement" element={<Announcement />} />
-              <Route path="DispatchOrder" element={<DispatchOrder />} />
-              <Route path="ViewOrders" element={<ViewOrders />} />
-              <Route path="ManualRouting" element={<ManualRouting />} />
-              <Route path="Addaudio" element={<Addaudio />} />
-              <Route path="Addaudio/:id" element={<Addaudio />} />
-              <Route path="EditAudio" element={<EditAudio />} />
-              <Route path="Email" element={<Email />} />
-              <Route path="EmailSupport" element={<EmailSupport />} />
-              <Route path="EmailDetails/:id" element={<EmailDetails />} />
-              <Route
-                path="EmailDetailsTm/:id"
-                element={<EmailDetailsDriver />}
-              />
-              <Route path="ComposeEmail" element={<ComposeEmail />} />
-              <Route
-                path="ComposeEmailHelpler"
-                element={<ComposeEmailHelpler />}
-              />
-              <Route path="PushNotification" element={<PushNotification />} />
-              <Route
-                path="NotificationDetails2/:id"
-                element={<NotificationDetails2 />}
-              />
-              <Route path="AddTripFleet" element={<AddTripFleet />} />
-              <Route
-                path="NotificationDetails/:id"
-                element={<NotificationDetails />}
-              />
-              <Route
-                path="AddPushNotification"
-                element={<AddPushNotification />}
-              />
+
               {/* ============ Reports Module ============= */}
               <Route path="Reports" element={<Reports />} />
               <Route path="ReportList" element={<NewUiReport />} />
@@ -800,20 +618,8 @@ function App() {
               {/* ============ ParkingManagement ============= */}
               <Route path="ParkingManagement" element={<ParkingManagement />} />
               {/* ============ Vehicle Inspection ============= */}
-              <Route
-                path="VehicleInspectionDashboard"
-                element={<VehicleInspectionDashboard />}
-              />
-              <Route path="VehicleInspection" element={<VehicleInspection />} />
-              <Route path="NewInspection" element={<NewInspection />} />
-              <Route
-                path="NewVehicleInspection"
-                element={<NewVehicleInspection />}
-              />
-              <Route
-                path="ViewInspectionDetails"
-                element={<ViewInspectionDetails />}
-              />
+
+
               {/* ============ Replay Playback ============= */}
               <Route path="ReplayPlayback" element={<ReplayPlayback />} />
               {/* ============ Fuel ManagementDashbord ============= */}
@@ -831,30 +637,7 @@ function App() {
                 element={<VehicleBookingList />}
               /> */}
               {/*============ Vehicle Maintance Routes =========*/}
-              <Route
-                path="AddVehicleMaintenance"
-                element={<AddVehicleMaintenance />}
-              />
-              <Route
-                path="AddVehicleMaintenance/:id"
-                element={<AddVehicleMaintenance />}
-              />
-              <Route
-                path="VehicleMaintenance"
-                element={<VehicleMaintenance />}
-              />
-              <Route
-                path="ViewVehicleMaintenance/:id/:type"
-                element={<ViewVehicleMaintenance />}
-              />
-              <Route
-                path="ViewVehicleMaintenance"
-                element={<ViewVehicleMaintenance />}
-              />
-              <Route
-                path="VehicleNotification"
-                element={<VehicleNotification />}
-              />
+
               {/*============ Vehicle Inspection setting Routes =========*/}
               {/* <Route
                 path="VehicleInspectionSettings"
@@ -907,7 +690,7 @@ function App() {
                 path="OnlineAuctionVehicleDetails"
                 element={<OnlineAuctionVehicleDetails />}
               /> */}
-              <Route path="DispatchDashboard" element={<DispatchDashboard />} />
+
               <Route
                 path="ReportOverSpeedView"
                 element={<ReportOverSpeedView />}
@@ -994,14 +777,9 @@ function App() {
                 path="VehicleFuelExpenseReport"
                 element={<VehicleFuelExpenseReport />}
               />
-              <Route path="DashboardDispatch" element={<DashboardDispatch />} />
 
 
               {/* //////////////////////////// Dispatch Executive //////////////////////////////////////////////////////////////*/}
-              <Route path="AddNewOrder" element={<AddNewOrder />} />
-              <Route path="DispatchViewOrder" element={<DispatchViewOrder />} />
-              <Route path="ViewInvoice" element={<ViewInvoice />} />
-              <Route path="EditInvoice" element={<EditInvoice />} />
 
 
             </Routes>
