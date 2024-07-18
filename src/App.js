@@ -104,16 +104,15 @@ import { isValidRoute } from "./sharedComponent/IsRouteValidation";
 // abubakar import for report
 // import TripReport from "./pages/vehicleExpenses/Report/DefaultReports/TripReport/Test.js";
 import Test from "./pages/vehicleExpenses/Report/DefaultReports/TripReport/Test.js";
-import TripActivity from "./pages/vehicleExpenses/Report/DefaultReports/TripReport/TripActivity.js";
 import VehicleRunningReport from "./pages/vehicleExpenses/Report/DefaultReports/VehicleRunningReport/VehicleRunningReport.js";
 import NewUiReport from "./pages/vehicleExpenses/Report/DefaultReports/VehicleRunningReport/NewUiReport.js";
 import { latestDate } from "./sharedComponent/common.js";
 import VehicleLocationReport from "./pages/vehicleExpenses/Report/DefaultReports/VehicleLocationReport";
 import VehicleCountAndCapacity from "./pages/vehicleExpenses/Report/DefaultReports/VehicleCountAndCapacity.js";
 import VehicleparkingSlot from "./pages/vehicleExpenses/Report/DefaultReports/VehicleparkingSlot.js";
-import ReportOverSpeedView from "./pages/vehicleExpenses/Report/ReportOverSpeedView.js";
+
 import VehicleLocationSignal from "./pages/vehicleExpenses/Report/DefaultReports/VehicleLocationSignal.js";
-import ImmobiliserReport from "./pages/vehicleExpenses/Report/DefaultReports/ImmobiliserReport.js";
+
 import DeliveryReports from "./pages/vehicleExpenses/Report/DeliveryReports.js";
 import RealTimeTrackingReport from "./pages/vehicleExpenses/Report/RealTimeTrackingReport.js";
 import DispatchReport from "./pages/vehicleExpenses/Report/DispatchReport.js";
@@ -122,7 +121,7 @@ import Register from "./pages/AuthPages/Register.js";
 import BackDropLoader from "./sharedComponent/BackDropLoader.js";
 import TripScheduleEta from "./pages/vehicleExpenses/Report/TripScheduleEta.js";
 import DriverListignitionReport from "./pages/vehicleExpenses/Report/DriverListignitionReport.js";
-import DriverBehaviourReport from "./pages/vehicleExpenses/Report/DriverBehaviourReport.js";
+
 import DriverActivertiyReport from "./pages/vehicleExpenses/Report/DriverActivertiyReport.js";
 
 
@@ -499,10 +498,6 @@ function App() {
                 path="/VehicleLocationSignal"
                 element={<VehicleLocationSignal />}
               />
-              <Route
-                path="/ImmobiliserReport"
-                element={<ImmobiliserReport />}
-              />
 
 
 
@@ -539,7 +534,6 @@ function App() {
               <Route path="ReportView" element={<ReportView />} />
 
               <Route path="test" element={<Test />} />
-              <Route path="TripActivity" element={<TripActivity />} />
               <Route
                 path="VehicleRunningReport"
                 element={<VehicleRunningReport />}
@@ -565,79 +559,15 @@ function App() {
 
               {/* ============ Replay Playback ============= */}
               <Route path="ReplayPlayback" element={<ReplayPlayback />} />
-              {/* ============ Fuel ManagementDashbord ============= */}
-              {/* <Route
-                path="FuelManagementDashbord"
-                element={<FuelManagementDashbord />}
-              />
-              <Route
-                path="FuelManagementDetails"
-                element={<FuelManagementDetails />}
-              />
-              <Route path="FuelAlerts" element={<FuelAlerts />} />
-              <Route
-                path="VehicleBookingList"
-                element={<VehicleBookingList />}
-              /> */}
-              {/*============ Vehicle Maintance Routes =========*/}
 
-              {/*============ Vehicle Inspection setting Routes =========*/}
-              {/* <Route
-                path="VehicleInspectionSettings"
-                element={<VehicleInspectionSettings />}
-              /> */}
-              {/* <Route
-                path="AddVehicleInspectionSetting"
-                element={<AddVehicleInspectionSetting />}
-              /> */}
-              {/* <Route
-                path="AddVehicleInspection2"
-                element={<AddVehicleInspection2 />}
-              /> */}
-              {/* <Route
-                path="VehicleInspectionTab"
-                element={<VehicleInspectionTab />}
-              /> */}
               {/* report management */}
               <Route
                 path="RealTimeReport"
                 element={<RealTimeTrackingReport />}
               />
               <Route path="DispatchReport" element={<DispatchReport />} />
-              {/* <Route />
-              <Route
-                path="DirectOrderOfferLoad"
-                element={<DirectOrderOfferLoad />}
-              /> */}
-              {/* <Route path="OnlineAuction" element={<OnlineAuction />} /> */}
-              {/* <Route path="BidAuctionDetails" element={<BidAuctionDetails />} /> */}
-              {/* <Route
-                path="AuctionOfferDetails"
-                element={<AuctionOfferDetails />}
-              /> */}
-              {/* <Route path="OrderConfDetails" element={<OrderConfDetails />} /> */}
-              {/* <Route path="AuctionAddVehicle" element={<AuctionAddVehicle />} /> */}
-              {/* <Route
-                path="AuctionReferenceDetails"
-                element={<AuctionReferenceDetails />}
-              /> */}
-              {/* <Route
-                path="DirectOrderVehicleDetails"
-                element={<DirectOrderVehicleDetails />}
-              /> */}
-              {/* <Route
-                path="DirectOrderConfirmation"
-                element={<DirectOrderConfirmation />}
-              /> */}
-              {/* <Route
-                path="OnlineAuctionVehicleDetails"
-                element={<OnlineAuctionVehicleDetails />}
-              /> */}
 
-              <Route
-                path="ReportOverSpeedView"
-                element={<ReportOverSpeedView />}
-              />
+
               <Route
                 path="DriverListignitionReport"
                 element={<DriverListignitionReport />}
@@ -647,12 +577,6 @@ function App() {
                 path="DriverActivertiyReport"
                 element={<DriverActivertiyReport />}
               />
-              <Route
-                path="DriverBehaviourReport"
-                element={<DriverBehaviourReport />}
-              />
-              x
-
 
               {/* //////////////////////////// Dispatch Executive //////////////////////////////////////////////////////////////*/}
 
