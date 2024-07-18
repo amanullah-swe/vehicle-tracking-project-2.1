@@ -64,8 +64,7 @@ import Reports from "./pages/vehicleExpenses/Report/Reports";
 import GenerateCustomReport from "./pages/vehicleExpenses/Report/GenerateCustomReport";
 import ScheduleReport from "./pages/vehicleExpenses/Report/ScheduleReport";
 import ReportView from "./pages/vehicleExpenses/Report/ReportView";
-import TripVersusPickupCount from "./pages/vehicleExpenses/Report/TripReportView/TripVersusPickupCount"
-import UnplannedTripsAutorouting from "./pages/vehicleExpenses/Report/UnplannedTripsAutorouting/UnplannedTripsAutorouting";
+
 
 
 import ConfigurationChecker from "./pages/ConfigurationChecker";
@@ -85,9 +84,9 @@ import { AppContext } from "./context/AppContext";
 import InfoComponent from "./sharedComponent/SupportHelp/InfoComponent";
 
 
-import UserDashboard from "./pages/UserDashboard/UserDashboard";
+// import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import { useSelector } from "react-redux";
-import UserAlert from "./pages/UserDashboard/UserAlert";
+// import UserAlert from "./pages/UserDashboard/UserAlert";
 
 
 
@@ -114,12 +113,11 @@ import VehicleCountAndCapacity from "./pages/vehicleExpenses/Report/DefaultRepor
 import VehicleparkingSlot from "./pages/vehicleExpenses/Report/DefaultReports/VehicleparkingSlot.js";
 import ReportOverSpeedView from "./pages/vehicleExpenses/Report/ReportOverSpeedView.js";
 import VehicleLocationSignal from "./pages/vehicleExpenses/Report/DefaultReports/VehicleLocationSignal.js";
-import Alert from "./pages/vehicleExpenses/Report/Alertsview/Alert.js";
 import ImmobiliserReport from "./pages/vehicleExpenses/Report/DefaultReports/ImmobiliserReport.js";
 import DeliveryReports from "./pages/vehicleExpenses/Report/DeliveryReports.js";
 import RealTimeTrackingReport from "./pages/vehicleExpenses/Report/RealTimeTrackingReport.js";
 import DispatchReport from "./pages/vehicleExpenses/Report/DispatchReport.js";
-import Temperaturereport from "./pages/vehicleExpenses/Report/Temperaturesensorreports/Temperaturereport.js";
+
 import Register from "./pages/AuthPages/Register.js";
 import BackDropLoader from "./sharedComponent/BackDropLoader.js";
 import TripScheduleEta from "./pages/vehicleExpenses/Report/TripScheduleEta.js";
@@ -127,33 +125,19 @@ import DriverListignitionReport from "./pages/vehicleExpenses/Report/DriverListi
 import DriverBehaviourReport from "./pages/vehicleExpenses/Report/DriverBehaviourReport.js";
 import DriverActivertiyReport from "./pages/vehicleExpenses/Report/DriverActivertiyReport.js";
 
-import DispatchCustomerOrderReport from "./pages/vehicleExpenses/Report/TripReportView/DispatchCustomerOrderReport.js";
-import LiveTripLocationReport from "./pages/vehicleExpenses/Report/TripReportView/LiveTripLocationReport.js";
-import TripAssignedVersusCompleted from "./pages/vehicleExpenses/Report/TripReportView/TripAssignedVersusCompleted.js";
-import TripManifestReport from "./pages/vehicleExpenses/Report/TripReportView/TripManifestReport.js";
-import TripActivityReport from "./pages/vehicleExpenses/Report/TripReportView/TripActivityReport.js";
-import PickUpPointReport from "./pages/vehicleExpenses/Report/TripReportView/PickUpPointReport.js";
+
+
+
+
 import { useTranslation } from "react-i18next";
-import DriverActivetySummaryReport from "./pages/vehicleExpenses/Report/TripReportView/DriverActivetySummaryReport.js";
+
 
 
 import TeamComposeMessage from "./pages/Account/TeamComposeMessage.js";
-import MaintenanceOverduesReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/MaintenanceOverduesReport.js";
-import VehicleExpenseReport from "./pages/vehicleExpenses/Report/ExpenceReports/VehicleExpenseReport.js";
-import VehicleFuelExpenseReport from "./pages/vehicleExpenses/Report/ExpenceReports/VehicleFuelExpenseReport.js";
-import DriverLicenceExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/DriverLicenceExpiryReport.js";
-import MaintenanceDuesSoonReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/MaintenanceDuesSoonReport.js";
-import InspectionDueReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/InspectionDueReport.js";
-import InsuranceExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/InsuranceExpiryReport.js";
-import RegistrationExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/RegistrationExpiryReport.js";
-import TaxExpiryReport from "./pages/vehicleExpenses/Report/MaintenanceViewReport/TaxExpiryReport.js";
 
-import SystemReportsAndStatisticsUsageAudit from "./pages/vehicleExpenses/Report/usageStatisticsReport/SystemReportsAndStatisticsUsageAudit.js";
-import DataUsageViewReport from "./pages/vehicleExpenses/Report/usageStatisticsReport/DataUsageViewReport.js";
-import ViewMobileAppDetails from "./pages/vehicleExpenses/Report/usageStatisticsReport/ViewMobileAppDetails.js";
-import TrackingdevicesAndSimDetails from "./pages/vehicleExpenses/Report/usageStatisticsReport/TrackingdevicesAndSimDetails.js";
-import LastLoginDetails from "./pages/vehicleExpenses/Report/usageStatisticsReport/LastLoginDetails.js";
-import MobileAppUsageDetails from "./pages/vehicleExpenses/Report/usageStatisticsReport/MobileAppUsageDetails.js";
+
+
+
 
 const routes = [
   "/ShareTrip",
@@ -519,34 +503,6 @@ function App() {
                 path="/ImmobiliserReport"
                 element={<ImmobiliserReport />}
               />
-              {/*================== usage statics Reports ==================  */}
-              <Route
-                path="/ReportsAndStatisticsUsageAudit"
-                element={<SystemReportsAndStatisticsUsageAudit />}
-              />
-              <Route
-                path="/DataUsageR"
-                element={<DataUsageViewReport />}
-              />
-              <Route
-                path="/MobileAppDetailsR"
-                element={<ViewMobileAppDetails />}
-              />
-              <Route
-                path="/TrackingdevicesAndSimDetailsR"
-                element={<TrackingdevicesAndSimDetails />}
-              />
-
-              <Route
-                path="/lastLoginDetailsR"
-                element={<LastLoginDetails />}
-              />
-              <Route
-                path="/mobleAppUsageDetailsR"
-                element={<MobileAppUsageDetails />}
-              />
-
-
 
 
 
@@ -558,8 +514,8 @@ function App() {
               {/* ============ Lock Screeen ============= */}
               <Route path="LockScreen" element={<LockScreen />} />
               {/* ============ User Section ============= */}
-              <Route path="UserDashboard" element={<UserDashboard />} />
-              <Route path="UserAlert" element={<UserAlert />} />
+              {/* <Route path="UserDashboard" element={<UserDashboard />} /> */}
+              {/* <Route path="UserAlert" element={<UserAlert />} /> */}
 
 
               {/* ============ ParkingManagement ============= */}
@@ -581,12 +537,7 @@ function App() {
                 element={<GenerateCustomReport />}
               />
               <Route path="ReportView" element={<ReportView />} />
-              <Route
-                path="UnplannedTripsAutorouting"
-                element={<UnplannedTripsAutorouting />}
-              />
-              <Route path="Alert" element={<Alert />} />
-              <Route path="Temperaturereport" element={<Temperaturereport />} />
+
               <Route path="test" element={<Test />} />
               <Route path="TripActivity" element={<TripActivity />} />
               <Route
@@ -691,10 +642,7 @@ function App() {
                 path="DriverListignitionReport"
                 element={<DriverListignitionReport />}
               />
-              <Route
-                path="DriverActivetySummaryReport"
-                element={<DriverActivetySummaryReport />}
-              />
+
               <Route
                 path="DriverActivertiyReport"
                 element={<DriverActivertiyReport />}
@@ -703,72 +651,7 @@ function App() {
                 path="DriverBehaviourReport"
                 element={<DriverBehaviourReport />}
               />
-              {/* ==========================TripReportView=================================== */}
-              <Route
-                path="TripVersusPickupCount"
-                element={<TripVersusPickupCount />}
-              />
-              <Route
-                path="DispatchCustomerOrderReport"
-                element={<DispatchCustomerOrderReport />}
-              />
-              <Route
-                path="LiveTripLocationReport"
-                element={<LiveTripLocationReport />}
-              />
-              <Route
-                path="TripAssignedVersusCompleted"
-                element={<TripAssignedVersusCompleted />}
-              />
-              <Route
-                path="TripManifestReport"
-                element={<TripManifestReport />}
-              />
-              <Route
-                path="TripActivityReport"
-                element={<TripActivityReport />}
-              />
-              <Route
-                path="PickUpPointReport"
-                element={<PickUpPointReport />}
-              />
-              <Route
-                path="InspectionDueReport"
-                element={<InspectionDueReport />}
-              />
-              <Route
-                path="InsuranceExpiryReport"
-                element={<InsuranceExpiryReport />}
-              />
-
-              <Route
-                path="RegistrationExpiryReport"
-                element={<RegistrationExpiryReport />}
-              />
-              <Route
-                path="TaxExpiryReport"
-                element={<TaxExpiryReport />}
-              />
-              <Route
-                path="DriverLicenceExpiryReport"
-                element={<DriverLicenceExpiryReport />}
-              />
-              <Route
-                path="MaintenanceOverduesReport"
-                element={<MaintenanceOverduesReport />}
-              />
-              <Route
-                path="MaintenanceDuesSoonReport"
-                element={<MaintenanceDuesSoonReport />}
-              />
-              <Route
-                path="VehicleExpenseReport"
-                element={<VehicleExpenseReport />}
-              />
-              <Route
-                path="VehicleFuelExpenseReport"
-                element={<VehicleFuelExpenseReport />}
-              />
+              x
 
 
               {/* //////////////////////////// Dispatch Executive //////////////////////////////////////////////////////////////*/}
