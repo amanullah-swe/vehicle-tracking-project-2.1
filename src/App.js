@@ -114,15 +114,12 @@ import VehicleparkingSlot from "./pages/vehicleExpenses/Report/DefaultReports/Ve
 import VehicleLocationSignal from "./pages/vehicleExpenses/Report/DefaultReports/VehicleLocationSignal.js";
 
 import DeliveryReports from "./pages/vehicleExpenses/Report/DeliveryReports.js";
-import RealTimeTrackingReport from "./pages/vehicleExpenses/Report/RealTimeTrackingReport.js";
-import DispatchReport from "./pages/vehicleExpenses/Report/DispatchReport.js";
+
 
 import Register from "./pages/AuthPages/Register.js";
 import BackDropLoader from "./sharedComponent/BackDropLoader.js";
-import TripScheduleEta from "./pages/vehicleExpenses/Report/TripScheduleEta.js";
-import DriverListignitionReport from "./pages/vehicleExpenses/Report/DriverListignitionReport.js";
 
-import DriverActivertiyReport from "./pages/vehicleExpenses/Report/DriverActivertiyReport.js";
+
 
 
 
@@ -524,7 +521,6 @@ function App() {
 
               {/* ============ Reports Module ============= */}
               <Route path="Reports" element={<Reports />} />
-              <Route path="TripScheduleEta" element={<TripScheduleEta />} />
               <Route path="ReportList" element={<NewUiReport />} />
               <Route path="ScheduleReport" element={<ScheduleReport />} />
               <Route
@@ -561,22 +557,6 @@ function App() {
               <Route path="ReplayPlayback" element={<ReplayPlayback />} />
 
               {/* report management */}
-              <Route
-                path="RealTimeReport"
-                element={<RealTimeTrackingReport />}
-              />
-              <Route path="DispatchReport" element={<DispatchReport />} />
-
-
-              <Route
-                path="DriverListignitionReport"
-                element={<DriverListignitionReport />}
-              />
-
-              <Route
-                path="DriverActivertiyReport"
-                element={<DriverActivertiyReport />}
-              />
 
               {/* //////////////////////////// Dispatch Executive //////////////////////////////////////////////////////////////*/}
 
