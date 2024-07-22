@@ -18,6 +18,21 @@ export const isValidRoute = (
 
   const excludedRoutes = ['/DashboardShare', '/ShareTrip'];
   const validRoutes = [
+    "/ReplayPlayback",
+    "/ParkingSlot",
+    "/PointOfIntrest",
+    "/GeofenceAreas",
+    "/AddParkingSlot",
+    "/AddPointOfInterest",
+    "/AddGeofenceArea",
+
+
+
+
+
+
+
+
     "/OfferVehicleMarketPlace",
     "/OfferDriverMarketPlace",
     "/DirectOrderMarketPlace",

@@ -344,13 +344,13 @@ const RoutingControl = ({
   stopData,
 }) => {
   const map = useMap();
-  console.log("stopData", stopData);
+  // console.log("stopData", stopData);
 
   useEffect(() => {
     try {
 
       if (stopData.length) {
-        console.log("view", stopData);
+        // console.log("view", stopData);
         let collection = [];
         let delivery = [];
         for (const iterator of stopData) {
@@ -636,8 +636,9 @@ const MapComponent = ({
   RemoveLayer,
   dispatchData,
   stopListData,
+  carSpeed = 1
 }) => {
-  console.log("stopListData", stopListData);
+  // console.log("stopListData", stopListData);
   let warehouseData = data ? data?.warehouse : {};
   let TransportatinGeofence = useSelector(
     (state) => state.auth.TransportationGeofence
@@ -1103,7 +1104,7 @@ const MapComponent = ({
         }
       })
       .catch((error) => {
-        console.log("api response", error);
+        // console.log("api response", error);
       });
   };
 
@@ -1127,7 +1128,6 @@ const MapComponent = ({
     // Display the local time or do whatever you need with it
   };
   // selectted marker
-  const markerRefPop = useRef(null);
 
   useEffect(() => {
     const marker = markerRef.current;
@@ -1138,7 +1138,8 @@ const MapComponent = ({
       // );
       // setShow(true);
     }
-  }, [selectedPopmMrker, markerRefPop]);
+  }, [selectedPopmMrker]);
+
 
   // playBack component
   const lineOptions = {
@@ -1146,7 +1147,7 @@ const MapComponent = ({
     weight: 5,
   };
   const ChartRef = useRef();
-  const ChartRefUpdate = useRef();
+  // const ChartRefUpdate = useRef();
   const ChartRefBreak = useRef();
   const lineOptionsUpdate = {
     color: "green",
@@ -1175,6 +1176,11 @@ const MapComponent = ({
   //     attribution: 'KlokanTech Basic'
   //   }).addTo(map);
   // }, []);
+
+
+
+
+
 
   return (
     <div className="map-wrapper">
@@ -1211,13 +1217,17 @@ const MapComponent = ({
                           <>
                             {ele.latitude && ele.longitude && (
                               <>
-                                <Marker
+                                <AnimatedMarker
+                                  className={ele.vehicle_id === selectedPopmMrker
+                                    ? "leaflet-marker-pane"
+                                    : null}
                                   key={"Dashboard" + index}
-                                  ref={
+                                  forwardRef={
                                     ele.vehicle_id === selectedPopmMrker
                                       ? markerRef
                                       : null
                                   }
+                                  customerData={customerData}
                                   eventHandlers={{
                                     click: (e) => {
                                       setSelectedPopMarker(ele.vehicle_id);
@@ -1227,51 +1237,10 @@ const MapComponent = ({
                                       setRadiusDraw("");
                                     },
                                   }}
-                                  position={[
-                                    Number(ele?.latitude),
-                                    Number(ele?.longitude),
-                                  ]}
-                                  icon={LeafletIconsDashboard(
-                                    ele.vehicle_type_icon !== "" &&
-                                      ele.vehicle_type_icon !== null &&
-                                      ele.vehicle_type_icon !== undefined
-                                      ? ele?.vehicle_type_icon > 40
-                                        ? `${ApiConfig.BASE_URL}uploads/${customerData.customer_id
-                                        }/vehicle_type/${ele?.vehicle_type_icon
-                                        }/${ele?.metering_status === "A"
-                                          ? t("Parked")
-                                          : ele?.metering_status === "B"
-                                            ? t("Running")
-                                            : ele?.metering_status === "d"
-                                              ? t("Idle")
-                                              : t("Untracked")
-                                        }.png`
-                                        : `${ApiConfig.BASE_URL
-                                        }uploads/vehicle_type/${ele?.vehicle_type_icon
-                                        }/${ele?.metering_status === "A"
-                                          ? t("Parked")
-                                          : ele?.metering_status === "B"
-                                            ? t("Running")
-                                            : ele?.metering_status === "d"
-                                              ? t("Idle")
-                                              : t("Untracked")
-                                        }.svg`
-                                      : ele.metering_status == "B"
-                                        ? greenCar
-                                        : ele.metering_status == "A"
-                                          ? blueCarN
-                                          : ele.metering_status == "d"
-                                            ? yellowCar
-                                            : ele.metering_status == "U"
-                                              ? redCar
-                                              : ele.metering_status == "customer"
-                                                ? blackCar
-                                                : parked,
-                                    Number(ele.heading_angle)
-                                  )}
+                                  currentTrack={ele}
                                 >
                                   {ele.metering_status == "customer" ? (
-                                    <Popup>
+                                    <Popup >
                                       <p>
                                         {t("Customer Speed:")}
                                         {ele.customer_speed_limit}
@@ -1621,7 +1590,7 @@ const MapComponent = ({
                                       </Tooltip>
                                     </>
                                   )}
-                                </Marker>
+                                </AnimatedMarker>
                               </>
                             )}
                           </>
@@ -1800,7 +1769,7 @@ const MapComponent = ({
                                           <Table className="pwb-table">
                                             <tbody>
                                               <tr>
-                                                <td>{t("Vehicle Number")}</td>
+                                                <td>{t("Vehicle Number ")}</td>
                                                 <td>:</td>
                                                 <td>{ele?.vehicle_number}</td>
                                               </tr>
@@ -1907,6 +1876,7 @@ const MapComponent = ({
                     )}
                   </>
                 )}
+
                 {positionCercle?.length > 0 && (
                   <SetBoundTrasportCercleDash
                     positionCercle={positionCercle}
@@ -1930,6 +1900,7 @@ const MapComponent = ({
                     componentId={componentId}
                   />
                 )}
+
                 {componentId == "playback" &&
                   currentTrack != null &&
                   currentTrack != undefined &&
@@ -1967,16 +1938,16 @@ const MapComponent = ({
                           />
                         )}
 
-                      {updatedTrackRoad != null &&
+                      {/* {updatedTrackRoad != null &&
                         updatedTrackRoad != undefined &&
                         updatedTrackRoad &&
                         updatedTrackRoad.length > 0 && (
                           <Polyline
-                            ref={ChartRefUpdate}
+                            // ref={ChartRefUpdate}
                             pathOptions={lineOptionsUpdate}
                             positions={updatedTrackRoad}
                           />
-                        )}
+                        )} */}
 
                       {BreakTrackRoad != null &&
                         BreakTrackRoad != undefined &&
@@ -1998,142 +1969,22 @@ const MapComponent = ({
                         currentTrack?.lat &&
                         currentTrack?.lng && (
                           <>
-                            <Marker
+                            <AnimatedMarker2
                               key={"currentTrack"}
-                              position={[currentTrack?.lat, currentTrack?.lng]}
-                              icon={LeafletIconsDashboard(
-                                currentTrack.vehicle_type_icon !== "" &&
-                                  currentTrack.vehicle_type_icon !== null &&
-                                  currentTrack.vehicle_type_icon !== undefined
-                                  ? currentTrack?.vehicle_type_icon > 40
-                                    ? `${ApiConfig.BASE_URL}uploads/${customerData.customer_id
-                                    }/vehicle_type/${currentTrack?.vehicle_type_icon
-                                    }/${currentTrack?.metering_status === "A"
-                                      ? "Parked"
-                                      : currentTrack?.metering_status ===
-                                        "B"
-                                        ? "Running"
-                                        : currentTrack?.metering_status ===
-                                          "d"
-                                          ? "Idle"
-                                          : "Untracked"
-                                    }.png`
-                                    : `${ApiConfig.BASE_URL
-                                    }uploads/vehicle_type/${currentTrack?.vehicle_type_icon
-                                    }/${currentTrack?.metering_status === "A"
-                                      ? "Parked"
-                                      : currentTrack?.metering_status ===
-                                        "B"
-                                        ? "Running"
-                                        : currentTrack?.metering_status ===
-                                          "d"
-                                          ? "Idle"
-                                          : "Untracked"
-                                    }.svg`
-                                  : currentTrack.metering_status == "B"
-                                    ? greenCar
-                                    : currentTrack.metering_status == "A"
-                                      ? blueCarN
-                                      : currentTrack.metering_status == "d"
-                                        ? yellowCar
-                                        : currentTrack.metering_status == "U"
-                                          ? redCar
-                                          : currentTrack.metering_status == "customer"
-                                            ? blackCar
-                                            : parked,
-                                Number(currentTrack.heading_angle)
-                              )}
+                              customerData={customerData}
+                              currentTrack={currentTrack}
+                              speedMultiplier={carSpeed}
+                              mapBoundReplay={mapBoundReplay}
                             >
-                              <Popup>
-                                {" "}
-                                <div className="pw-bottom">
-                                  <Table className="pwb-table">
-                                    <tbody>
-                                      <tr>
-                                        <td>{t("Vehicle Number")}</td>
-                                        <td>:</td>
-                                        <td>{currentTrack?.vehicle_number}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>{t("Vehicle Status")}</td>
-                                        <td>:</td>
-                                        <td>
-                                          {currentTrack?.metering_status == "B"
-                                            ? "Running"
-                                            : currentTrack?.metering_status ==
-                                              "A"
-                                              ? "Parked"
-                                              : currentTrack?.metering_status ==
-                                                "d"
-                                                ? "Idle"
-                                                : "Untracked"}
-                                        </td>
-                                      </tr>
-                                      {currentTrack?.temperatureSensor ===
-                                        null ||
-                                        currentTrack?.temperatureSensor ===
-                                        undefined ? (
-                                        ""
-                                      ) : (
-                                        <tr>
-                                          <td>{t("Temparatue")}</td>
-                                          <td>:</td>
-                                          <td>
-                                            Max:{" "}
-                                            {currentTrack?.metering_status ==
-                                              "B"
-                                              ? JSON.parse(
-                                                currentTrack?.temperatureSensor
-                                              )?.maximumTemperatureRunning
-                                              : currentTrack?.metering_status ==
-                                                "A"
-                                                ? JSON.parse(
-                                                  currentTrack?.temperatureSensor
-                                                )?.maximumTemperatureParked
-                                                : ""}
-                                            <sup>0</sup>C
-                                          </td>
-                                          <td>
-                                            Min:{" "}
-                                            {currentTrack?.metering_status ==
-                                              "B"
-                                              ? JSON.parse(
-                                                currentTrack?.temperatureSensor
-                                              )?.minimumTemperatureRunning
-                                              : currentTrack?.metering_status ==
-                                                "A"
-                                                ? JSON.parse(
-                                                  currentTrack?.temperatureSensor
-                                                )?.minimumTemperatureParked
-                                                : ""}
-                                            <sup>0</sup>C
-                                          </td>
-                                        </tr>
-                                      )}
-
-                                      <tr>
-                                        <td>{t("Vehicle Speed")}</td>
-                                        <td>:</td>
-                                        <td>{currentTrack?.speed}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>{t("Time")}</td>
-                                        <td>:</td>
-                                        <td> {currentTrack?.logged_time}</td>
-                                      </tr>
-                                    </tbody>
-                                  </Table>
-                                </div>
-                              </Popup>
-                            </Marker>
-                            {mapBoundReplay && (
+                            </AnimatedMarker2>
+                            {/* {mapBoundReplay && (
                               <MapWithCenteredMarker
                                 markerPosition={[
                                   Number(currentTrack?.lat),
                                   Number(currentTrack?.lng),
                                 ]}
                               />
-                            )}
+                            )} */}
                           </>
                         )}
 
@@ -3544,3 +3395,703 @@ const MapComponent = ({
 };
 
 export default MapComponent;
+
+// Utility function to interpolate positions
+// const interpolatePosition = (start, end, factor) => {
+//   return [
+//     start[0] + (end[0] - start[0]) * factor,
+//     start[1] + (end[1] - start[1]) * factor,
+//   ];
+// };
+
+const AnimatedMarker = ({ currentTrack, children, customerData, eventHandlers, className, forwardRef }) => {
+
+  const prevTrackRef = useRef(null); // Initially set to null
+  const queueRef = useRef([]); // Initialize queue as an empty array
+  const [updatedTrack, setUpdatedTrack] = useState([]);
+  const isAnimatingRef = useRef(false);
+  const map = useMap();
+  const { t, i18n } = useTranslation();
+  const lineOptionsUpdate = {
+    color: "green",
+    weight: 10,
+  };
+
+  // Add new track to queue
+  useEffect(() => {
+    if (currentTrack) {
+      queueRef.current.push(currentTrack);
+
+      if (!isAnimatingRef.current) {
+        processQueue();
+      }
+    }
+  }, [currentTrack]);
+
+  const processQueue = () => {
+    if (queueRef.current.length === 0) return;
+
+    isAnimatingRef.current = true;
+    const nextTrack = queueRef.current.shift(); // Get the next track from the queue
+    const prevTrack = prevTrackRef.current ?
+      [Number(prevTrackRef.current.latitude), Number(prevTrackRef.current.longitude)] :
+      [Number(nextTrack.latitude), Number(nextTrack.longitude)];
+
+    prevTrackRef.current = nextTrack;
+    const duration = 1600;
+
+    let startTime = null;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = (timestamp - startTime) / duration;
+      const factor = Math.min(progress, 1);
+
+      const newPos = interpolatePosition(prevTrack, [Number(nextTrack.latitude), Number(nextTrack.longitude)], factor);
+      if (forwardRef.current) {
+        forwardRef.current.setLatLng(new L.LatLng(newPos[0], newPos[1]));
+        setUpdatedTrack(prev => [...prev, newPos])
+        forwardRef.setView(newPos);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        // Animation finished, move to next in queue
+        isAnimatingRef.current = false;
+        processQueue(); // Continue processing next item in the queue
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  return (
+    <Marker
+      ref={forwardRef}
+      position={[Number(prevTrackRef?.current?.latitude ? prevTrackRef?.current?.latitude : 0), Number(prevTrackRef?.current?.longitude ? prevTrackRef?.current?.longitude : 0)]}
+      rotationAngle={prevTrackRef?.current?.heading_angle}
+      icon={LeafletIconsDashboard(
+        prevTrackRef.current?.vehicle_type_icon !== "" &&
+          prevTrackRef.current?.vehicle_type_icon !== null &&
+          prevTrackRef.current?.vehicle_type_icon !== undefined
+          ? prevTrackRef.current?.vehicle_type_icon > 40
+            ? `${ApiConfig.BASE_URL}uploads/${customerData.customer_id
+            }/vehicle_type/${prevTrackRef.current?.vehicle_type_icon
+            }/${prevTrackRef.current?.metering_status === "A"
+              ? t("Parked")
+              : prevTrackRef.current?.metering_status === "B"
+                ? t("Running")
+                : prevTrackRef.current?.metering_status === "d"
+                  ? t("Idle")
+                  : t("Untracked")
+            }.png`
+            : `${ApiConfig.BASE_URL
+            }uploads/vehicle_type/${prevTrackRef.current?.vehicle_type_icon
+            }/${prevTrackRef.current?.metering_status === "A"
+              ? t("Parked")
+              : prevTrackRef.current?.metering_status === "B"
+                ? t("Running")
+                : prevTrackRef.current?.metering_status === "d"
+                  ? t("Idle")
+                  : t("Untracked")
+            }.svg`
+          : prevTrackRef.current?.metering_status == "B"
+            ? greenCar
+            : prevTrackRef.current?.metering_status == "A"
+              ? blueCarN
+              : prevTrackRef.current?.metering_status == "d"
+                ? yellowCar
+                : prevTrackRef.current?.metering_status == "U"
+                  ? redCar
+                  : prevTrackRef.current?.metering_status == "customer"
+                    ? blackCar
+                    : parked,
+        Number(prevTrackRef.current?.heading_angle ? prevTrackRef.current?.heading_angle : 0)
+      )} // Assuming you want to rotate the marker based on the heading angle
+      className={className}
+      eventHandlers={eventHandlers}
+    >
+      {prevTrackRef.current.metering_status == "customer" ? (
+        <Popup >
+          <p>
+            {t("Customer Speed:")}
+            {prevTrackRef.current.customer_speed_limit}
+          </p>
+        </Popup>
+      ) : (
+        <>
+          <Popup
+            position="bottom"
+            className="dashboard_popup"
+          >
+            <div className="popover-wrapper">
+              <div className="pw-top">
+                <span>
+                  <img src={speed} alt="" />
+                  <p
+                    className={
+                      addonSettingData?.addon_over_speed ==
+                        1
+                        ? Number(prevTrackRef.current?.speed) >
+                          Number(
+                            prevTrackRef.current?.overSpeed
+                              ? prevTrackRef.current?.overSpeed
+                              : customerSettingdata.customer_speed_limit
+                          ) &&
+                          prevTrackRef.current?.metering_status ==
+                          "B"
+                          ? "text-danger fw-bold flash animated_speed"
+                          : Number(prevTrackRef.current?.speed) <
+                            Number(
+                              prevTrackRef.current?.overSpeed
+                                ? prevTrackRef.current?.overSpeed
+                                : customerSettingdata.customer_speed_limit
+                            ) &&
+                            prevTrackRef.current?.metering_status ==
+                            "B"
+                            ? "text-success fw-bold "
+                            : ""
+                        : ""
+                    }
+                  >
+                    {" "}
+                    {prevTrackRef.current?.speed}
+                    {t("Km/h")}{" "}
+                  </p>
+                </span>
+
+                <span>
+                  <img src={engine} alt="" />
+                  {prevTrackRef.current?.metering_status == "B"
+                    ? t("ON")
+                    : prevTrackRef.current?.metering_status == "A"
+                      ? t("Parked")
+                      : prevTrackRef.current?.metering_status == "d"
+                        ? t("ON")
+                        : t("OFF")}
+                </span>
+                <span>
+                  <img src={dish} alt="" />{" "}
+                  {prevTrackRef.current?.gsm_signal_strength}
+                </span>
+                <Dropdown className="pw-dropdown">
+                  <Dropdown.Toggle>
+                    <img src={optionDot} alt="" />
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="pwd-menu">
+                    {/* <Dropdown.Item>
+                                                  {t("Track")}
+                                                </Dropdown.Item > */}
+                    {(
+                      accessRights?.rights_view_replay_or_paybacks ==
+                      1) && (
+                        <Dropdown.Item
+                          onClick={() => {
+                            navigate(
+                              "/ReplayPlayback/" +
+                              prevTrackRef.current.vehicle_id
+                            );
+                          }}
+                        >
+                          {t("Playback")}
+                        </Dropdown.Item>
+                      )}
+                    {(
+                      accessRights?.rights_view_vehicle == 1) && (
+                        <>
+                          <Dropdown.Item
+                            onClick={() => {
+                              navigate(
+                                "/VehicleDetails/" +
+                                prevTrackRef.current.vehicle_id
+                              );
+                            }}
+                          >
+                            {t("Device Details")}
+                          </Dropdown.Item>
+                          <Dropdown.Item
+                            onClick={() => {
+                              localStorage.setItem(
+                                "alertTab",
+                                "2"
+                              );
+                              navigate(
+                                "/VehicleDetails/" +
+                                prevTrackRef.current.vehicle_id
+                              );
+                            }}
+                          >
+                            {t("Alerts")}
+                          </Dropdown.Item>
+                        </>
+                      )}
+
+                    {
+                      accessRights?.rights_view_geofence_area == 1 ?
+                        <>
+                          <></>
+                          <Dropdown.Item
+                            onClick={() => {
+                              // setPostionPolygon([]);
+                              // setPositionRectangle([]);
+                              // setPositionCercle([]);
+                              // setPostionRadius("");
+                              getsingleListDetails(
+                                prevTrackRef.current.vehicle_id
+                              );
+
+                              // setTriggerMapBoundKeyRandom(
+                              //   Math.floor(
+                              //     Math.random() *
+                              //       10000000
+                              //   )
+                              // );
+                              // setCenterDragged([
+                              //   Number(prevTrackRef.current?.latitude),
+                              //   Number(prevTrackRef.current?.longitude),
+                              // ]);
+                            }}
+                          >
+                            {t("Geofence")}
+                          </Dropdown.Item>
+                        </>
+                        : <></>
+                    }
+
+                    <Dropdown.Item
+                      // href="#"
+                      onClick={() => {
+                        shareDatat(
+                          prevTrackRef.current?.vehicle_imei
+                        );
+                        setShareLink(true);
+                      }}
+                    >
+                      {t("Share Tracking")}
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      // href="#"
+                      onClick={() => {
+                        shareCureenr(
+                          prevTrackRef.current?.latitude,
+                          prevTrackRef.current?.longitude
+                        );
+                        setShareCureentLink(true);
+                      }}
+                    >
+                      {t("Share Current Location")}
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+              <div className="pw-img-box">
+                {(prevTrackRef.current?.vehicle_type_icon !== null &&
+                  prevTrackRef.current?.vehicle_type_icon !== "" &&
+                  prevTrackRef.current?.vehicle_type_icon !==
+                  undefined) ||
+                  (prevTrackRef.current?.vehicle_image_path !== null &&
+                    prevTrackRef.current?.vehicle_image_path !== "" &&
+                    prevTrackRef.current?.vehicle_image_path !==
+                    undefined) ? (
+                  <img
+                    style={{
+                      transform:
+                        prevTrackRef.current?.vehicle_image_path
+                          ? `rotate(${0}deg)`
+                          : `rotate(${270}deg)`,
+                      width: "50px",
+                      // heigth:"40px"
+                    }}
+                    src={
+                      prevTrackRef.current?.vehicle_image_path
+                        ? `${ApiConfig.BASE_URL}${prevTrackRef.current?.vehicle_image_path}`
+                        : prevTrackRef.current?.vehicle_type_icon >
+                          40
+                          ? `${ApiConfig.BASE_URL
+                          }uploads/${customerData.customer_id
+                          }/vehicle_type/${prevTrackRef.current?.vehicle_type_icon
+                          }/${prevTrackRef.current?.metering_status ===
+                            "A"
+                            ? t("Parked")
+                            : prevTrackRef.current?.metering_status ===
+                              "B"
+                              ? t("Running")
+                              : prevTrackRef.current?.metering_status ===
+                                "d"
+                                ? t("Idle")
+                                : t("Untracked")
+                          }.png`
+                          : `${ApiConfig.BASE_URL
+                          }uploads/vehicle_type/${prevTrackRef.current?.vehicle_type_icon
+                          }/${prevTrackRef.current?.metering_status ===
+                            "A"
+                            ? t("Parked")
+                            : prevTrackRef.current?.metering_status ===
+                              "B"
+                              ? t("Running")
+                              : prevTrackRef.current?.metering_status ===
+                                "d"
+                                ? t("Idle")
+                                : t("Untracked")
+                          }.svg`
+                    }
+                    alt="no icon"
+                  />
+                ) : (
+                  <img
+                    src={popimg}
+                    alt="no vehicle icon"
+                  />
+                )}
+              </div>
+              <div className="pw-bottom">
+                <Table className="pwb-table">
+                  <tbody>
+                    <tr>
+                      <td>{t("Vehicle Number")}</td>
+                      <td>:</td>
+                      <td>{prevTrackRef.current?.vehicle_number}</td>
+                    </tr>
+                    <tr>
+                      <td>{t("Vehicle Status")}</td>
+                      <td>:</td>
+                      <td>
+                        {prevTrackRef.current?.metering_status == "B"
+                          ? t("Running")
+                          : prevTrackRef.current?.metering_status ==
+                            "A"
+                            ? t("Parked")
+                            : prevTrackRef.current?.metering_status ==
+                              "d"
+                              ? t("Idle")
+                              : t("Untracked")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>{t("Driver Name")}</td>
+                      <td>:</td>
+                      <td>
+                        {prevTrackRef.current?.user_name}
+                      </td>
+                    </tr>
+                    {
+                      prevTrackRef.current?.temperatureSensor ===
+                        null ||
+                        prevTrackRef.current?.temperatureSensor ===
+                        undefined ? (
+                        ""
+                      ) : (
+                        <tr>
+                          <td>{t("Temparatue")}</td>
+                          <td>:</td>
+                          <td>
+                            Max:{" "}
+                            {prevTrackRef.current?.metering_status ==
+                              "B"
+                              ? JSON.parse(
+                                prevTrackRef.current?.temperatureSensor
+                              )
+                                ?.maximumTemperatureRunning
+                              : prevTrackRef.current?.metering_status ==
+                                "A"
+                                ? JSON.parse(
+                                  prevTrackRef.current?.temperatureSensor
+                                )
+                                  ?.maximumTemperatureParked
+                                : ""}
+                            <sup>0</sup>C
+                          </td>
+                          <td>
+                            Min:{" "}
+                            {prevTrackRef.current?.metering_status ==
+                              "B"
+                              ? JSON.parse(
+                                prevTrackRef.current?.temperatureSensor
+                              )
+                                ?.minimumTemperatureRunning
+                              : prevTrackRef.current?.metering_status ==
+                                "A"
+                                ? JSON.parse(
+                                  prevTrackRef.current?.temperatureSensor
+                                )
+                                  ?.minimumTemperatureParked
+                                : ""}
+                            <sup>0</sup>C
+                          </td>
+                        </tr>
+                      )
+
+                      //    <tr>
+                      //    <td>{t("Temparatue")}</td>
+                      //    <td>:</td>
+                      //    <td>
+                      //      {prevTrackRef.current?.temperature
+
+                      //        }
+                      //      <sup>0</sup>C
+                      //    </td>
+                      //  </tr>
+                    }
+                    <tr>
+                      <td>{t("Time")}</td>
+                      <td>:</td>
+                      <td> {prevTrackRef.current?.logged_time}</td>
+                    </tr>
+                    {/* <tr>
+                                          <td>{t("Last Seen At")}</td>
+                                          <td>:</td>
+                                          <td> {prevTrackRef.current?.user_city}</td>
+                                        </tr> */}
+                  </tbody>
+                </Table>
+              </div>
+            </div>
+          </Popup>
+          <Tooltip className="dashboard_popup">
+            <div className="pw-bottom">
+              {prevTrackRef.current?.vehicle_number}{" "}
+              <span className="text-success ms-2">
+                {prevTrackRef.current?.metering_status == "B" &&
+                  prevTrackRef.current?.speed
+                  ? prevTrackRef.current?.speed
+                  : "0"}
+              </span>{" "}
+              {prevTrackRef.current?.speed ? t("Km/h") : ""}
+            </div>
+          </Tooltip>
+        </>
+      )}
+    </Marker>
+  );
+};
+
+const interpolatePosition = (start, end, factor) => {
+  const lat = start[0] + (end[0] - start[0]) * factor;
+  const lng = start[1] + (end[1] - start[1]) * factor;
+  return [lat, lng];
+};
+
+
+const AnimatedMarker2 = ({ currentTrack, speedMultiplier = 4, children, customerData, mapBoundReplay }) => {
+  const markerRef = useRef(null);
+  const prevTrackRef = useRef(null); // Initially set to null
+  const queueRef = useRef([]); // Initialize queue as an empty array
+  const [updatedTrack, setUpdatedTrack] = useState([]);
+  const isAnimatingRef = useRef(false);
+  const map = useMap();
+  const { t, i18n } = useTranslation();
+  const lineOptionsUpdate = {
+    color: "green",
+    weight: 10,
+  };
+
+  // Add new track to queue
+  useEffect(() => {
+    if (currentTrack) {
+      queueRef.current.push(currentTrack);
+
+      if (!isAnimatingRef.current) {
+        processQueue();
+      }
+    }
+  }, [currentTrack]);
+
+  const processQueue = () => {
+    if (queueRef.current.length === 0) return;
+
+    isAnimatingRef.current = true;
+    const nextTrack = queueRef.current.shift(); // Get the next track from the queue
+    const prevTrack = prevTrackRef.current ?
+      [Number(prevTrackRef.current.latitude), Number(prevTrackRef.current.longitude)] :
+      [Number(nextTrack.latitude), Number(nextTrack.longitude)];
+
+    prevTrackRef.current = nextTrack;
+    const duration = 1580 / speedMultiplier;
+
+    let startTime = null;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = (timestamp - startTime) / duration;
+      const factor = Math.min(progress, 1);
+
+      const newPos = interpolatePosition(prevTrack, [Number(nextTrack.latitude), Number(nextTrack.longitude)], factor);
+      if (markerRef.current) {
+        markerRef.current.setLatLng(new L.LatLng(newPos[0], newPos[1]));
+        setUpdatedTrack(prev => [...prev, newPos])
+        map.setView(newPos);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        // Animation finished, move to next in queue
+        isAnimatingRef.current = false;
+        processQueue(); // Continue processing next item in the queue
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  return (
+    <>
+      <Marker
+        ref={markerRef}
+        position={[Number(prevTrackRef?.current?.latitude ? prevTrackRef?.current?.latitude : 0), Number(prevTrackRef?.current?.longitude ? prevTrackRef?.current?.longitude : 0)]}
+        rotationAngle={prevTrackRef?.current?.heading_angle}
+        icon={LeafletIconsDashboard(
+          prevTrackRef?.current?.vehicle_type_icon !== "" &&
+            prevTrackRef?.current?.vehicle_type_icon !== null &&
+            prevTrackRef?.current?.vehicle_type_icon !== undefined
+            ? prevTrackRef?.current?.vehicle_type_icon > 40
+              ? `${ApiConfig.BASE_URL}uploads/${customerData.customer_id
+              }/vehicle_type/${prevTrackRef?.current?.vehicle_type_icon
+              }/${prevTrackRef?.current?.metering_status === "A"
+                ? "Parked"
+                : prevTrackRef?.current?.metering_status ===
+                  "B"
+                  ? "Running"
+                  : prevTrackRef?.current?.metering_status ===
+                    "d"
+                    ? "Idle"
+                    : "Untracked"
+              }.png`
+              : `${ApiConfig.BASE_URL
+              }uploads/vehicle_type/${prevTrackRef?.current?.vehicle_type_icon
+              }/${prevTrackRef?.current?.metering_status === "A"
+                ? "Parked"
+                : prevTrackRef?.current?.metering_status ===
+                  "B"
+                  ? "Running"
+                  : prevTrackRef?.current?.metering_status ===
+                    "d"
+                    ? "Idle"
+                    : "Untracked"
+              }.svg`
+            : prevTrackRef?.current?.metering_status == "B"
+              ? greenCar
+              : prevTrackRef?.current?.metering_status == "A"
+                ? blueCarN
+                : prevTrackRef?.current?.metering_status == "d"
+                  ? yellowCar
+                  : prevTrackRef?.current?.metering_status == "U"
+                    ? redCar
+                    : prevTrackRef?.current?.metering_status == "customer"
+                      ? blackCar
+                      : parked,
+          Number(prevTrackRef?.current?.heading_angle)
+        )} // Assuming you want to rotate the marker based on the heading angle
+      >
+        <Popup>
+          {" "}
+          <div className="pw-bottom">
+            <Table className="pwb-table">
+              <tbody>
+                <tr>
+                  <td>{t("Vehicle Number kfhdr")}</td>
+                  <td>:</td>
+                  <td>{prevTrackRef?.current?.vehicle_number}</td>
+                </tr>
+                <tr>
+                  <td>{t("Vehicle Status")}</td>
+                  <td>:</td>
+                  <td>
+                    {prevTrackRef?.current?.metering_status == "B"
+                      ? "Running"
+                      : prevTrackRef?.current?.metering_status ==
+                        "A"
+                        ? "Parked"
+                        : prevTrackRef?.current?.metering_status ==
+                          "d"
+                          ? "Idle"
+                          : "Untracked"}
+                  </td>
+                </tr>
+                {prevTrackRef?.current?.temperatureSensor ===
+                  null ||
+                  prevTrackRef?.current?.temperatureSensor ===
+                  undefined ? (
+                  ""
+                ) : (
+                  <tr>
+                    <td>{t("Temparatue")}</td>
+                    <td>:</td>
+                    <td>
+                      Max:{" "}
+                      {prevTrackRef?.current?.metering_status ==
+                        "B"
+                        ? JSON.parse(
+                          prevTrackRef?.current?.temperatureSensor
+                        )?.maximumTemperatureRunning
+                        : prevTrackRef?.current?.metering_status ==
+                          "A"
+                          ? JSON.parse(
+                            prevTrackRef?.current?.temperatureSensor
+                          )?.maximumTemperatureParked
+                          : ""}
+                      <sup>0</sup>C
+                    </td>
+                    <td>
+                      Min:{" "}
+                      {prevTrackRef?.current?.metering_status ==
+                        "B"
+                        ? JSON.parse(
+                          prevTrackRef?.current?.temperatureSensor
+                        )?.minimumTemperatureRunning
+                        : prevTrackRef?.current?.metering_status ==
+                          "A"
+                          ? JSON.parse(
+                            prevTrackRef?.current?.temperatureSensor
+                          )?.minimumTemperatureParked
+                          : ""}
+                      <sup>0</sup>C
+                    </td>
+                  </tr>
+                )}
+
+                <tr>
+                  <td>{t("Vehicle Speed")}</td>
+                  <td>:</td>
+                  <td>{prevTrackRef?.current?.speed}</td>
+                </tr>
+                <tr>
+                  <td>{t("Time")}</td>
+                  <td>:</td>
+                  <td> {prevTrackRef?.current?.logged_time}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+        </Popup>
+        {children}
+      </Marker>
+
+      {updatedTrack != null &&
+        updatedTrack != undefined &&
+        updatedTrack &&
+        updatedTrack.length > 0 && (
+          <Polyline
+            // ref={ChartRefUpdate}
+            pathOptions={lineOptionsUpdate}
+            positions={updatedTrack}
+          />
+        )}
+
+
+      {/* {mapBoundReplay && (
+        <MapWithCenteredMarker
+          markerPosition={[
+            Number(prevTrackRef?.current?.lat ? prevTrackRef?.current?.lat : 0),
+            Number(prevTrackRef.current?.lng ? prevTrackRef.current?.lng : 0),
+          ]}
+        />
+      )} */}
+    </>
+  );
+};
+
+
+

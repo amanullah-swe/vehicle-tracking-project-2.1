@@ -105,8 +105,8 @@ const Dashboard = () => {
   const [ShareCureentlatitudeLink, setShareCureentlatitudeLink] = useState("");
   const [ShareCureentlongitudeLink, setShareCureentlongitudeLink] =
     useState("");
-  console.log("ShareCureentlatitudeLink", ShareCureentlatitudeLink);
-  console.log("ShareCureentlongitudeLink", ShareCureentlongitudeLink);
+  // console.log("ShareCureentlatitudeLink", ShareCureentlatitudeLink);
+  // console.log("ShareCureentlongitudeLink", ShareCureentlongitudeLink);
   //live data  with all dsetaials
   const [mapDataLive, setMapDataLive] = useState([]);
   const [runningData, setRuningData] = useState([]);
@@ -140,7 +140,7 @@ const Dashboard = () => {
       .catch((err) => {
         console.log("err", err);
       })
-      .finally(() => {});
+      .finally(() => { });
   };
   const getVehicleList = () => {
     simplePostCall(
@@ -165,7 +165,7 @@ const Dashboard = () => {
     )
       .then((res) => {
         setGroupVehicleList(res?.data ? res.data : []);
-       
+
       })
       .catch((error) => {
         console.log("api response", error);
@@ -339,7 +339,7 @@ const Dashboard = () => {
       .catch((err) => {
         console.log("err", err);
       })
-      .finally(() => {});
+      .finally(() => { });
   };
 
   // time zonew
@@ -385,161 +385,161 @@ const Dashboard = () => {
             <div className="topsection">
               {(userRole === "customer" ||
                 accessRights?.rights_dashboard_map == 1) && (
-                <>
-                  {/* <p>{t("Location Overview")}</p> */}
-                  <div className="dropdown-wrapper" style={{ flex: 1 }}>
-                    <div
-                      className="row"
-                      style={{ width: "100%" }}
-                      key={"multiselctVAlues"}
-                    >
+                  <>
+                    {/* <p>{t("Location Overview")}</p> */}
+                    <div className="dropdown-wrapper" style={{ flex: 1 }}>
                       <div
-                        className="col-md-4 margin-lft-response"
-                        key={"multiselct001"}
+                        className="row"
+                        style={{ width: "100%" }}
+                        key={"multiselctVAlues"}
                       >
-                      {
-                        accessRights?.rights_manage_vehiclegroup == 1  ? 
-                        <>
-                        <div className="multi-select-1">
-                          <Select
-                            mode="multiple" // Enable multiple selection
-                            style={{
-                              width: "95%",
-                              color: "rgba(156, 73, 0, 0.5)",
-                            }}
-                            // placeholder={`Groups (${groupVehicleList?.length})`}
-                            placeholder={t("Groups_taleeb", {groups_length :groupVehicleList?.length }) }
-                            key={"selectedGroupData"}
-                            onChange={(selectedValues) => {
-                              setConnectStatus("group_id");
-                              setSelectedStatus([]);
-                              setSelectedVehicleData([]);
-                              setSelectedGroupData(selectedValues);
-                              setFilterData(selectedValues);
-                            }}
-                            value={selectedGroupData}
-                            optionLabelProp="label"
-                            filterOption={(input, option) =>
-                              option?.label
-                                ?.toLowerCase()
-                                ?.indexOf(input?.toLowerCase()) >= 0
-                            }
-                          >
-                            {groupVehicleList?.map((data, index) => (
-                              <Option
-                                key={data?.vehicle_group_id}
-                                value={data?.vehicle_group_id}
-                                label={data?.vehicle_group_name}
-                                style={{ color: "rgba(156, 73, 0)" }}
-                              >
-                                <Space>
-                                  <span
-                                    role="group"
-                                    aria-label={data.vehicle_group_id}
+                        <div
+                          className="col-md-4 margin-lft-response"
+                          key={"multiselct001"}
+                        >
+                          {
+                            accessRights?.rights_manage_vehiclegroup == 1 ?
+                              <>
+                                <div className="multi-select-1">
+                                  <Select
+                                    mode="multiple" // Enable multiple selection
+                                    style={{
+                                      width: "95%",
+                                      color: "rgba(156, 73, 0, 0.5)",
+                                    }}
+                                    // placeholder={`Groups (${groupVehicleList?.length})`}
+                                    placeholder={t("Groups_taleeb", { groups_length: groupVehicleList?.length })}
+                                    key={"selectedGroupData"}
+                                    onChange={(selectedValues) => {
+                                      setConnectStatus("group_id");
+                                      setSelectedStatus([]);
+                                      setSelectedVehicleData([]);
+                                      setSelectedGroupData(selectedValues);
+                                      setFilterData(selectedValues);
+                                    }}
+                                    value={selectedGroupData}
+                                    optionLabelProp="label"
+                                    filterOption={(input, option) =>
+                                      option?.label
+                                        ?.toLowerCase()
+                                        ?.indexOf(input?.toLowerCase()) >= 0
+                                    }
                                   >
-                                    {data.vehicle_group_name}
-                                  </span>
-                                </Space>
-                              </Option>
-                            ))}
-                          </Select>
-                         
+                                    {groupVehicleList?.map((data, index) => (
+                                      <Option
+                                        key={data?.vehicle_group_id}
+                                        value={data?.vehicle_group_id}
+                                        label={data?.vehicle_group_name}
+                                        style={{ color: "rgba(156, 73, 0)" }}
+                                      >
+                                        <Space>
+                                          <span
+                                            role="group"
+                                            aria-label={data.vehicle_group_id}
+                                          >
+                                            {data.vehicle_group_name}
+                                          </span>
+                                        </Space>
+                                      </Option>
+                                    ))}
+                                  </Select>
+
+                                </div>
+                              </>
+                              : <></>
+                          }
                         </div>
-                        </>
-                        :<></>
-                    }
-                      </div>
-                      <div className="col-md-4" key={"multiselct002"}>
-                        <div className="multi-select-1">
-                          <Select
-                            mode="multiple" // Enable multiple selection
-                            style={{
-                              width: "95%",
-                              color: "rgba(156, 73, 0, 0.5)",
-                            }}
-                            // placeholder={`Vehicle (${singleVehicleList?.length})`}
-                            placeholder={t("Vehicle_taleeb",{vehicle_length : singleVehicleList?.length}) }
-                            optionLabelProp="label"
-                            onChange={(selectedValues) => {
-                              setConnectStatus("imei");
-                              setSelectedGroupData([]);
-                              setSelectedStatus([]);
-                              setSelectedVehicleData(selectedValues);
-                              setFilterData(selectedValues);
-                            }}
-                            value={selectedVehicleData}
-                            filterOption={(input, option) =>
-                              option?.label
-                                ?.toLowerCase()
-                                ?.indexOf(input?.toLowerCase()) >= 0
-                            }
-                          >
-                            {singleVehicleList?.map((data, index) => (
-                              <Option
-                                key={data?.vehicle_number}
-                                value={data?.vehicle_imei}
-                                label={data?.vehicle_number}
-                                style={{ color: "rgba(156, 73, 0)" }}
-                              >
-                                <Space>
-                                  <span
-                                    role="vehicle"
-                                    aria-label={data?.vehicle_number}
-                                  >
-                                    {data?.vehicle_number}
-                                  </span>
-                                </Space>
-                              </Option>
-                            ))}
-                          </Select>
+                        <div className="col-md-4" key={"multiselct002"}>
+                          <div className="multi-select-1">
+                            <Select
+                              mode="multiple" // Enable multiple selection
+                              style={{
+                                width: "95%",
+                                color: "rgba(156, 73, 0, 0.5)",
+                              }}
+                              // placeholder={`Vehicle (${singleVehicleList?.length})`}
+                              placeholder={t("Vehicle_taleeb", { vehicle_length: singleVehicleList?.length })}
+                              optionLabelProp="label"
+                              onChange={(selectedValues) => {
+                                setConnectStatus("imei");
+                                setSelectedGroupData([]);
+                                setSelectedStatus([]);
+                                setSelectedVehicleData(selectedValues);
+                                setFilterData(selectedValues);
+                              }}
+                              value={selectedVehicleData}
+                              filterOption={(input, option) =>
+                                option?.label
+                                  ?.toLowerCase()
+                                  ?.indexOf(input?.toLowerCase()) >= 0
+                              }
+                            >
+                              {singleVehicleList?.map((data, index) => (
+                                <Option
+                                  key={data?.vehicle_number}
+                                  value={data?.vehicle_imei}
+                                  label={data?.vehicle_number}
+                                  style={{ color: "rgba(156, 73, 0)" }}
+                                >
+                                  <Space>
+                                    <span
+                                      role="vehicle"
+                                      aria-label={data?.vehicle_number}
+                                    >
+                                      {data?.vehicle_number}
+                                    </span>
+                                  </Space>
+                                </Option>
+                              ))}
+                            </Select>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-md-4" key={"multiselct003"}>
-                        <div className="multi-select-1">
-                          <Select
-                            mode="multiple" // Enable multiple selection
-                            style={{
-                              width: "95%",
-                              color: "rgba(156, 73, 0, 0.5)",
-                            }}
-                            // placeholder={`Status (${statusList?.length})`}
-                            placeholder={t("Status_taleeb", {status_length :statusList?.length}) }
-                            optionLabelProp="label"
-                            onChange={(selectedValues) => {
-                              setConnectStatus("running_status");
-                              setSelectedGroupData([]);
-                              setSelectedVehicleData([]);
-                              setSelectedStatus(selectedValues);
-                              setFilterData(selectedValues);
-                            }}
-                            value={selectedStatus}
-                            filterOption={(input, option) =>
-                              option?.label
-                                .toLowerCase()
-                                .indexOf(input.toLowerCase()) >= 0
-                            }
-                          >
-                            {statusList.map((status, index) => (
-                              <Option
-                                key={status?.name}
-                                value={status?.idName}
-                                label={status?.name}
-                                style={{ color: "rgba(156, 73, 0)" }}
-                              >
-                                <Space>
-                                  <span role="status" aria-label={status.name}>
-                                    {status?.name}
-                                  </span>
-                                </Space>
-                              </Option>
-                            ))}
-                          </Select>
+                        <div className="col-md-4" key={"multiselct003"}>
+                          <div className="multi-select-1">
+                            <Select
+                              mode="multiple" // Enable multiple selection
+                              style={{
+                                width: "95%",
+                                color: "rgba(156, 73, 0, 0.5)",
+                              }}
+                              // placeholder={`Status (${statusList?.length})`}
+                              placeholder={t("Status_taleeb", { status_length: statusList?.length })}
+                              optionLabelProp="label"
+                              onChange={(selectedValues) => {
+                                setConnectStatus("running_status");
+                                setSelectedGroupData([]);
+                                setSelectedVehicleData([]);
+                                setSelectedStatus(selectedValues);
+                                setFilterData(selectedValues);
+                              }}
+                              value={selectedStatus}
+                              filterOption={(input, option) =>
+                                option?.label
+                                  .toLowerCase()
+                                  .indexOf(input.toLowerCase()) >= 0
+                              }
+                            >
+                              {statusList.map((status, index) => (
+                                <Option
+                                  key={status?.name}
+                                  value={status?.idName}
+                                  label={status?.name}
+                                  style={{ color: "rgba(156, 73, 0)" }}
+                                >
+                                  <Space>
+                                    <span role="status" aria-label={status.name}>
+                                      {status?.name}
+                                    </span>
+                                  </Space>
+                                </Option>
+                              ))}
+                            </Select>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
             </div>
             <div
               className="dashboard-main-map"
@@ -549,486 +549,221 @@ const Dashboard = () => {
               <div className="dashboard-inner-wrapper" key={"mapContainer"}>
                 {(userRole === "customer" ||
                   accessRights?.rights_dashboard_map == 1) && (
-                  <div className="map-wrapper left">
-                    <MapComponent
-                      componentId={"dashBoard"}
-                      iconMarker={yellowCar}
-                      mapDataLive={mapDataLive}
-                      setShareLink={setShareLink}
-                      setShareCureentLink={setShareCureentLink}
-                      setShareLinkData={setShareLinkData}
-                      setShareCureentlatitudeLink={setShareCureentlatitudeLink}
-                      setShareCureentlongitudeLink={
-                        setShareCureentlongitudeLink
-                      }
-                      selectedPopmMrker={selectedPopmMrker}
-                      setSelectedPopMarker={setSelectedPopMarker}
-                      customerSettingdata={customerSettingdata}
-                    />
-                    {/* // )} */}
-                  </div>
-                )}
+                    <div className="map-wrapper left">
+                      <MapComponent
+                        componentId={"dashBoard"}
+                        iconMarker={yellowCar}
+                        mapDataLive={mapDataLive}
+                        setShareLink={setShareLink}
+                        setShareCureentLink={setShareCureentLink}
+                        setShareLinkData={setShareLinkData}
+                        setShareCureentlatitudeLink={setShareCureentlatitudeLink}
+                        setShareCureentlongitudeLink={
+                          setShareCureentlongitudeLink
+                        }
+                        selectedPopmMrker={selectedPopmMrker}
+                        setSelectedPopMarker={setSelectedPopMarker}
+                        customerSettingdata={customerSettingdata}
+                      />
+                      {/* // )} */}
+                    </div>
+                  )}
 
                 <div className="right-vehicle-status-wrapper right">
                   <Tab.Container id="right-tabs-example">
                     {(userRole === "customer" ||
                       accessRights?.rights_dashboard_map == 1) && (
-                      <Col sm={12}>
-                        <Nav
-                          ref={navRef}
-                          variant="pills"
-                          className="flex-column rvs-nav"
-                          data-bs-custom-class="custom-tooltip"
-                        >
-                          <Nav.Item
-                            className="vehicle1 vehicle-tabs"
-                            onClick={() => {
-                              setIsShown(!isShown);
-                              setIsShown1(false);
-                              setIsShown2(false);
-                              setIsShown3(false);
-                              setIsShown4(false);
-                              setIsShown5(false);
-                              // setTriggerMap(false)
-                            }}
+                        <Col sm={12}>
+                          <Nav
+                            ref={navRef}
+                            variant="pills"
+                            className="flex-column rvs-nav"
+                            data-bs-custom-class="custom-tooltip"
                           >
-                            <Nav.Link eventKey="first" title={t("Running")}>
-                              <img src={Vehicle1} alt="" />
-                              <span>{runningData?.length}</span>
-                            </Nav.Link>
-                          </Nav.Item>
-                          <Nav.Item
-                            className="vehicle1 vehicle-tabs"
-                            onClick={() => {
-                              console.log("isShown4");
-                              setIsShown4(!isShown4);
-                              setIsShown1(false);
-                              setIsShown2(false);
-                              setIsShown(false);
-                              setIsShown5(false);
-                              setIsShown3(false);
-                              // setTriggerMap(false)
-                            }}
-                          >
-                            <Nav.Link eventKey="second" title={t("Idle")}>
-                              <img src={vehicle6} alt="" />
-                              <span>{idleData?.length}</span>
-                            </Nav.Link>
-                          </Nav.Item>
-                          <Nav.Item
-                            className="vehicle1 vehicle-tabs"
-                            onClick={() => {
-                              console.log("isShown5");
-                              setIsShown5(!isShown5);
-                              setIsShown(false);
-                              setIsShown1(false);
-                              setIsShown2(false);
-                              setIsShown3(false);
-                              setIsShown4(false);
-                              // setTriggerMap(false)
-                            }}
-                          >
-                            <Nav.Link eventKey="third" title={t("Parked")}>
-                              <img src={vehicle7} alt="" />
-                              <span>{parkedData?.length}</span>
-                            </Nav.Link>
-                          </Nav.Item>
-                          <Nav.Item
-                            className="vehicle1 vehicle-tabs"
-                            onClick={() => {
-                              setIsShown1(!isShown1);
-                              setIsShown(false);
-                              setIsShown2(false);
-                              setIsShown3(false);
-                              setIsShown4(false);
-                              setIsShown5(false);
-                            }}
-                          >
-                            <Nav.Link eventKey="fourth" title={t("Untracked")}>
-                              <img src={Vehicle2} alt="" />
-                              <span>
-                                {trakedData?.length + untrakedData?.length}
-                              </span>
-                            </Nav.Link>
-                          </Nav.Item>
-                          {(userRole === "customer" ||
-                            accessRights.rights_view_trips == 1) && (
+                            <Nav.Item
+                              className="vehicle1 vehicle-tabs"
+                              onClick={() => {
+                                setIsShown(!isShown);
+                                setIsShown1(false);
+                                setIsShown2(false);
+                                setIsShown3(false);
+                                setIsShown4(false);
+                                setIsShown5(false);
+                                // setTriggerMap(false)
+                              }}
+                            >
+                              <Nav.Link eventKey="first" title={t("Running")}>
+                                <img src={Vehicle1} alt="" />
+                                <span>{runningData?.length}</span>
+                              </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item
+                              className="vehicle1 vehicle-tabs"
+                              onClick={() => {
+                                console.log("isShown4");
+                                setIsShown4(!isShown4);
+                                setIsShown1(false);
+                                setIsShown2(false);
+                                setIsShown(false);
+                                setIsShown5(false);
+                                setIsShown3(false);
+                                // setTriggerMap(false)
+                              }}
+                            >
+                              <Nav.Link eventKey="second" title={t("Idle")}>
+                                <img src={vehicle6} alt="" />
+                                <span>{idleData?.length}</span>
+                              </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item
+                              className="vehicle1 vehicle-tabs"
+                              onClick={() => {
+                                console.log("isShown5");
+                                setIsShown5(!isShown5);
+                                setIsShown(false);
+                                setIsShown1(false);
+                                setIsShown2(false);
+                                setIsShown3(false);
+                                setIsShown4(false);
+                                // setTriggerMap(false)
+                              }}
+                            >
+                              <Nav.Link eventKey="third" title={t("Parked")}>
+                                <img src={vehicle7} alt="" />
+                                <span>{parkedData?.length}</span>
+                              </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item
+                              className="vehicle1 vehicle-tabs"
+                              onClick={() => {
+                                setIsShown1(!isShown1);
+                                setIsShown(false);
+                                setIsShown2(false);
+                                setIsShown3(false);
+                                setIsShown4(false);
+                                setIsShown5(false);
+                              }}
+                            >
+                              <Nav.Link eventKey="fourth" title={t("Untracked")}>
+                                <img src={Vehicle2} alt="" />
+                                <span>
+                                  {trakedData?.length + untrakedData?.length}
+                                </span>
+                              </Nav.Link>
+                            </Nav.Item>
+                            {(userRole === "customer" ||
+                              accessRights.rights_view_trips == 1) && (
+                                <Nav.Item
+                                  className="vehicle1 vehicle-tabs"
+                                  onClick={() => {
+                                    {
+                                      //
+                                      setIsShown2(!isShown2);
+                                      setIsShown3(false);
+                                      setIsShown1(false);
+                                      setIsShown(false);
+                                      setIsShown4(false);
+                                      setIsShown5(false);
+                                      // setTriggerMap(false)
+                                    }
+                                  }}
+                                >
+                                  <Nav.Link eventKey="fifth" title="Scheduled">
+                                    <img src={route} alt="" />
+                                    <span>{scheduleCount}</span>
+                                  </Nav.Link>
+                                </Nav.Item>
+                              )}
+
                             <Nav.Item
                               className="vehicle1 vehicle-tabs"
                               onClick={() => {
                                 {
-                                  //
-                                  setIsShown2(!isShown2);
                                   setIsShown3(false);
                                   setIsShown1(false);
-                                  setIsShown(false);
+                                  setIsShown2(false);
                                   setIsShown4(false);
                                   setIsShown5(false);
-                                  // setTriggerMap(false)
+                                  setIsShown(false);
+                                  setMapLayer([]);
+                                  setMapRectangle([]);
+                                  setRadiusDraw("");
+                                  setCircle([]);
+                                  setTriggerMap(!triggerMap);
                                 }
                               }}
                             >
-                              <Nav.Link eventKey="fifth" title="Scheduled">
-                                <img src={route} alt="" />
-                                <span>{scheduleCount}</span>
+                              <Nav.Link eventKey="sixth" title="Map Resize">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 8 8"
+                                >
+                                  <path
+                                    fill="#35a6bf"
+                                    d="M0 0v8h8V5.62a.5.5 0 0 0 0-.22V-.01H0zm1 1h6v4H5.5a.5.5 0 0 0-.09 0a.5.5 0 1 0 .09 1H7v1H1V1zm2.5 1C2.67 2 2 2.67 2 3.5C2 4.5 3.5 6 3.5 6S5 4.5 5 3.5C5 2.67 4.33 2 3.5 2zm0 1c.28 0 .5.22.5.5s-.22.5-.5.5s-.5-.22-.5-.5s.22-.5.5-.5z"
+                                  />
+                                </svg>
+
+                                {/* <span>{t("Boundries")}</span> */}
                               </Nav.Link>
                             </Nav.Item>
-                          )}
-
-                          <Nav.Item
-                            className="vehicle1 vehicle-tabs"
-                            onClick={() => {
-                              {
-                                setIsShown3(false);
-                                setIsShown1(false);
-                                setIsShown2(false);
-                                setIsShown4(false);
-                                setIsShown5(false);
-                                setIsShown(false);
-                                setMapLayer([]);
-                                setMapRectangle([]);
-                                setRadiusDraw("");
-                                setCircle([]);
-                                setTriggerMap(!triggerMap);
-                              }
-                            }}
-                          >
-                            <Nav.Link eventKey="sixth" title="Map Resize">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 8 8"
-                              >
-                                <path
-                                  fill="#35a6bf"
-                                  d="M0 0v8h8V5.62a.5.5 0 0 0 0-.22V-.01H0zm1 1h6v4H5.5a.5.5 0 0 0-.09 0a.5.5 0 1 0 .09 1H7v1H1V1zm2.5 1C2.67 2 2 2.67 2 3.5C2 4.5 3.5 6 3.5 6S5 4.5 5 3.5C5 2.67 4.33 2 3.5 2zm0 1c.28 0 .5.22.5.5s-.22.5-.5.5s-.5-.22-.5-.5s.22-.5.5-.5z"
-                                />
-                              </svg>
-
-                              {/* <span>{t("Boundries")}</span> */}
-                            </Nav.Link>
-                          </Nav.Item>
-                        </Nav>
-                      </Col>
-                    )}
+                          </Nav>
+                        </Col>
+                      )}
                     {(userRole === "customer" ||
                       accessRights?.rights_dashboard_map == 1) && (
-                      <Col sm={12}>
-                        <div className="outer-new">
-                          <Tab.Content
-                            className={"vehicle-main-tab"}
-                            id={isShown ? "vehicle-main-tab-active" : ""}
-                          >
-                            <Tab.Pane eventKey="first">
-                              <div className="dashboard-first-item">
-                                <div className="style-vehicle-btn1"></div>
-                                <Tab.Container
-                                  id="left-tabs-example"
-                                  className="va-tab-wrapper"
-                                  defaultActiveKey="0"
-                                >
-                                  <Row className={!isShown ? "none" : ""}>
-                                    <Col sm={12}>
-                                      <Nav
-                                        variant="pills"
-                                        className="va-nav tabs-custom-width-2-50"
-                                      >
-                                        <Nav.Item
-                                          className="va-tab"
-                                          id="diffWidth"
+                        <Col sm={12}>
+                          <div className="outer-new">
+                            <Tab.Content
+                              className={"vehicle-main-tab"}
+                              id={isShown ? "vehicle-main-tab-active" : ""}
+                            >
+                              <Tab.Pane eventKey="first">
+                                <div className="dashboard-first-item">
+                                  <div className="style-vehicle-btn1"></div>
+                                  <Tab.Container
+                                    id="left-tabs-example"
+                                    className="va-tab-wrapper"
+                                    defaultActiveKey="0"
+                                  >
+                                    <Row className={!isShown ? "none" : ""}>
+                                      <Col sm={12}>
+                                        <Nav
+                                          variant="pills"
+                                          className="va-nav tabs-custom-width-2-50"
                                         >
-                                          <Nav.Link
-                                            className="va-link"
-                                            eventKey="0"
+                                          <Nav.Item
+                                            className="va-tab"
+                                            id="diffWidth"
                                           >
-                                            {t("Running")} (
-                                            {runningData?.length})
-                                          </Nav.Link>
-                                        </Nav.Item>
-                                      </Nav>
-                                    </Col>
+                                            <Nav.Link
+                                              className="va-link"
+                                              eventKey="0"
+                                            >
+                                              {t("Running")} (
+                                              {runningData?.length})
+                                            </Nav.Link>
+                                          </Nav.Item>
+                                        </Nav>
+                                      </Col>
 
-                                    <Col sm={12}>
-                                      <Tab.Content>
-                                        <Tab.Pane
-                                          eventKey="0"
-                                          key={"runningData120"}
-                                        >
-                                          <div className="running-status-card-wrapper">
-                                            {runningData &&
-                                            runningData.length > 0 ? (
-                                              runningData?.map((ele, index) => {
-                                                return (
-                                                  <>
-                                                    <div
-                                                      className="status-card active"
-                                                      key={"running" + index}
-                                                      onClick={() => {
-                                                        setSelectedPopMarker(
-                                                          ele.vehicle_id
-                                                        );
-                                                        setTriggerMapBoundKeyRandom(
-                                                          Math.floor(
-                                                            Math.random() *
-                                                              10000000
-                                                          )
-                                                        );
-                                                        setCenterDragged([
-                                                          Number(ele?.latitude),
-                                                          Number(
-                                                            ele?.longitude
-                                                          ),
-                                                        ]);
-                                                      }}
-                                                    >
+                                      <Col sm={12}>
+                                        <Tab.Content>
+                                          <Tab.Pane
+                                            eventKey="0"
+                                            key={"runningData120"}
+                                          >
+                                            <div className="running-status-card-wrapper">
+                                              {runningData &&
+                                                runningData.length > 0 ? (
+                                                runningData?.map((ele, index) => {
+                                                  return (
+                                                    <>
                                                       <div
-                                                        className="first-active-card-main row"
-                                                        onClick={() => {
-                                                          setBikeBg(!bikeBg);
-                                                          setShow(!show);
-                                                        }}
-                                                        ref={target}
+                                                        className="status-card active"
                                                         key={"running" + index}
-                                                      >
-                                                        <div className="col-4 data-content">
-                                                          <label htmlFor="">
-                                                            {t("Driver Name")}
-                                                          </label>
-                                                          <p>
-                                                            {ele?.user_name}
-                                                          </p>
-                                                        </div>
-                                                        <div className="col-4 data-content">
-                                                          <label htmlFor="">
-                                                            {t("Vehicle Type")}
-                                                          </label>
-                                                          <p>
-                                                            {ele?.vehicle_type_code
-                                                              ? ele?.vehicle_type_code
-                                                              : ""}
-                                                          </p>
-                                                        </div>
-                                                        <div className="col-4 data-content">
-                                                          <label htmlFor="">
-                                                            {t("Vehicle No")}.
-                                                          </label>
-                                                          <p>
-                                                            {
-                                                              ele?.vehicle_number
-                                                            }
-                                                          </p>
-                                                        </div>
-                                                        <div className="col-4 data-content">
-                                                          <label htmlFor="">
-                                                            {t("From")}
-                                                          </label>
-                                                          <p>..</p>
-                                                        </div>
-                                                        <div className="col-4 data-content">
-                                                          <label htmlFor="">
-                                                            {t(
-                                                              "Distance Travelled"
-                                                            )}
-                                                          </label>
-                                                          <p>
-                                                            {
-                                                              ele?.vehicle_type_total_distance_travelled
-                                                            }
-                                                          </p>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </>
-                                                );
-                                              })
-                                            ) : (
-                                              <NoDataComp />
-                                            )}
-                                          </div>
-                                        </Tab.Pane>
-                                      </Tab.Content>
-                                    </Col>
-                                  </Row>
-                                </Tab.Container>
-                              </div>
-                            </Tab.Pane>
-                          </Tab.Content>
-                        </div>
-                        {/* {../../../../../} */}
-                        <div className="outer-new">
-                          <Tab.Content
-                            className={"vehicle-main-tab"}
-                            id={isShown4 ? "vehicle-main-tab-active" : ""}
-                          >
-                            <Tab.Pane eventKey="second">
-                              <div className="dashboard-first-item">
-                                <div className="style-vehicle-btn23"></div>
-                                <Tab.Container
-                                  id="left-tabs-example"
-                                  className="va-tab-wrapper"
-                                  defaultActiveKey="0"
-                                >
-                                  <Row className={!isShown4 ? "none" : ""}>
-                                    <Col sm={12}>
-                                      <Nav
-                                        variant="pills"
-                                        className="va-nav tabs-custom-width-2-50"
-                                      >
-                                        <Nav.Item
-                                          className="va-tab"
-                                          id="diffWidth"
-                                        >
-                                          <Nav.Link
-                                            className="va-link"
-                                            eventKey="0"
-                                          >
-                                            {t("Idle")}({idleData?.length})
-                                          </Nav.Link>
-                                        </Nav.Item>
-                                      </Nav>
-                                    </Col>
-
-                                    <Col sm={12}>
-                                      <Tab.Content>
-                                        <Tab.Pane
-                                          eventKey="0"
-                                          key={"runningData120"}
-                                        >
-                                          <div className="running-status-card-wrapper">
-                                            {idleData &&
-                                            idleData?.length > 0 ? (
-                                              idleData?.map((ele, index) => {
-                                                return (
-                                                  <div
-                                                    className="status-card active"
-                                                    onClick={() => {
-                                                      setSelectedPopMarker(
-                                                        ele.vehicle_id
-                                                      );
-                                                      setTriggerMapBoundKeyRandom(
-                                                        Math.floor(
-                                                          Math.random() *
-                                                            10000000
-                                                        )
-                                                      );
-                                                      setCenterDragged([
-                                                        Number(ele?.latitude),
-                                                        Number(ele?.longitude),
-                                                      ]);
-                                                    }}
-                                                    key={"idleData" + index}
-                                                  >
-                                                    <div className="first-active-card-main row">
-                                                      <div className="col-4 data-content">
-                                                        <label htmlFor="">
-                                                          {t("Driver Name")}
-                                                        </label>
-                                                        <p>{ele?.user_name}</p>
-                                                      </div>
-                                                      <div className="col-4 data-content">
-                                                        <label htmlFor="">
-                                                          {t("Vehicle Type")}
-                                                        </label>
-                                                        <p>
-                                                          {ele?.vehicle_type_code
-                                                            ? ele?.vehicle_type_code
-                                                            : ""}
-                                                        </p>
-                                                      </div>
-                                                      <div className="col-4 data-content">
-                                                        <label htmlFor="">
-                                                          {t("Vehicle No")}.
-                                                        </label>
-                                                        <p>
-                                                          {ele?.vehicle_number}
-                                                        </p>
-                                                      </div>
-                                                      <div className="col-4 data-content">
-                                                        <label htmlFor="">
-                                                          {t("From")}
-                                                        </label>
-                                                        <p>..</p>
-                                                      </div>
-                                                      <div className="col-4 data-content">
-                                                        <label htmlFor="">
-                                                          {t(
-                                                            "Distance Travelled"
-                                                          )}
-                                                        </label>
-                                                        <p>
-                                                          {
-                                                            ele?.vehicle_type_total_distance_travelled
-                                                          }
-                                                        </p>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                );
-                                              })
-                                            ) : (
-                                              <NoDataComp />
-                                            )}
-                                          </div>
-                                        </Tab.Pane>
-                                      </Tab.Content>
-                                    </Col>
-                                  </Row>
-                                </Tab.Container>
-                              </div>
-                            </Tab.Pane>
-                          </Tab.Content>
-                        </div>
-
-                        {/* {../../../../../.././} */}
-                        {/* {../../../../../../../../../} */}
-                        <div className="outer-new">
-                          <Tab.Content
-                            className={"vehicle-main-tab"}
-                            id={isShown5 ? "vehicle-main-tab-active" : ""}
-                          >
-                            <Tab.Pane eventKey="third">
-                              <div className="dashboard-first-item">
-                                <div className="style-vehicle-btn24"></div>
-                                <Tab.Container
-                                  id="left-tabs-example"
-                                  className="va-tab-wrapper"
-                                  defaultActiveKey="0"
-                                >
-                                  <Row className={!isShown5 ? "none" : ""}>
-                                    <Col sm={12}>
-                                      <Nav
-                                        variant="pills"
-                                        className="va-nav tabs-custom-width-2-50"
-                                      >
-                                        <Nav.Item
-                                          className="va-tab"
-                                          id="diffWidth"
-                                        >
-                                          <Nav.Link
-                                            className="va-link"
-                                            eventKey="0"
-                                          >
-                                            {t("Parked")} ({parkedData?.length})
-                                          </Nav.Link>
-                                        </Nav.Item>
-                                      </Nav>
-                                    </Col>
-                                    <Col sm={12}>
-                                      <Tab.Content>
-                                        <Tab.Pane
-                                          eventKey="0"
-                                          key={"runningData120"}
-                                        >
-                                          <div className="running-status-card-wrapper">
-                                            {parkedData &&
-                                            parkedData.length > 0 ? (
-                                              parkedData.map((ele, index) => {
-                                                return (
-                                                  <>
-                                                    <div className="status-card d-flex justify-content-center  active">
-                                                      <div
-                                                        className="first-active-card-main row"
                                                         onClick={() => {
                                                           setSelectedPopMarker(
                                                             ele.vehicle_id
@@ -1036,29 +771,160 @@ const Dashboard = () => {
                                                           setTriggerMapBoundKeyRandom(
                                                             Math.floor(
                                                               Math.random() *
-                                                                10000000
+                                                              10000000
                                                             )
                                                           );
                                                           setCenterDragged([
-                                                            Number(
-                                                              ele?.latitude
-                                                            ),
+                                                            Number(ele?.latitude),
                                                             Number(
                                                               ele?.longitude
                                                             ),
                                                           ]);
                                                         }}
-                                                        key={
-                                                          "parkedData" + index
-                                                        }
                                                       >
+                                                        <div
+                                                          className="first-active-card-main row"
+                                                          onClick={() => {
+                                                            setBikeBg(!bikeBg);
+                                                            setShow(!show);
+                                                          }}
+                                                          ref={target}
+                                                          key={"running" + index}
+                                                        >
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Driver Name")}
+                                                            </label>
+                                                            <p>
+                                                              {ele?.user_name}
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Vehicle Type")}
+                                                            </label>
+                                                            <p>
+                                                              {ele?.vehicle_type_code
+                                                                ? ele?.vehicle_type_code
+                                                                : ""}
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Vehicle No")}.
+                                                            </label>
+                                                            <p>
+                                                              {
+                                                                ele?.vehicle_number
+                                                              }
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("From")}
+                                                            </label>
+                                                            <p>..</p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t(
+                                                                "Distance Travelled"
+                                                              )}
+                                                            </label>
+                                                            <p>
+                                                              {
+                                                                ele?.vehicle_type_total_distance_travelled
+                                                              }
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </>
+                                                  );
+                                                })
+                                              ) : (
+                                                <NoDataComp />
+                                              )}
+                                            </div>
+                                          </Tab.Pane>
+                                        </Tab.Content>
+                                      </Col>
+                                    </Row>
+                                  </Tab.Container>
+                                </div>
+                              </Tab.Pane>
+                            </Tab.Content>
+                          </div>
+                          {/* {../../../../../} */}
+                          <div className="outer-new">
+                            <Tab.Content
+                              className={"vehicle-main-tab"}
+                              id={isShown4 ? "vehicle-main-tab-active" : ""}
+                            >
+                              <Tab.Pane eventKey="second">
+                                <div className="dashboard-first-item">
+                                  <div className="style-vehicle-btn23"></div>
+                                  <Tab.Container
+                                    id="left-tabs-example"
+                                    className="va-tab-wrapper"
+                                    defaultActiveKey="0"
+                                  >
+                                    <Row className={!isShown4 ? "none" : ""}>
+                                      <Col sm={12}>
+                                        <Nav
+                                          variant="pills"
+                                          className="va-nav tabs-custom-width-2-50"
+                                        >
+                                          <Nav.Item
+                                            className="va-tab"
+                                            id="diffWidth"
+                                          >
+                                            <Nav.Link
+                                              className="va-link"
+                                              eventKey="0"
+                                            >
+                                              {t("Idle")}({idleData?.length})
+                                            </Nav.Link>
+                                          </Nav.Item>
+                                        </Nav>
+                                      </Col>
+
+                                      <Col sm={12}>
+                                        <Tab.Content>
+                                          <Tab.Pane
+                                            eventKey="0"
+                                            key={"runningData120"}
+                                          >
+                                            <div className="running-status-card-wrapper">
+                                              {idleData &&
+                                                idleData?.length > 0 ? (
+                                                idleData?.map((ele, index) => {
+                                                  return (
+                                                    <div
+                                                      className="status-card active"
+                                                      onClick={() => {
+                                                        setSelectedPopMarker(
+                                                          ele.vehicle_id
+                                                        );
+                                                        setTriggerMapBoundKeyRandom(
+                                                          Math.floor(
+                                                            Math.random() *
+                                                            10000000
+                                                          )
+                                                        );
+                                                        setCenterDragged([
+                                                          Number(ele?.latitude),
+                                                          Number(ele?.longitude),
+                                                        ]);
+                                                      }}
+                                                      key={"idleData" + index}
+                                                    >
+                                                      <div className="first-active-card-main row">
                                                         <div className="col-4 data-content">
                                                           <label htmlFor="">
                                                             {t("Driver Name")}
                                                           </label>
-                                                          <p>
-                                                            {ele?.user_name}
-                                                          </p>
+                                                          <p>{ele?.user_name}</p>
                                                         </div>
                                                         <div className="col-4 data-content">
                                                           <label htmlFor="">
@@ -1075,9 +941,7 @@ const Dashboard = () => {
                                                             {t("Vehicle No")}.
                                                           </label>
                                                           <p>
-                                                            {ele?.vehicle_number
-                                                              ? ele.vehicle_number
-                                                              : ""}
+                                                            {ele?.vehicle_number}
                                                           </p>
                                                         </div>
                                                         <div className="col-4 data-content">
@@ -1100,84 +964,220 @@ const Dashboard = () => {
                                                         </div>
                                                       </div>
                                                     </div>
-                                                  </>
-                                                );
-                                              })
-                                            ) : (
-                                              <NoDataComp />
-                                            )}
-                                          </div>
-                                        </Tab.Pane>
-                                      </Tab.Content>
-                                    </Col>
-                                  </Row>
-                                </Tab.Container>
-                              </div>
-                            </Tab.Pane>
-                          </Tab.Content>
-                        </div>
-                        {/* {../../../../../../../../../} */}
+                                                  );
+                                                })
+                                              ) : (
+                                                <NoDataComp />
+                                              )}
+                                            </div>
+                                          </Tab.Pane>
+                                        </Tab.Content>
+                                      </Col>
+                                    </Row>
+                                  </Tab.Container>
+                                </div>
+                              </Tab.Pane>
+                            </Tab.Content>
+                          </div>
 
-                        {(userRole === "customer" ||
-                          accessRights?.rights_dashboard_map == 1) && (
-                          <Tab.Content
-                            className={"vehicle-main-tab"}
-                            id={isShown1 ? "vehicle-main-tab-active" : ""}
-                          >
-                            <Tab.Pane eventKey="fourth">
-                              <div className={!isShown1 ? "none" : ""}>
-                                <div className="style-vehicle-btn25"></div>
-                                {
-                                  <VehicleActive1
-                                    componentId={"status1"}
-                                    trakedData={trakedData}
-                                    untrakedData={untrakedData}
-                                    setSelectedPopMarker={setSelectedPopMarker}
-                                  />
-                                }
-                              </div>
-                            </Tab.Pane>
-                          </Tab.Content>
-                        )}
+                          {/* {../../../../../.././} */}
+                          {/* {../../../../../../../../../} */}
+                          <div className="outer-new">
+                            <Tab.Content
+                              className={"vehicle-main-tab"}
+                              id={isShown5 ? "vehicle-main-tab-active" : ""}
+                            >
+                              <Tab.Pane eventKey="third">
+                                <div className="dashboard-first-item">
+                                  <div className="style-vehicle-btn24"></div>
+                                  <Tab.Container
+                                    id="left-tabs-example"
+                                    className="va-tab-wrapper"
+                                    defaultActiveKey="0"
+                                  >
+                                    <Row className={!isShown5 ? "none" : ""}>
+                                      <Col sm={12}>
+                                        <Nav
+                                          variant="pills"
+                                          className="va-nav tabs-custom-width-2-50"
+                                        >
+                                          <Nav.Item
+                                            className="va-tab"
+                                            id="diffWidth"
+                                          >
+                                            <Nav.Link
+                                              className="va-link"
+                                              eventKey="0"
+                                            >
+                                              {t("Parked")} ({parkedData?.length})
+                                            </Nav.Link>
+                                          </Nav.Item>
+                                        </Nav>
+                                      </Col>
+                                      <Col sm={12}>
+                                        <Tab.Content>
+                                          <Tab.Pane
+                                            eventKey="0"
+                                            key={"runningData120"}
+                                          >
+                                            <div className="running-status-card-wrapper">
+                                              {parkedData &&
+                                                parkedData.length > 0 ? (
+                                                parkedData.map((ele, index) => {
+                                                  return (
+                                                    <>
+                                                      <div className="status-card d-flex justify-content-center  active">
+                                                        <div
+                                                          className="first-active-card-main row"
+                                                          onClick={() => {
+                                                            setSelectedPopMarker(
+                                                              ele.vehicle_id
+                                                            );
+                                                            setTriggerMapBoundKeyRandom(
+                                                              Math.floor(
+                                                                Math.random() *
+                                                                10000000
+                                                              )
+                                                            );
+                                                            setCenterDragged([
+                                                              Number(
+                                                                ele?.latitude
+                                                              ),
+                                                              Number(
+                                                                ele?.longitude
+                                                              ),
+                                                            ]);
+                                                          }}
+                                                          key={
+                                                            "parkedData" + index
+                                                          }
+                                                        >
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Driver Name")}
+                                                            </label>
+                                                            <p>
+                                                              {ele?.user_name}
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Vehicle Type")}
+                                                            </label>
+                                                            <p>
+                                                              {ele?.vehicle_type_code
+                                                                ? ele?.vehicle_type_code
+                                                                : ""}
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("Vehicle No")}.
+                                                            </label>
+                                                            <p>
+                                                              {ele?.vehicle_number
+                                                                ? ele.vehicle_number
+                                                                : ""}
+                                                            </p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t("From")}
+                                                            </label>
+                                                            <p>..</p>
+                                                          </div>
+                                                          <div className="col-4 data-content">
+                                                            <label htmlFor="">
+                                                              {t(
+                                                                "Distance Travelled"
+                                                              )}
+                                                            </label>
+                                                            <p>
+                                                              {
+                                                                ele?.vehicle_type_total_distance_travelled
+                                                              }
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </>
+                                                  );
+                                                })
+                                              ) : (
+                                                <NoDataComp />
+                                              )}
+                                            </div>
+                                          </Tab.Pane>
+                                        </Tab.Content>
+                                      </Col>
+                                    </Row>
+                                  </Tab.Container>
+                                </div>
+                              </Tab.Pane>
+                            </Tab.Content>
+                          </div>
+                          {/* {../../../../../../../../../} */}
 
-                        {accessRights.rights_view_trips == 1 && (
-                          <Tab.Content
-                            className={"vehicle-main-tab"}
-                            id={isShown2 ? "vehicle-main-tab-active" : ""}
-                          >
-                            <Tab.Pane eventKey="fifth">
-                              <div className={!isShown2 ? "none" : ""}>
-                                <div className="style-vehicle-btn26"></div>
-                                {
-                                  <VehicleActive2
-                                    componentId={"status2"}
-                                    scheduleData={scheduleData}
-                                    scheduleCount={scheduleCount}
-                                  />
-                                }
-                              </div>
-                            </Tab.Pane>
-                          </Tab.Content>
-                        )}
+                          {(userRole === "customer" ||
+                            accessRights?.rights_dashboard_map == 1) && (
+                              <Tab.Content
+                                className={"vehicle-main-tab"}
+                                id={isShown1 ? "vehicle-main-tab-active" : ""}
+                              >
+                                <Tab.Pane eventKey="fourth">
+                                  <div className={!isShown1 ? "none" : ""}>
+                                    <div className="style-vehicle-btn25"></div>
+                                    {
+                                      <VehicleActive1
+                                        componentId={"status1"}
+                                        trakedData={trakedData}
+                                        untrakedData={untrakedData}
+                                        setSelectedPopMarker={setSelectedPopMarker}
+                                      />
+                                    }
+                                  </div>
+                                </Tab.Pane>
+                              </Tab.Content>
+                            )}
 
-                        <div
-                          className={
-                            isShown3
-                              ? "dashboard-first-item dashboard-first-item-active"
-                              : "dashboard-first-item"
-                          }
-                        >
-                          <div className="style-vehicle-btn4"></div>
-                          <Tab.Content
+                          {accessRights.rights_view_trips == 1 && (
+                            <Tab.Content
+                              className={"vehicle-main-tab"}
+                              id={isShown2 ? "vehicle-main-tab-active" : ""}
+                            >
+                              <Tab.Pane eventKey="fifth">
+                                <div className={!isShown2 ? "none" : ""}>
+                                  <div className="style-vehicle-btn26"></div>
+                                  {
+                                    <VehicleActive2
+                                      componentId={"status2"}
+                                      scheduleData={scheduleData}
+                                      scheduleCount={scheduleCount}
+                                    />
+                                  }
+                                </div>
+                              </Tab.Pane>
+                            </Tab.Content>
+                          )}
+
+                          <div
                             className={
                               isShown3
-                                ? "tools-main-tab tools-main-tab-active"
-                                : "tools-main-tab"
+                                ? "dashboard-first-item dashboard-first-item-active"
+                                : "dashboard-first-item"
                             }
-                          ></Tab.Content>
-                        </div>
-                      </Col>
-                    )}
+                          >
+                            <div className="style-vehicle-btn4"></div>
+                            <Tab.Content
+                              className={
+                                isShown3
+                                  ? "tools-main-tab tools-main-tab-active"
+                                  : "tools-main-tab"
+                              }
+                            ></Tab.Content>
+                          </div>
+                        </Col>
+                      )}
                   </Tab.Container>
                 </div>
                 {/* Bottom Wrapper */}
@@ -1205,24 +1205,20 @@ const Dashboard = () => {
             <p>{t("Link to Share")}</p>
             <input
               type="text"
-              Value={`${
-                ` ${ApiConfig?.BASE_URL_SHARE}DashboardShare/` +
+              Value={`${` ${ApiConfig?.BASE_URL_SHARE}DashboardShare/` +
                 shareLinkData +
-                `&user_customer_id=${
-                  customerData?.customer_id
+                `&user_customer_id=${customerData?.customer_id
                 }&timeZone=${timeZone?.replace("/", "-")}`
-              }`}
+                }`}
               className="form-control"
             />
             <div className="copy_body d-flex justify-content-end">
               <CopyToClipboard
-                text={`${
-                  ` ${ApiConfig?.BASE_URL_SHARE}DashboardShare/` +
+                text={`${` ${ApiConfig?.BASE_URL_SHARE}DashboardShare/` +
                   shareLinkData +
-                  `&user_customer_id=${
-                    customerData?.customer_id
+                  `&user_customer_id=${customerData?.customer_id
                   }&timeZone=${timeZone?.replace("/", "-")}`
-                }`}
+                  }`}
                 onCopy={() => setShareLink(false)}
               >
                 <button className="cx-btn-2  mt-2">

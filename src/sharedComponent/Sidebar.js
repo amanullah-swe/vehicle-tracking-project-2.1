@@ -184,47 +184,7 @@ const Sidebar = () => {
   //   return false; // Return false if none of the properties have a value of 1
   // };
 
-  const handleVeicleTab = () => {
-    if (accessRights?.rights_view_vehicle) {
-      localStorage.setItem("vehicleTabListActive", "vehicle");
-      setVehicleTabListActive("vehicle");
-      return true;
-    }
 
-    if (
-      !accessRights?.rights_view_vehicle &&
-      accessRights?.rights_view_vehiclegroup
-    ) {
-      localStorage.setItem("vehicleTabListActive", "group");
-      setVehicleTabListActive("group");
-      return true;
-    }
-
-    if (
-      !accessRights?.rights_view_vehicle &&
-      accessRights?.rights_view_vehiclesync
-    ) {
-      localStorage.setItem("vehicleTabListActive", "sync");
-      setVehicleTabListActive("sync");
-      return true;
-    }
-    if (
-      !accessRights?.rights_view_vehicle &&
-      accessRights?.rights_view_vehicletype
-    ) {
-      localStorage.setItem("vehicleTabListActive", "category");
-      setVehicleTabListActive("category");
-      return true;
-    }
-    if (
-      !accessRights?.rights_view_vehicle &&
-      accessRights?.rights_view_hardware_feature_set
-    ) {
-      localStorage.setItem("vehicleTabListActive", "FeatureSet");
-      setVehicleTabListActive("FeatureSet");
-      return true;
-    }
-  };
   return (
     <div className="cx-sidebar ">
       <div
@@ -311,59 +271,57 @@ const Sidebar = () => {
               <div className="sidebar-menu-wrapper">
                 <Accordion>
                   {/* ================> Dashboard Start <============== */}
-                  {(userRole === "customer" ||
-                    accessRights?.rights_dashboard_map === 1) && (
-                      <Accordion.Item eventKey="7" id="single_accordian_item">
-                        <Accordion.Header>
-                          <div
-                            className="menus-items"
-                            onClick={() => {
-                              isMobile ? setSidebar(false) : setSidebar(true);
-                            }}
-                          >
-                            <Link
-                              to="/dashboard"
-                              className="icon-menu-name"
-                              onMouseOver={() => setDashboard1(true)}
-                              onMouseOut={() => setDashboard1(false)}
-                              onClick={() => {
-                                setCommunication(false);
-                                setDispatchManagement(false);
-                                setPayment(false);
-                                setUsers(false);
-                                setVehicleExpenses(false);
-                                setMasterData(false);
-                                setMasterSetting(false);
-                                setReplayPlayback(false);
-                                setParkingManagement(false);
-                                setConfigurationChecker(false);
-                                setReports(false);
-                              }}
-                            >
-                              <div className="icon-left">
-                                {currentRoute === "/dashboard" ||
-                                  Dashboard1 === true ? (
-                                  <img src={dashboard_icon_active} alt="" />
-                                ) : (
-                                  <img src={dashboard_icon} alt="" />
-                                )}
-                              </div>
 
-                              <div
-                                className={
-                                  currentRoute === "/dashboard" ||
-                                    Dashboard1 === true
-                                    ? "menu-name activeColorBrown"
-                                    : "menu-name"
-                                }
-                              >
-                                {t("Dashboard")}
-                              </div>
-                            </Link>
+                  <Accordion.Item eventKey="7" id="single_accordian_item">
+                    <Accordion.Header>
+                      <div
+                        className="menus-items"
+                        onClick={() => {
+                          isMobile ? setSidebar(false) : setSidebar(true);
+                        }}
+                      >
+                        <Link
+                          to="/dashboard"
+                          className="icon-menu-name"
+                          onMouseOver={() => setDashboard1(true)}
+                          onMouseOut={() => setDashboard1(false)}
+                          onClick={() => {
+                            setCommunication(false);
+                            setDispatchManagement(false);
+                            setPayment(false);
+                            setUsers(false);
+                            setVehicleExpenses(false);
+                            setMasterData(false);
+                            setMasterSetting(false);
+                            setReplayPlayback(false);
+                            setParkingManagement(false);
+                            setConfigurationChecker(false);
+                            setReports(false);
+                          }}
+                        >
+                          <div className="icon-left">
+                            {currentRoute === "/dashboard" ||
+                              Dashboard1 === true ? (
+                              <img src={dashboard_icon_active} alt="" />
+                            ) : (
+                              <img src={dashboard_icon} alt="" />
+                            )}
                           </div>
-                        </Accordion.Header>
-                      </Accordion.Item>
-                    )}
+
+                          <div
+                            className={
+                              currentRoute === "/dashboard" ||
+                                Dashboard1 === true
+                                ? "menu-name activeColorBrown"
+                                : "menu-name"
+                            }
+                          >
+                            {t("Dashboard")}
+                          </div>
+                        </Link>
+                      </div>
+                    </Accordion.Header>
+                  </Accordion.Item>
                   {/* ================> Dashboard End <============== */}
 
                   {/* ================> Master Setting Start <============== */}
@@ -372,28 +330,65 @@ const Sidebar = () => {
 
                   {/* ================> Master Data Start <============== */}
                   <Accordion.Item eventKey="1">
-                    {userRole === "customer" ||
-                      (accessRights &&
-                        (accessRights?.rights_view_vehicle ||
-                          accessRights?.rights_view_vehicletype ||
-                          accessRights?.rights_view_vehiclesync ||
-                          accessRights?.rights_view_vehiclegroup ||
-                          accessRights?.rights_view_hardware_feature_set ||
-                          accessRights?.rights_view_holiday ||
-                          accessRights?.rights_view_vacation ||
-                          accessRights?.rights_view_vehicletype ||
-                          accessRights?.rights_view_vacation ||
-                          accessRights?.rights_view_parking_station ||
-                          accessRights.rights_view_point_of_interest ||
-                          accessRights?.rights_view_geofence_area)) ? (
-                      <Accordion.Header>
+
+                    <Accordion.Header>
+                      <div
+                        className="icon-menu-name"
+                        onMouseOver={() => setMasterData1(true)}
+                        onMouseOut={() => setMasterData1(false)}
+                      >
+                        <div className="icon-left">
+                          {masterData === true ||
+                            masterData1 === true ||
+                            currentRoute === "/Vehicle" ||
+                            currentRoute === "/Holidays" ||
+                            currentRoute === "/Vacations" ||
+                            currentRoute === "/EditVacation" ||
+                            currentRoute === "/ParkingSlot" ||
+                            currentRoute === "/AddHolidays" ||
+                            currentRoute === "/EditHolidays" ||
+                            currentRoute === "/AddVehicle" ||
+                            currentRoute === "/AddVacation" ||
+                            currentRoute === "/EditVacation" ||
+                            currentRoute === "/AddParkingSlot" ||
+                            currentRoute === "/EditParkingSlot" ||
+                            currentRoute === "/AddPointOfInterest" ||
+                            currentRoute === "/AddGeofenceArea" ||
+                            currentRoute === "/AddVehicleCategory" ||
+                            currentRoute === "/AddVehicleGroup" ||
+                            currentRoute === "/NewSyncRequest" ||
+                            currentRoute === "/PointOfIntrest" ||
+                            currentRoute === "/VehicleDetails" ||
+                            currentRoute === "/GeofenceAreas" ||
+                            currentRoute.includes("/VehicleDetails") ||
+                            currentRoute.includes("/AddVehicle") ||
+                            currentRoute.includes("/AddHolidays") ||
+                            currentRoute === "/EditGeofenceArea" ? (
+                            <Link
+                              to="/Vehicle"
+                              onClick={() => {
+                                setDashboard1(false);
+                                setSidebar(true);
+                              }}
+                            >
+                              <img src={data_icon_active} alt="" />
+                            </Link>
+                          ) : (
+                            <Link
+                              to="/Vehicle"
+                              onClick={() => {
+                                setDashboard1(false);
+                                setSidebar(true);
+                              }}
+                            >
+                              <img src={data_icon} alt="" />
+                            </Link>
+                          )}
+                        </div>
+
                         <div
-                          className="icon-menu-name"
-                          onMouseOver={() => setMasterData1(true)}
-                          onMouseOut={() => setMasterData1(false)}
-                        >
-                          <div className="icon-left">
-                            {masterData === true ||
+                          className={
+                            masterData === true ||
                               masterData1 === true ||
                               currentRoute === "/Vehicle" ||
                               currentRoute === "/Holidays" ||
@@ -415,160 +410,89 @@ const Sidebar = () => {
                               currentRoute === "/PointOfIntrest" ||
                               currentRoute === "/VehicleDetails" ||
                               currentRoute === "/GeofenceAreas" ||
+                              currentRoute === "/EditGeofenceArea" ||
                               currentRoute.includes("/VehicleDetails") ||
                               currentRoute.includes("/AddVehicle") ||
-                              currentRoute.includes("/AddHolidays") ||
-                              currentRoute === "/EditGeofenceArea" ? (
-                              <Link
-                                to="/Vehicle"
-                                onClick={() => {
-                                  setDashboard1(false);
-                                  setSidebar(true);
-                                }}
-                              >
-                                <img src={data_icon_active} alt="" />
-                              </Link>
-                            ) : (
-                              <Link
-                                to="/Vehicle"
-                                onClick={() => {
-                                  setDashboard1(false);
-                                  setSidebar(true);
-                                }}
-                              >
-                                <img src={data_icon} alt="" />
-                              </Link>
-                            )}
-                          </div>
+                              currentRoute.includes("/AddHolidays")
+                              ? "menu-name activeColorBrown"
+                              : "menu-name"
+                          }
+                        >
 
-                          <div
-                            className={
-                              masterData === true ||
-                                masterData1 === true ||
-                                currentRoute === "/Vehicle" ||
-                                currentRoute === "/Holidays" ||
-                                currentRoute === "/Vacations" ||
-                                currentRoute === "/EditVacation" ||
-                                currentRoute === "/ParkingSlot" ||
-                                currentRoute === "/AddHolidays" ||
-                                currentRoute === "/EditHolidays" ||
-                                currentRoute === "/AddVehicle" ||
-                                currentRoute === "/AddVacation" ||
-                                currentRoute === "/EditVacation" ||
-                                currentRoute === "/AddParkingSlot" ||
-                                currentRoute === "/EditParkingSlot" ||
-                                currentRoute === "/AddPointOfInterest" ||
-                                currentRoute === "/AddGeofenceArea" ||
-                                currentRoute === "/AddVehicleCategory" ||
-                                currentRoute === "/AddVehicleGroup" ||
-                                currentRoute === "/NewSyncRequest" ||
-                                currentRoute === "/PointOfIntrest" ||
-                                currentRoute === "/VehicleDetails" ||
-                                currentRoute === "/GeofenceAreas" ||
-                                currentRoute === "/EditGeofenceArea" ||
-                                currentRoute.includes("/VehicleDetails") ||
-                                currentRoute.includes("/AddVehicle") ||
-                                currentRoute.includes("/AddHolidays")
-                                ? "menu-name activeColorBrown"
-                                : "menu-name"
-                            }
-                          >
-
-                            {t("Master Data")}
-                          </div>
-                          {/* </Link> */}
+                          {t("Master Data")}
                         </div>
-                      </Accordion.Header>
-                    ) : null}
+                        {/* </Link> */}
+                      </div>
+                    </Accordion.Header>
 
                     <Accordion.Body>
                       <div className="sub-menus">
                         <ul className="actionnmenulist">
+                          <li>
+                            <Link
+                              onClick={() => {
+                                setParkingManagement(false);
+                                setReplayPlayback(false);
+                                isMobile
+                                  ? setSidebar(false)
+                                  : setSidebar(true);
+                              }}
+                              to="/ParkingSlot"
+                              className={
+                                currentRoute === "/ParkingSlot" ||
+                                  currentRoute === "/AddParkingSlot" ||
+                                  currentRoute === "/EditParkingSlot"
+                                  ? "activeColorBrown"
+                                  : ""
+                              }
+                            >
+                              {t("Parking Station")}
+                            </Link>
+                          </li>
 
+                          <li>
+                            <Link
+                              onClick={() => {
+                                setParkingManagement(false);
+                                setReplayPlayback(false);
+                                isMobile
+                                  ? setSidebar(false)
+                                  : setSidebar(true);
+                              }}
+                              to="/PointOfIntrest"
+                              className={
+                                currentRoute === "/PointOfIntrest" ||
+                                  currentRoute === "/AddPointOfInterest" ||
+                                  currentRoute === "/EditPointOfInterest"
+                                  ? "activeColorBrown"
+                                  : ""
+                              }
+                            >
+                              {t("Point of Interest")}
+                            </Link>
+                          </li>
 
-                          {userRole === "customer" ||
-                            (accessRights &&
-                              accessRights?.rights_view_parking_station) ? (
-                            <li>
-                              <Link
-                                onClick={() => {
-                                  setParkingManagement(false);
-                                  setReplayPlayback(false);
-                                  isMobile
-                                    ? setSidebar(false)
-                                    : setSidebar(true);
-                                }}
-                                to="/ParkingSlot"
-                                className={
-                                  currentRoute === "/ParkingSlot" ||
-                                    currentRoute === "/AddParkingSlot" ||
-                                    currentRoute === "/EditParkingSlot"
-                                    ? "activeColorBrown"
-                                    : ""
-                                }
-                              >
-                                {t("Parking Station")}
-                              </Link>
-                            </li>
-                          ) : (
-                            <></>
-                          )}
-
-                          {userRole === "customer" ||
-                            (accessRights &&
-                              accessRights.rights_view_point_of_interest) ? (
-                            <li>
-                              <Link
-                                onClick={() => {
-                                  setParkingManagement(false);
-                                  setReplayPlayback(false);
-                                  isMobile
-                                    ? setSidebar(false)
-                                    : setSidebar(true);
-                                }}
-                                to="/PointOfIntrest"
-                                className={
-                                  currentRoute === "/PointOfIntrest" ||
-                                    currentRoute === "/AddPointOfInterest" ||
-                                    currentRoute === "/EditPointOfInterest"
-                                    ? "activeColorBrown"
-                                    : ""
-                                }
-                              >
-                                {t("Point of Interest")}
-                              </Link>
-                            </li>
-                          ) : (
-                            <></>
-                          )}
-
-                          {userRole === "customer" ||
-                            (accessRights &&
-                              accessRights?.rights_view_geofence_area) ? (
-                            <li>
-                              <Link
-                                onClick={() => {
-                                  setParkingManagement(false);
-                                  setReplayPlayback(false);
-                                  isMobile
-                                    ? setSidebar(false)
-                                    : setSidebar(true);
-                                }}
-                                to="/GeofenceAreas"
-                                className={
-                                  currentRoute === "/GeofenceAreas" ||
-                                    currentRoute === "/AddGeofenceArea" ||
-                                    currentRoute === "/EditGeofenceArea"
-                                    ? "activeColorBrown"
-                                    : ""
-                                }
-                              >
-                                {t("Geofence Areas")}
-                              </Link>
-                            </li>
-                          ) : (
-                            <></>
-                          )}
+                          <li>
+                            <Link
+                              onClick={() => {
+                                setParkingManagement(false);
+                                setReplayPlayback(false);
+                                isMobile
+                                  ? setSidebar(false)
+                                  : setSidebar(true);
+                              }}
+                              to="/GeofenceAreas"
+                              className={
+                                currentRoute === "/GeofenceAreas" ||
+                                  currentRoute === "/AddGeofenceArea" ||
+                                  currentRoute === "/EditGeofenceArea"
+                                  ? "activeColorBrown"
+                                  : ""
+                              }
+                            >
+                              {t("Geofence Areas")}
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                     </Accordion.Body>
@@ -580,63 +504,6 @@ const Sidebar = () => {
                   {/* ================> Users End <============== */}
 
                   {/* ================> New User Start <============== */}
-
-                  {accessRights &&
-                    temporaryHide &&
-                    accessRights?.rights_view_report_distribution ? (
-                    <Accordion.Item eventKey="8" id="single_accordian_item">
-                      <Accordion.Header>
-                        <div className="menus-items">
-                          <Link
-                            to="/AllUsers"
-                            className="icon-menu-name"
-                            onMouseOver={() => setNewUser1(true)}
-                            onMouseOut={() => setNewUser1(false)}
-                            onClick={() => {
-                              setCommunication(false);
-                              setTripManagement(false);
-                              setParkingManagement(false);
-                              setReplayPlayback(false);
-                              setDispatchManagement(false);
-                              setPayment(false);
-                              setUsers(false);
-                              setVehicleExpenses(false);
-                              setMasterData(false);
-                              setMasterSetting(false);
-                              isMobile ? setSidebar(false) : setSidebar(true);
-                            }}
-                          >
-                            <div className="icon-left">
-                              {NewUser1 === true ||
-                                currentRoute === "/AllUsers" ||
-                                currentRoute === "/CreateUser" ||
-                                currentRoute ===
-                                "/ReportDistributionContactsDetails" ||
-                                currentRoute === "/EditUser" ? (
-                                <img src={Report_Distribution_active} alt="" />
-                              ) : (
-                                <img src={Report_Distribution} alt="" />
-                              )}
-                            </div>
-                            <div
-                              className={
-                                NewUser1 === true ||
-                                  currentRoute === "/AllUsers" ||
-                                  currentRoute === "/CreateUser" ||
-                                  currentRoute ===
-                                  "/ReportDistributionContactsDetails" ||
-                                  currentRoute === "/EditUser"
-                                  ? "menu-name activeColorBrown"
-                                  : "menu-name"
-                              }
-                            >
-                              {t("Report Distribution")}
-                            </div>
-                          </Link>
-                        </div>
-                      </Accordion.Header>
-                    </Accordion.Item>
-                  ) : null}
 
                   {/* ================> New User End <============== */}
                   {/* {userRole === "customer" ||
@@ -691,127 +558,6 @@ const Sidebar = () => {
                   {/* ================> Dispatch Management Start <============== */}
                   {/* ================> Dispatch Management End <============== */}
 
-                  {/* ================> Payment Start <============== */}
-                  {temporaryHide && (
-                    <Accordion.Item eventKey="5">
-                      {userRole === "customer" ||
-                        (accessRights &&
-                          (accessRights?.rights_view_invoiced ||
-                            accessRights?.rights_view_paid)) ? (
-                        <Accordion.Header>
-                          <div
-                            className="icon-menu-name"
-                            onMouseOver={() => setPayment1(true)}
-                            onMouseOut={() => setPayment1(false)}
-                          >
-                            <div className="icon-left">
-                              {Payment === true ||
-                                Payment1 === true ||
-                                currentRoute === "/Invoiced" ||
-                                currentRoute === "/InvoiceDetails" ||
-                                currentRoute === "/Paid" ||
-                                currentRoute === "/PaidPaymentReceipt" ||
-                                currentRoute === "/PaidPaymentInvoice" ? (
-                                <Link
-                                  to="/Invoiced"
-                                  onClick={() => {
-                                    setDashboard1(false);
-                                    setSidebar(true);
-                                  }}
-                                >
-                                  <img src={payment_icon_active} alt="" />
-                                </Link>
-                              ) : (
-                                <Link
-                                  to="/Invoiced"
-                                  onClick={() => {
-                                    setDashboard1(false);
-                                    setSidebar(true);
-                                  }}
-                                >
-                                  <img src={payment_icon} alt="" />
-                                </Link>
-                              )}
-                            </div>
-
-                            <div
-                              className={
-                                Payment1 === true ||
-                                  Payment === true ||
-                                  currentRoute === "/Invoiced" ||
-                                  currentRoute === "/InvoiceDetails" ||
-                                  currentRoute === "/Paid" ||
-                                  currentRoute === "/PaidPaymentReceipt" ||
-                                  currentRoute === "/PaidPaymentInvoice"
-                                  ? "menu-name activeColorBrown"
-                                  : "menu-name"
-                              }
-                            >
-                              {t("Payment")}
-                            </div>
-                          </div>
-                        </Accordion.Header>
-                      ) : null}
-
-                      <Accordion.Body>
-                        <div className="sub-menus">
-                          <ul className="actionnmenulist">
-                            {userRole === "customer" ||
-                              (accessRights &&
-                                accessRights?.rights_view_invoiced) ? (
-                              <li>
-                                <Link
-                                  onClick={() => {
-                                    setDispatchManagement(false);
-                                    setParkingManagement(false);
-                                    setReplayPlayback(false);
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                  className={
-                                    currentRoute === "/Invoiced" ||
-                                      currentRoute === "/InvoiceDetails"
-                                      ? "activeColorBrown"
-                                      : ""
-                                  }
-                                  to="/Invoiced"
-                                >
-                                  {t("Invoiced")}
-                                </Link>
-                              </li>
-                            ) : null}
-                            {userRole === "customer" ||
-                              (accessRights && accessRights?.rights_view_paid) ? (
-                              <li>
-                                <Link
-                                  to="/Paid"
-                                  className={
-                                    currentRoute === "/Paid" ||
-                                      currentRoute === "/PaidPaymentReceipt" ||
-                                      currentRoute === "/PaidPaymentInvoice"
-                                      ? "activeColorBrown"
-                                      : ""
-                                  }
-                                  onClick={() => {
-                                    setDispatchManagement(false);
-                                    setParkingManagement(false);
-                                    setReplayPlayback(false);
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                >
-                                  {t("Paid")}
-                                </Link>
-                              </li>
-                            ) : null}
-                          </ul>
-                        </div>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  )}
-
                   {/* ================> Payment End <============== */}
 
                   {/* ================> Communication Start <============== */}
@@ -819,184 +565,93 @@ const Sidebar = () => {
 
                   {/* ================> Reports Start <============== */}
 
-                  {accessRights && accessRights?.rights_view_reports ? (
-                    <Accordion.Item eventKey="20" id="single_accordian_item">
-                      <Accordion.Header>
-                        <div className="main-menus">
-                          <div
-                            className={
-                              Reports ? "menus-items  " : "menus-items"
-                            }
-                          >
-                            <Link
-                              to="#"
-                              className="icon-menu-name"
-                              onMouseOver={() => setReports1(true)}
-                              onMouseOut={() => setReports1(false)}
-                              onClick={() => {
-                                setCommunication(false);
-                                setReports(!Reports);
-                                setDispatchManagement(false);
-                                setParkingManagement(false);
-                                setReplayPlayback(false);
-                                setPayment(false);
-                                setUsers(false);
-                                setVehicleExpenses(false);
-                                setMasterData(false);
-                                setMasterSetting(false);
-                                isMobile ? setSidebar(false) : setSidebar(true);
-                              }}
-                            >
-                              <div className="icon-left">
-                                {Reports === true ||
-                                  Reports1 === true ||
-                                  currentRoute === "/Reports" ||
-                                  currentRoute === "/ScheduleReport" ||
-                                  currentRoute === "/GenerateCustomReport" ||
-                                  currentRoute === "/ReportView" ? (
-                                  <Link
-                                    to="/Reports"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={reports_icon_active} alt="" />
-                                  </Link>
-                                ) : (
-                                  <Link
-                                    to="/Reports"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={reports_icon} alt="" />
-                                  </Link>
-                                )}
-                              </div>
 
-                              <div
-                                className={
-                                  Reports1 === true ||
-                                    Reports === true ||
-                                    currentRoute === "/Reports" ||
-                                    currentRoute === "/ScheduleReport" ||
-                                    currentRoute === "/GenerateCustomReport" ||
-                                    currentRoute === "/ReportView"
-                                    ? "menu-name activeColorBrown"
-                                    : "menu-name"
-                                }
-                              >
+                  <Accordion.Item eventKey="20" id="single_accordian_item">
+                    <Accordion.Header>
+                      <div className="main-menus">
+                        <div
+                          className={
+                            Reports ? "menus-items  " : "menus-items"
+                          }
+                        >
+                          <Link
+                            to="#"
+                            className="icon-menu-name"
+                            onMouseOver={() => setReports1(true)}
+                            onMouseOut={() => setReports1(false)}
+                            onClick={() => {
+                              setCommunication(false);
+                              setReports(!Reports);
+                              setDispatchManagement(false);
+                              setParkingManagement(false);
+                              setReplayPlayback(false);
+                              setPayment(false);
+                              setUsers(false);
+                              setVehicleExpenses(false);
+                              setMasterData(false);
+                              setMasterSetting(false);
+                              isMobile ? setSidebar(false) : setSidebar(true);
+                            }}
+                          >
+                            <div className="icon-left">
+                              {Reports === true ||
+                                Reports1 === true ||
+                                currentRoute === "/Reports" ||
+                                currentRoute === "/ScheduleReport" ||
+                                currentRoute === "/GenerateCustomReport" ||
+                                currentRoute === "/ReportView" ? (
                                 <Link
                                   to="/Reports"
                                   onClick={() => {
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
+                                    setDashboard1(false);
+                                    setSidebar(true);
                                   }}
                                 >
-                                  {t("Reports")}
+                                  <img src={reports_icon_active} alt="" />
                                 </Link>
-                              </div>
-                            </Link>
-                          </div>
+                              ) : (
+                                <Link
+                                  to="/Reports"
+                                  onClick={() => {
+                                    setDashboard1(false);
+                                    setSidebar(true);
+                                  }}
+                                >
+                                  <img src={reports_icon} alt="" />
+                                </Link>
+                              )}
+                            </div>
+
+                            <div
+                              className={
+                                Reports1 === true ||
+                                  Reports === true ||
+                                  currentRoute === "/Reports" ||
+                                  currentRoute === "/ScheduleReport" ||
+                                  currentRoute === "/GenerateCustomReport" ||
+                                  currentRoute === "/ReportView"
+                                  ? "menu-name activeColorBrown"
+                                  : "menu-name"
+                              }
+                            >
+                              <Link
+                                to="/Reports"
+                                onClick={() => {
+                                  isMobile
+                                    ? setSidebar(false)
+                                    : setSidebar(true);
+                                }}
+                              >
+                                {t("Reports")}
+                              </Link>
+                            </div>
+                          </Link>
                         </div>
-                      </Accordion.Header>
-                    </Accordion.Item>
-                  ) : null}
+                      </div>
+                    </Accordion.Header>
+                  </Accordion.Item>
                   {/* ================> Reports End <============== */}
 
-                  {/* ================> ConfigurationChecker Start <============== */}
-                  {(userRole === "customer" && temporaryHide) ||
-                    (temporaryHide &&
-                      accessRights &&
-                      accessRights.rights_view_configuration_checker) ? (
-                    <Accordion.Item eventKey="10" id="single_accordian_item">
-                      <Accordion.Header>
-                        <div className="main-menus">
-                          <div
-                            className={
-                              ConfigurationChecker
-                                ? "menus-items  "
-                                : "menus-items"
-                            }
-                          >
-                            <Link
-                              to="#"
-                              className="icon-menu-name"
-                              onMouseOver={() => setConfigurationChecker1(true)}
-                              onMouseOut={() => setConfigurationChecker1(false)}
-                              onClick={() => {
-                                setConfigurationChecker(!ConfigurationChecker);
-                                setCommunication(false);
-                                setParkingManagement(false);
-                                setReplayPlayback(false);
-                                setReports(false);
-                                setDispatchManagement(false);
-                                setPayment(false);
-                                setUsers(false);
-                                setVehicleExpenses(false);
-                                setMasterData(false);
-                                setMasterSetting(false);
-                                isMobile ? setSidebar(false) : setSidebar(true);
-                              }}
-                            >
-                              <div className="icon-left">
-                                {ConfigurationChecker === true ||
-                                  ConfigurationChecker1 === true ||
-                                  currentRoute === "/ConfigurationChecker" ||
-                                  currentRoute === "/Paid" ? (
-                                  <Link
-                                    to="/ConfigurationChecker"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={config_icon_active} alt="" />
-                                  </Link>
-                                ) : (
-                                  <Link
-                                    to="/ConfigurationChecker"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={config_icon} alt="" />
-                                  </Link>
-                                )}
-                              </div>
-
-                              <div
-                                className={
-                                  ConfigurationChecker1 === true ||
-                                    ConfigurationChecker === true ||
-                                    currentRoute === "/ConfigurationChecker"
-                                    ? "menu-name activeColorBrown"
-                                    : "menu-name"
-                                }
-                              >
-                                <Link
-                                  to="/ConfigurationChecker"
-                                  onClick={() => {
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                >
-                                  {t("Configuration Checker")}
-                                </Link>
-                              </div>
-                            </Link>
-                          </div>
-                        </div>
-                      </Accordion.Header>
-                    </Accordion.Item>
-                  ) : (
-                    <></>
-                  )}
                   {/* ================> ConfigurationChecker End <============== */}
 
                   {/* ================> Parking Management Start <============== */}
@@ -1096,366 +751,94 @@ const Sidebar = () => {
 
                   {/* ================> Parking Management Start <============== */}
 
-                  {userRole === "customer" ||
-                    (accessRights &&
-                      accessRights?.rights_view_replay_or_paybacks) ? (
-                    <Accordion.Item eventKey="11" id="single_accordian_item">
-                      <Accordion.Header>
-                        <div className="main-menus">
-                          <div
-                            className={
-                              ReplayPlayback ? "menus-items  " : "menus-items"
-                            }
-                          >
-                            <Link
-                              to="#"
-                              className="icon-menu-name"
-                              onMouseOver={() => setReplayPlayback1(true)}
-                              onMouseOut={() => setReplayPlayback1(false)}
-                              onClick={() => {
-                                setReplayPlayback(!ReplayPlayback);
-                                setParkingManagement(false);
-                                setReplayPlayback(false);
-                                setConfigurationChecker(false);
-                                setCommunication(false);
-                                setReports(false);
-                                setDispatchManagement(false);
-                                setPayment(false);
-                                setUsers(false);
-                                setVehicleExpenses(false);
-                                setMasterData(false);
-                                setMasterSetting(false);
-                                isMobile ? setSidebar(false) : setSidebar(true);
-                              }}
-                            >
-                              <div className="icon-left">
-                                {ReplayPlayback === true ||
-                                  ReplayPlayback1 === true ||
-                                  currentRoute === "/ReplayPlayback" ? (
-                                  <Link
-                                    to="/ReplayPlayback"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={ReplayPlayback_active} alt="" />
-                                  </Link>
-                                ) : (
-                                  <Link
-                                    to="/ReplayPlayback"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={ReplayPlayback_icon} alt="" />
-                                  </Link>
-                                )}
-                              </div>
 
-                              <div
-                                className={
-                                  ReplayPlayback1 === true ||
-                                    ReplayPlayback === true ||
-                                    currentRoute === "/ReplayPlayback"
-                                    ? "menu-name activeColorBrown"
-                                    : "menu-name"
-                                }
-                              >
+                  <Accordion.Item eventKey="11" id="single_accordian_item">
+                    <Accordion.Header>
+                      <div className="main-menus">
+                        <div
+                          className={
+                            ReplayPlayback ? "menus-items  " : "menus-items"
+                          }
+                        >
+                          <Link
+                            to="#"
+                            className="icon-menu-name"
+                            onMouseOver={() => setReplayPlayback1(true)}
+                            onMouseOut={() => setReplayPlayback1(false)}
+                            onClick={() => {
+                              setReplayPlayback(!ReplayPlayback);
+                              setParkingManagement(false);
+                              setReplayPlayback(false);
+                              setConfigurationChecker(false);
+                              setCommunication(false);
+                              setReports(false);
+                              setDispatchManagement(false);
+                              setPayment(false);
+                              setUsers(false);
+                              setVehicleExpenses(false);
+                              setMasterData(false);
+                              setMasterSetting(false);
+                              isMobile ? setSidebar(false) : setSidebar(true);
+                            }}
+                          >
+                            <div className="icon-left">
+                              {ReplayPlayback === true ||
+                                ReplayPlayback1 === true ||
+                                currentRoute === "/ReplayPlayback" ? (
                                 <Link
                                   to="/ReplayPlayback"
                                   onClick={() => {
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                >
-                                  {t("Replay or Playback's")}
-                                </Link>
-                              </div>
-                            </Link>
-                          </div>
-                        </div>
-                      </Accordion.Header>
-                    </Accordion.Item>
-                  ) : null}
-
-                  {/* ================> Parking Management End <============== */}
-
-                  {/* ================> Fuel Management Start <============== */}
-                  {
-                    <Accordion.Item eventKey="12">
-                      {(userRole === "customer" && temporaryHide) ||
-                        (temporaryHide &&
-                          accessRights &&
-                          (accessRights?.rights_view_fuel_management_dashboard ||
-                            accessRights?.rights_view_fuel_management_fuel_details ||
-                            accessRights?.rights_view_fuel_management_fuel_alerts)) ? (
-                        <Accordion.Header>
-                          <div
-                            className="icon-menu-name"
-                            onMouseOver={() => setFuelMana1(true)}
-                            onMouseOut={() => setFuelMana1(false)}
-                          >
-                            <div className="icon-left">
-                              {FuelMana === true ||
-                                FuelMana1 === true ||
-                                currentRoute === "/FuelManagementDashbord" ||
-                                currentRoute === "/FuelAlerts" ||
-                                currentRoute === "/FuelManagementDetails" ? (
-                                <Link
-                                  to="/FuelManagementDashbord"
-                                  onClick={() => {
                                     setDashboard1(false);
                                     setSidebar(true);
                                   }}
                                 >
-                                  <img src={FuelManagement_active} alt="" />
+                                  <img src={ReplayPlayback_active} alt="" />
                                 </Link>
                               ) : (
                                 <Link
-                                  to="/FuelManagementDashbord"
+                                  to="/ReplayPlayback"
                                   onClick={() => {
                                     setDashboard1(false);
                                     setSidebar(true);
                                   }}
                                 >
-                                  <img src={FuelManagement} alt="" />
+                                  <img src={ReplayPlayback_icon} alt="" />
                                 </Link>
                               )}
                             </div>
 
                             <div
                               className={
-                                FuelMana1 === true ||
-                                  FuelMana === true ||
-                                  currentRoute === "/FuelManagementDashbord" ||
-                                  currentRoute === "/FuelAlerts" ||
-                                  currentRoute === "/FuelManagementDetails"
+                                ReplayPlayback1 === true ||
+                                  ReplayPlayback === true ||
+                                  currentRoute === "/ReplayPlayback"
                                   ? "menu-name activeColorBrown"
                                   : "menu-name"
                               }
                             >
-                              {t("Fuel Management")}
+                              <Link
+                                to="/ReplayPlayback"
+                                onClick={() => {
+                                  isMobile
+                                    ? setSidebar(false)
+                                    : setSidebar(true);
+                                }}
+                              >
+                                {t("Replay or Playback's")}
+                              </Link>
                             </div>
-                          </div>
-                        </Accordion.Header>
-                      ) : null}
-                      <Accordion.Body>
-                        <div className="sub-menus">
-                          <ul className="actionnmenulist">
-                            {userRole === "customer" ||
-                              (accessRights &&
-                                accessRights?.rights_view_fuel_management_dashboard) ? (
-                              <li>
-                                <Link
-                                  onClick={() => {
-                                    setDispatchManagement(false);
-                                    setParkingManagement(false);
-                                    setReplayPlayback(false);
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                  className={
-                                    currentRoute === "/FuelManagementDashbord"
-                                      ? "activeColorBrown"
-                                      : ""
-                                  }
-                                  to="/FuelManagementDashbord"
-                                >
-                                  {t("Dashboard")}
-                                </Link>
-                              </li>
-                            ) : null}
-
-                            {userRole === "customer" ||
-                              (accessRights &&
-                                accessRights?.rights_view_fuel_management_fuel_details) ? (
-                              <li>
-                                <Link
-                                  to="/FuelManagementDetails"
-                                  className={
-                                    currentRoute === "/FuelManagementDetails"
-                                      ? "activeColorBrown"
-                                      : ""
-                                  }
-                                  onClick={() => {
-                                    setDispatchManagement(false);
-                                    setParkingManagement(false);
-                                    setReplayPlayback(false);
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                >
-                                  {t("Fuel Details")}
-                                </Link>
-                              </li>
-                            ) : null}
-
-                            {userRole === "customer" ||
-                              (accessRights &&
-                                accessRights?.rights_view_fuel_management_fuel_alerts) ? (
-                              <li>
-                                <Link
-                                  to="/FuelAlerts"
-                                  className={
-                                    currentRoute === "/FuelAlerts"
-                                      ? "activeColorBrown"
-                                      : ""
-                                  }
-                                  onClick={() => {
-                                    setDispatchManagement(false);
-                                    setParkingManagement(false);
-                                    setReplayPlayback(false);
-                                    isMobile
-                                      ? setSidebar(false)
-                                      : setSidebar(true);
-                                  }}
-                                >
-                                  {t("Fuel Alerts")}
-                                </Link>
-                              </li>
-                            ) : null}
-                          </ul>
+                          </Link>
                         </div>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  }
+                      </div>
+                    </Accordion.Header>
+                  </Accordion.Item>
+                  {/* ================> Parking Management End <============== */}
+
+                  {/* ================> Fuel Management Start <============== */}
+
 
                   {/* ================> Payment End <============== */}
                   {/* ================> Vehicle Inspection Start <============== */}
-                  {addonSettingData["addon_vehicle_inspection"] == 1 &&
-                    temporaryHide && (
-                      <Accordion.Item eventKey="16">
-                        {userRole === "customer" ||
-                          (accessRights &&
-                            (accessRights?.rights_view_vehicle_inspection_dashboard ||
-                              accessRights?.rights_view_vehicle_inspection_inspection)) ? (
-                          <Accordion.Header>
-                            <div
-                              className="icon-menu-name"
-                              onMouseOver={() => setInspection1(true)}
-                              onMouseOut={() => setInspection1(false)}
-                            >
-                              <div className="icon-left">
-                                {Inspection === true ||
-                                  Inspection1 === true ||
-                                  currentRoute === "/VehicleInspection" ||
-                                  currentRoute === "/NewInspection" ||
-                                  currentRoute === "/ViewInspectionDetails" ||
-                                  currentRoute ===
-                                  "/VehicleInspectionDashboard" ||
-                                  currentRoute === "/NewVehicleInspection" ? (
-                                  <Link
-                                    to="/VehicleInspection"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img
-                                      src={VehicleInspection_active}
-                                      alt=""
-                                    />
-                                  </Link>
-                                ) : (
-                                  <Link
-                                    to="/VehicleInspection"
-                                    onClick={() => {
-                                      setDashboard1(false);
-                                      setSidebar(true);
-                                    }}
-                                  >
-                                    <img src={VehicleInspection} alt="" />
-                                  </Link>
-                                )}
-                              </div>
-
-                              <div
-                                className={
-                                  Inspection1 === true ||
-                                    Inspection === true ||
-                                    currentRoute === "/VehicleInspection" ||
-                                    currentRoute === "/NewInspection" ||
-                                    currentRoute ===
-                                    "/VehicleInspectionDashboard" ||
-                                    currentRoute === "/ViewInspectionDetails" ||
-                                    currentRoute === "/NewVehicleInspection"
-                                    ? "menu-name activeColorBrown"
-                                    : "menu-name"
-                                }
-                              >
-                                {t("Vehicle Inspection")}
-                              </div>
-                            </div>
-                          </Accordion.Header>
-                        ) : null}
-                        <Accordion.Body>
-                          <div className="sub-menus">
-                            <ul className="actionnmenulist">
-                              {userRole === "customer" ||
-                                (accessRights &&
-                                  accessRights?.rights_view_vehicle_inspection_dashboard) ? (
-                                <li>
-                                  <Link
-                                    onClick={() => {
-                                      setDispatchManagement(false);
-                                      setParkingManagement(false);
-                                      setReplayPlayback(false);
-                                      isMobile
-                                        ? setSidebar(false)
-                                        : setSidebar(true);
-                                    }}
-                                    className={
-                                      currentRoute ===
-                                        "/VehicleInspectionDashboard" ||
-                                        currentRoute ===
-                                        "/VehicleInspectionDashboard"
-                                        ? "activeColorBrown"
-                                        : ""
-                                    }
-                                    to="/VehicleInspectionDashboard"
-                                  >
-                                    {t("Dashboard")}
-                                  </Link>
-                                </li>
-                              ) : null}
-                              {userRole === "customer" ||
-                                (accessRights &&
-                                  accessRights?.rights_view_vehicle_inspection_inspection) ? (
-                                <li>
-                                  <Link
-                                    to="/VehicleInspection"
-                                    className={
-                                      currentRoute === "/VehicleInspection" ||
-                                        currentRoute === "/NewInspection" ||
-                                        currentRoute ===
-                                        "/ViewInspectionDetails" ||
-                                        currentRoute === "/NewVehicleInspection"
-                                        ? "activeColorBrown"
-                                        : ""
-                                    }
-                                    onClick={() => {
-                                      setDispatchManagement(false);
-                                      setParkingManagement(false);
-                                      setReplayPlayback(false);
-                                      isMobile
-                                        ? setSidebar(false)
-                                        : setSidebar(true);
-                                    }}
-                                  >
-                                    {t("Inspection")}
-                                  </Link>
-                                </li>
-                              ) : null}
-                            </ul>
-                          </div>
-                        </Accordion.Body>
-                      </Accordion.Item>
-                    )}
                   {/* ================> Vehicle Inspection End <============== */}
 
                 </Accordion>
@@ -1463,8 +846,8 @@ const Sidebar = () => {
             </div>
           </div>
         </aside>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

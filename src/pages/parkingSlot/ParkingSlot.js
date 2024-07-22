@@ -237,7 +237,7 @@ const ParkingSlot = () => {
       .catch((err) => {
         console.log("err", err);
       })
-      .finally(() => {});
+      .finally(() => { });
   }
 
   const pdfFormat = (pdfData) => {
@@ -367,24 +367,20 @@ const ParkingSlot = () => {
 
               <div className="col-md-4 mainCol4">
                 <div className="leftSideSec">
-                  {userRole === "customer" ||
-                  (accessRights &&
-                    accessRights?.rights_manage_parking_station) ? (
-                    <div
-                      onClick={() => {
-                        navigation("/AddParkingSlot");
-                        setPostionPolygon([]);
-                        setPositionRectangle([]);
-                        setPositionCercle([]);
-                        setPostionRadius("");
-                      }}
-                      className="addParkBtn"
-                    >
-                      <button>+ {t("Add Parking Slot")}</button>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
+
+                  <div
+                    onClick={() => {
+                      navigation("/AddParkingSlot");
+                      setPostionPolygon([]);
+                      setPositionRectangle([]);
+                      setPositionCercle([]);
+                      setPostionRadius("");
+                    }}
+                    className="addParkBtn"
+                  >
+                    <button>+ {t("Add Parking Slot")}</button>
+                  </div>
+
 
                   {/* <Link to="#">
                       <div className="inconMain left-margin me-0">
@@ -406,7 +402,7 @@ const ParkingSlot = () => {
                             onClick={() => getExportChat()}
                             className="d-block"
                           >
-                          {t("PDF")}  
+                            {t("PDF")}
                           </Link>
                         </Dropdown.Item>
                         <Dropdown.Item>
@@ -414,7 +410,7 @@ const ParkingSlot = () => {
                             onClick={() => downLoadExcelSheet()}
                             className="d-block"
                           >
-                          {t("Excel")}  
+                            {t("Excel")}
                           </Link>
                         </Dropdown.Item>
                       </Dropdown.Menu>
@@ -470,41 +466,38 @@ const ParkingSlot = () => {
                             </svg>
                           </div>
 
-                          {userRole === "customer" ||
-                          (accessRights &&
-                            accessRights?.rights_manage_parking_station) ? (
-                            <Dropdown>
-                              <Dropdown.Toggle id="dropdown-basic">
-                                <img src={option} alt="" />
-                              </Dropdown.Toggle>
 
-                              <Dropdown.Menu>
-                                <Dropdown.Item>
-                                  <Link
-                                    to={
-                                      "/AddParkingSlot/" +
-                                      singleCardDetails?.slot_id
-                                    }
-                                    className="d-block"
-                                  >
-                                    {t("Edit")}
-                                  </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item>
-                                  <Link
-                                    tp="#"
-                                    onClick={() => {
-                                      setShow(true);
-                                      setDeletedId(singleCardDetails?.slot_id);
-                                    }}
-                                    className="d-block"
-                                  >
-                                    {t("Delete")}
-                                  </Link>
-                                </Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          ) : null}
+                          <Dropdown>
+                            <Dropdown.Toggle id="dropdown-basic">
+                              <img src={option} alt="" />
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                              <Dropdown.Item>
+                                <Link
+                                  to={
+                                    "/AddParkingSlot/" +
+                                    singleCardDetails?.slot_id
+                                  }
+                                  className="d-block"
+                                >
+                                  {t("Edit")}
+                                </Link>
+                              </Dropdown.Item>
+                              <Dropdown.Item>
+                                <Link
+                                  tp="#"
+                                  onClick={() => {
+                                    setShow(true);
+                                    setDeletedId(singleCardDetails?.slot_id);
+                                  }}
+                                  className="d-block"
+                                >
+                                  {t("Delete")}
+                                </Link>
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
                         </div>
                       </div>
                       <div className="innerCOntent">
@@ -609,7 +602,7 @@ const ParkingSlot = () => {
                       variant="pills"
                       className="td-nav"
                       id="InnerTabNew_Two"
-                      // when we add suggest tab comment inline stly
+                    // when we add suggest tab comment inline stly
                     >
                       <Nav.Item className="td-tab" style={{ width: "100%" }}>
                         <Nav.Link

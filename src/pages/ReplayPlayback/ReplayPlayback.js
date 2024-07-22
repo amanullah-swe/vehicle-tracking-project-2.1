@@ -443,16 +443,16 @@ const ReplayPlayback = () => {
                         >
                           {singleVehicleList && singleVehicleList?.length > 0
                             ? singleVehicleList?.map((item, index) => {
-                                return (
-                                  <Option
-                                    style={{ color: "rgba(156, 73, 0)" }}
-                                    key={"vehicleCategory" + index}
-                                    value={item.vehicle_id}
-                                  >
-                                    {item.vehicle_number}
-                                  </Option>
-                                );
-                              })
+                              return (
+                                <Option
+                                  style={{ color: "rgba(156, 73, 0)" }}
+                                  key={"vehicleCategory" + index}
+                                  value={item.vehicle_id}
+                                >
+                                  {item.vehicle_number}
+                                </Option>
+                              );
+                            })
                             : "no data available"}
                         </Select>
                       </div>
@@ -894,6 +894,7 @@ const ReplayPlayback = () => {
                                 vehicleIcon={vehicleIcon}
                                 overSpeedColor={overSpeedColor}
                                 mapBoundReplay={mapBoundReplay}
+                                carSpeed={carSpeed}
                               />
                               <div className="map_bottom_labels">
                                 <div className="label label_1">

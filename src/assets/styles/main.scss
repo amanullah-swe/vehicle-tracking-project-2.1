@@ -29,6 +29,7 @@
 @import url(./calendar.scss);
 @import url(./VehicleAvailability.scss);
 @import url(./Driver_Duty_Roaster.scss);
+@import url(./Animation.scss);
 
 .monthe-list {
   font-size: 14px;
@@ -36,6 +37,7 @@
   display: flex;
   justify-content: center;
 }
+
 .step-container {
   display: flex;
   flex-direction: column;
@@ -57,6 +59,7 @@
   font-size: 11px;
   color: #333; // Adjust color as needed
 }
+
 .team-user {
   display: flex;
   align-items: center;
@@ -67,9 +70,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     a {
       text-decoration: none;
     }
+
     // align-items: center;
 
     .icon-menu-name-arrow {
@@ -80,6 +85,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+
         .menu-name {
           padding-left: 10px;
           display: flex;
@@ -93,6 +99,7 @@
 
         .team-image {
           margin: 0 10px 0 3px;
+
           img {
             width: 100%;
             height: auto;
@@ -100,11 +107,12 @@
           }
         }
       }
-      .arrow {
-      }
+
+      .arrow {}
     }
   }
 }
+
 .team-user-for-team {
   display: flex;
   align-items: center;
@@ -115,9 +123,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     a {
       text-decoration: none;
     }
+
     // align-items: center;
 
     .icon-menu-name-arrow {
@@ -128,6 +138,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+
         .menu-name {
           padding-left: 10px;
           display: flex;
@@ -141,6 +152,7 @@
 
         .team-image {
           margin: 0 10px 0 3px;
+
           img {
             width: 100%;
             height: auto;
@@ -148,23 +160,27 @@
           }
         }
       }
-      .arrow {
-      }
+
+      .arrow {}
     }
   }
 }
+
 .sub-menus-1 {
   margin: 10px 0 20px 30px;
   transition: all 0.5s;
   border-left: 1px solid var(#9c4900);
+
   a {
     text-decoration: none;
   }
+
   .sub-menue-items {
     margin-bottom: 15px;
     display: block;
     margin-left: 24px;
   }
+
   .menu-name {
     display: flex;
     align-items: center;
@@ -175,18 +191,22 @@
     color: var(--gray_05_LightMode);
   }
 }
+
 .sub-menus-1-for-team {
   margin: 10px 0 20px 30px;
   transition: all 0.5s;
   border-left: 1px solid var(#9c4900);
+
   a {
     text-decoration: none;
   }
+
   .sub-menue-items {
     margin-bottom: 15px;
     display: block;
     margin-left: 24px;
   }
+
   .menu-name {
     display: flex;
     align-items: center;
@@ -194,8 +214,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: rgb(17 17 17 / 50%)
-    right 
+    color: rgb(17 17 17 / 50%) right
   }
 }
 
@@ -203,122 +222,140 @@
 
 @media (max-width: 699px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 3%,
+    bottom: 13rem;
+    right: 3%,
   }
 }
+
 @media (min-width: 700px) and (max-width: 950px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 10%,
+    bottom: 13rem;
+    right: 10%,
   }
 }
+
 @media (min-width: 951px) and (max-width: 1159px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 35%,
+    bottom: 13rem;
+    right: 35%,
   }
 }
+
 @media (min-width: 1160px) and (max-width: 1350px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 50%,
+    bottom: 13rem;
+    right: 50%,
   }
 }
+
 @media (min-width: 1351px) and (max-width: 1440px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 55%,
+    bottom: 13rem;
+    right: 55%,
   }
 }
+
 @media (min-width: 1441px) and (max-width: 1540px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 60%,
+    bottom: 13rem;
+    right: 60%,
   }
 }
+
 @media (min-width: 1541px) and (max-width: 1730px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 65%,
+    bottom: 13rem;
+    right: 65%,
   }
 }
+
 @media (min-width: 1731px) and (max-width: 1980px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 70%,
+    bottom: 13rem;
+    right: 70%,
   }
 }
+
 @media (min-width: 1981px) and (max-width: 2550px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 75%,
+    bottom: 13rem;
+    right: 75%,
   }
 }
-@media (min-width: 2501px)  {
+
+@media (min-width: 2501px) {
   .emoji-style {
-    bottom: 13rem ;
-     right : 78%,
+    bottom: 13rem;
+    right: 78%,
   }
 }
 
 @media (max-width: 699px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 6%,
+    bottom: 13rem;
+    right: 6%,
   }
 }
+
 @media (min-width: 700px) and (max-width: 950px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 13%,
+    bottom: 13rem;
+    right: 13%,
   }
 }
+
 @media (min-width: 951px) and (max-width: 1159px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 40%,
+    bottom: 13rem;
+    right: 40%,
   }
 }
+
 @media (min-width: 1160px) and (max-width: 1400px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 58%,
+    bottom: 13rem;
+    right: 58%,
   }
 }
+
 @media (min-width: 1401px) and (max-width: 1490px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 62%,
+    bottom: 13rem;
+    right: 62%,
   }
 }
+
 @media (min-width: 1491px) and (max-width: 1590px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 65%,
+    bottom: 13rem;
+    right: 65%,
   }
 }
+
 @media (min-width: 1591px) and (max-width: 1780px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 70%,
+    bottom: 13rem;
+    right: 70%,
   }
 }
+
 @media (min-width: 1781px) and (max-width: 2030px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 75%,
+    bottom: 13rem;
+    right: 75%,
   }
 }
+
 @media (min-width: 2031px) and (max-width: 2550px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 77%,
+    bottom: 13rem;
+    right: 77%,
   }
 }
-@media (min-width: 2551px)  {
+
+@media (min-width: 2551px) {
   .emoji-style-sidebar-off {
-    bottom: 13rem ;
-     right : 82%,
+    bottom: 13rem;
+    right: 82%,
   }
 }

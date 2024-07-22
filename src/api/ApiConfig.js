@@ -10,11 +10,11 @@
 
 // const BASE_URL = "http://192.168.0.148:3002/"  /// amir wifi /
 // 
-const BASE_URL = "https://api.vehicletracking.qa:3002/";   /* Stage */
+// const BASE_URL = "https://api.vehicletracking.qa:3002/";   /* Stage */
 // const BASE_URL = "https://api.vehicletracking.qa:3002/";
 // const BASE_URL = "http://203.129.225.99:3002/"  /// AWD server
 
-// const BASE_URL = "https://api.vehicletracking.qa:3000/"; /// VT
+const BASE_URL = "https://api.vehicletracking.qa:3000/"; /// VT
 
 export const ApiConfig = {
   BASE_URL_SHARE: "https://api.vehicletracking.qa:3000/",
